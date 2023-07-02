@@ -1,0 +1,109 @@
+% BEGIN ------------------   Version   ------------------- END %
+
+\newcommand{\version}{\today} % Define la commande << version >>, à laquelle on a attribué ici la date d'aujoud'hui.
+
+% BEGIN ------------------   Classe du document   ------------------- END %
+
+\documentclass[a4paper,11pt]{article} % Le format du papier, la taille de police d'écriture, le modèle du document.
+% Classe existante: article, book, letter, beamer, amsart.
+
+% BEGIN-------------------   Packages   ------------------- END %
+
+\usepackage[french,english,german,italian]{babel} % Permet de sélectionner la langue, ici je vais avoir le choix entre le français, l'anglais, l'allemand, et l'italien. 
+\usepackage[utf8]{inputenc} % Evite le problème des accents.
+\usepackage{graphicx} % Permet d'incorporer des images.
+\usepackage{geometry} % Permet de la flexbilité sur la géométrie.
+\usepackage{amsfonts,amsmath,amsthm,amssymb,amscd,amsxtra} % Package pour les maths.
+\usepackage{array} % Package pour dessiner des tableaux.
+\usepackage[babel=true]{csquotes} % csquotes va utiliser la langue définie dans babel, pour choisir les bons guillemets.
+\usepackage{color} % Permet d'utiliser des couleurs personnalisées (black, white, red, green, blue, cyan, magenta).
+\usepackage{shorttoc} % Permet de créer une autre table des matières avec une profondeur différente.
+\usepackage[hyperindex=true,colorlinks=true,linkcolor=black,urlcolor=black, citecolor= black, pagebackref=true]{hyperref} % Insere des liens (liens dans les indexs, colorie les liens, couleur des liens interne, couleur des hyperliens, couleur des citations, permet de faire figurer dans la bibliographie les pages où sont cités les article).
+\usepackage{cancel} % Permet de barrer des éléments.
+\usepackage{subfigure} % Permet de faire correspondre une légende à plusieurs figures.
+\usepackage{multicol} % Permet de mettre une partie de son document sur plusieurs colonnes.
+\usepackage{latexsym} % Permet d'inserer d'autres symboles mathématique.
+\usepackage{authblk} % Permet de gérer les noms et affiliations des auteurs.
+\usepackage{mathrsfs} % Permet d'utiliser \mathscr{}.
+%\usepackage{footnotebackref} % Permet la création de liens interne à partir des footnote.
+\usepackage{natbib} % Permet de changer la couleur des numéros dans la biblio.
+
+% BEGIN --------------------  BACKREF  -------------------- END %
+
+\newcommand{\mapolicebackref}[1]{\hspace*{\fill}\mbox{\textit {\small #1}}} % Définir un style pour les backrefs.
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{
+                               \ifcase #1 \mapolicebackref{}
+                               \or \mapolicebackref{Cited page #2}
+                               \else \mapolicebackref{Cited pages #2}
+                               \fi
+                               } % Pour gérer les backref dans la bibliographie.
+
+% BEGIN --------------------  Commandes personnalisées  -------------------- END %
+
+\newcommand{\bra}[1]{\langle{#1}|} % Definie le Bra.       
+\newcommand{\ket}[1]{|{#1}\rangle} % Definie le Ket.
+\newcommand{\abs}[1]{\left|{#1}\right|} % Define la valeur absolue.
+\graphicspath{{./figures/}} % Permet d'aller chercher les figures, images, etc dans un dossier nommé figures.
+
+% BEGIN --------------------  numberwithin  -------------------- END %
+
+\numberwithin{equation}{section} % Permet de numéroter les equations suivant la section où elles se trouvent.
+\numberwithin{figure}{section} % Permet de numéroter les figures suivant la section où elles se trouvent.
+
+% BEGIN --------------------  theoremstyle  -------------------- END %
+
+\theoremstyle{plain} % plain pour les théorèmes, lemmes, corollaires, conjectures.
+\newtheorem{thm}{Theorem}[section] 
+\renewcommand{\thethm}{\empty{}} 
+\newtheorem{lem}{Lemma}[section] 
+\renewcommand{\thelem}{\empty{}} 
+\newtheorem{prop}{Proposition}[section]
+\renewcommand{\theprop}{\empty{}} 
+\newtheorem{cor}{Corollary}[section]
+\renewcommand{\thecor}{\empty{}} 
+\newtheorem{demo}{Proof}[section]
+\renewcommand{\thedemo}{\empty{}} 
+
+
+\theoremstyle{definition} % definition : définitions, exemples, problèmes.
+\newtheorem{dfn}{Definition}[section]
+\renewcommand{\thedfn}{\empty{}} 
+\newtheorem{dfns}{Definitions}[section]
+\renewcommand{\thedfns}{\empty{}} 
+\newtheorem{conj}{Conjecture}[section]
+\renewcommand{\theconj}{\empty{}} 
+\newtheorem{ex}{Example}[section]
+\renewcommand{\theex}{\empty{}} 
+
+\theoremstyle{remark} % remark : remarque, note, conclusion.
+\newtheorem{rem}{Remark}[section]
+\renewcommand{\therem}{\empty{}} 
+\newtheorem{note}{Note}[section]
+\renewcommand{\thenote}{\empty{}} 
+\newtheorem{case}{Case}[section]
+\renewcommand{\thecase}{\empty{}} 
+
+% BEGIN --------------------  Presentation du document  -------------------- END %
+
+%\title{} % Titre.
+%\author{} % Auteur.
+%\affil{} % Affiliation.
+%\email{} % Email.
+%\date{} % Date.
+
+
+% BEGIN ======================================================================================================== END %
+% ===== %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        DOCUMENT         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ==== %
+% BEGIN ======================================================================================================== END %
+
+\begin{document}
+
+\selectlanguage{english}
+
+\normalsize
+
+\noindent
+The kinematics of a classical mechanical system is given by its phase space, which is a manifold, say $M$ , equipped with a Poisson bracket. It should be the "shadow" of a quantum mechanical system, whose kinematics is given by specifying a non-commutative $C^{\star}$ - algebra of operators and suitable "physical" states on it. There should be a length-scale, Planck’s constant. As $\hbar \rightarrow 0$ the quantum system should converge in some sense to the classical system. 
+
+\end{document}

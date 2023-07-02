@@ -1,0 +1,510 @@
+% Weyl algebra and field quantization}. 
+% Antoine Gé́ré (gere@dima.unige.it).
+
+\documentclass[10pt]{article} % Define the default size of the writing, and the model of the document.
+
+\pdfoutput=1
+
+\makeatletter
+
+%-- VERSION ----------------------------------------------------------------%
+
+\newcommand{\version}{\today} % Define the command << version >> to which we associate the date from today.
+
+%-- PACKAGES ----------------------------------------------------------------%
+
+\usepackage[T1]{fontenc} % Gestion des accents (PDF).
+\usepackage[utf8]{inputenc} % Gestion des accents (source).
+\usepackage[french,english,italian,german]{babel} % Permet de sélectionner la langue, ici je vais avoir le choix entre le français, l'anglais, l'allemmaand, et l'italien. 
+\usepackage{geometry} % Gestion des marges.
+\usepackage[numbers,sort]{natbib}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{amsxtra}
+\usepackage{color}
+\usepackage{xcolor} % Gestion des couleurs (black, white, red, green, blue, cyan, magenta, pink).
+\usepackage{url}
+\usepackage{hyperref} % Gestion des hyperliens.
+\usepackage{graphicx} % Incorporate graphics.
+\usepackage{array} % Package pour dessiner des tableaux.
+\usepackage{multicol} % Permet de diviser document en plusieurs colonnes.
+\usepackage{setspace} % Provides support for setting the spacing between lines in a document.
+\usepackage{bibentry}
+
+%-- GEOMETRY ----------------------------------------------------------------%
+
+\geometry{
+ a4paper,
+ tmargin=2.2truecm,
+ bmargin=2.2truecm,
+ rmargin=2.2truecm,
+ lmargin=2.2truecm,
+ twoside,
+ verbose=true
+}
+
+%-- FONTS -------------------------------------------------------------------%
+
+\IfFileExists{MinionPro.sty}{
+  \usepackage[lf,medfamily,italicgreek,openg]{MinionPro}
+}{
+  \usepackage{lmodern}
+  \usepackage{upgreek}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \let\smallfrac\tfrac
+  \let\upDelta\Delta
+}
+
+\IfFileExists{MyriadPro.sty}{
+  \usepackage[lf,medfamily,onlytext]{MyriadPro}
+  \usepackage[sf,bf,small]{titlesec}
+  \usepackage[labelfont={sf,bf},labelsep=period]{caption}
+  \let\maybesf\sffamily
+}{
+  \usepackage{helvet}
+  \usepackage[bf,small]{titlesec}
+  \usepackage[labelfont={bf},labelsep=period]{caption}
+  \let\maybesf\rmfamily
+}
+
+\usepackage[final]{microtype}
+
+%-- HYPERREF ----------------------------------------------------------------%
+
+\definecolor{hypercolor}{rgb}{0,0.2,0.7}
+\hypersetup{
+  colorlinks=true, % Permet de colrier les liens au lieu de les encadrer.
+  linkcolor=hypercolor, % Permet de changer la couleur des liens.
+  urlcolor=hypercolor, % Permet de changer la couleur des hyperliens.
+  citecolor=hypercolor, % Permet de changer la couleur des citations.
+  filecolor=hypercolor,
+  pdfauthor=Antoine Géré,
+  pdfcreator=LaTeX,
+  pdfproducer=pdfTeX
+  unicode,
+  final
+}
+
+%-- STYLING -----------------------------------------------------------------%
+
+\numberwithin{equation}{section}
+
+\linespread{1.02}
+
+\nobibliography*
+
+\numberwithin{equation}{section} % Permet de numéroter les equations suivant la section où elles se trouvent.
+\numberwithin{figure}{section} % Permet de numéroter les figures suivant la section où elles se trouvent.
+
+\newcommand{\labo}[2]{\newcommand{\@labo}{\href{#2}{#1}}}
+\newcommand{\univ}[2]{\newcommand{\@univ}{\href{#2}{#1}}}
+\newcommand{\address}[1]{\newcommand{\@address}{\href{mailto:#1}{#1}}}
+
+\renewcommand{\maketitle}{
+ { % author, address, labo, univ.
+  \tt
+  \begin{flushleft}
+   \noindent\@author, \\
+   \@address, \\
+   \@labo, \@univ, \\
+   from January 11, 2013 to \@date.
+  \end{flushleft}
+ }
+ \vspace{1.0\baselineskip} 
+ { % title
+  \begin{flushright}
+   \LARGE \bf
+   \noindent\ignorespaces\texttt{\@title}
+  \end{flushright}
+ }
+}
+
+%-- COMMANDS ----------------------------------------------------------------%
+
+\newcommand{\bra}[1]{\langle{#1}|} % Definie le Bra.       
+\newcommand{\ket}[1]{|{#1}\rangle} % Definie le Ket.
+\newcommand{\abs}[1]{\left|{#1}\right|} % Define la valeur absolue.
+\newcommand{\E}[1]{\text{exp}\left({#1}\right)} % Definie l'exponentielle.
+\newcommand{\norm}[1]{\|{#1}\|} % Definie la norme.
+\newcommand{\PB}[2]{\left\{{#1},{#2}\right\}} % Define le crochet de Poisson.
+\newcommand{\cg}[6]{\left(\begin{array}{cc|c} #1 & #3 & #5 \\ #2 & #4 & #6 \end{array}\right)} % Definie le symbole pour les coefficients de Clebsch-Gordan.
+\newcommand{\wig}[6]{\left(\begin{array}{ccc} #1 & #3 & #5 \\ #2 & #4 & #6 \end{array}\right)} % Definie le symbole pour les 3-j (symbole de Wigner).
+\newcommand{\smerip}[1]{\langle #1 \rangle} % Define le smearing product.
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eq}{\end{equation}}
+\newcommand{\beqn}{\begin{eqnarray}}
+\newcommand{\eqn}{\end{eqnarray}}
+\newcommand{\WF}[1]{\mathrm{WF}\left(#1\right)} % wave front set
+\newcommand{\supp}[1]{\mathrm{supp}(#1)} % support
+\newcommand{\comut}[1]{\left[ #1 \right]} % commutator
+\newcommand{\Smatrix}{{\bf\mathcal{S}}}
+\newcommand{\Minko}{\mathbb{M}}
+\newcommand{\Manifold}{\mathcal{M}}
+\newcommand{\EndDfn}{\vspace{-7.2mm} \begin{flushright} $\blacktriangleright$ \end{flushright}}
+\newcommand{\EndLem}{\vspace{-7.2mm} \begin{flushright} $\rhd$ \end{flushright}}
+\newcommand{\EndThm}{\vspace{-7.2mm} \begin{flushright} $\rhd$ \end{flushright}}
+\newcommand{\refsection}{\noindent \textbf{References} :\\}
+
+%-- ALPHABET IN mathcal mode ------------------------------------------------%
+
+\newcommand{\Acal}{\mathcal{A}}
+\newcommand{\Bcal}{\mathcal{B}}
+\newcommand{\Ccal}{\mathcal{C}}
+\newcommand{\Dcal}{\mathcal{D}}
+\newcommand{\Ecal}{\mathcal{E}}
+\newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Gcal}{\mathcal{G}}
+\newcommand{\Hcal}{\mathcal{H}}
+\newcommand{\Ical}{\mathcal{I}}
+\newcommand{\Jcal}{\mathcal{J}}
+\newcommand{\Kcal}{\mathcal{K}}
+\newcommand{\Lcal}{\mathcal{L}}
+\newcommand{\Ncal}{\mathcal{N}}
+\newcommand{\Ocal}{\mathcal{O}}
+\newcommand{\Pcal}{\mathcal{P}}
+\newcommand{\Qcal}{\mathcal{Q}}
+\newcommand{\Rcal}{\mathcal{R}}
+\newcommand{\Scal}{\mathcal{S}}
+\newcommand{\Tcal}{\mathcal{T}}
+\newcommand{\Ucal}{\mathcal{U}}
+\newcommand{\Vcal}{\mathcal{V}}
+\newcommand{\Wcal}{\mathcal{W}}
+\newcommand{\Xcal}{\mathcal{X}}
+\newcommand{\Ycal}{\mathcal{Y}}
+\newcommand{\Zcal}{\mathcal{Z}}
+
+%-- THEOREM ENVIRONMENTS ----------------------------------------------------%
+
+\newtheoremstyle{theoremsf}
+  {}   % ABOVESPACE
+  {}   % BELOWSPACE
+  {\normalfont}  % BODYFONT
+  {}       % INDENT (empty value is the same as 0pt)
+  {\bfseries\maybesf} % HEADFONT
+  {.}         % HEADPUNCT
+  {\labelsep} % HEADSPACE
+  {}          % CUSTOM-HEAD-SPE
+\newtheoremstyle{definitionsf}{}{}{}{}{\bfseries\maybesf}{.}{\labelsep}{}
+
+\theoremstyle{theoremsf}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{corol}[thm]{Corollary}
+\newtheorem{demo}[thm]{Proof}
+\theoremstyle{definitionsf}
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{rems}{Remarks}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{exs}{Examples}[section]
+
+%-- DEPTH SECTIONS ----------------------------------------------------------%
+
+\setcounter{secnumdepth}{10} % Permet de modifier la profondeur des "sections".
+\setcounter{tocdepth}{10} % Permet de modifier la profondeur de la table des matieres.
+%\section{}  
+%\subsection{}
+%\subsubsection{}
+%\paragraph{} 
+%\subparagraph{}
+
+%============================================================================%
+
+\begin{document}
+
+%----------------------------------------------------------------------------%
+
+\selectlanguage{english}
+
+%----------------------------------------------------------------------------%
+
+\title{Weyl algebra and field quantization}
+\author{Antoine}
+\address{gere@dima.unige.it}
+\labo{Dipartimento di Matematica}{http://www.dima.unige.it/}
+\univ{Università di Genova}{http://www.unige.it/}
+\date{\version}
+
+\maketitle
+
+%----------------------------------------------------------------------------%
+
+\tableofcontents
+
+%----------------------------------------------------------------------------%
+
+\section{Weyl Algebras}
+
+\subsection{Weyl $^{\ast}$-algebra}
+
+\noindent
+Let $E$ be a real vector space \cite{weisRealVectorSpace}, and $\sigma$ a symplectic form $(\sigma : E \times E \to \mathbb{R} )$. Then we call $(E,\sigma)$ a real symplectic space \cite{weisSymplecticSpace}. 
+
+\begin{dfn} \label{SympForm}
+ A symplectic form \cite{weisSymplecticForm} is a 2-form which is, for $\forall x,y,a,b \in E$, and $\alpha, \beta \in \mathbb{R}$, bilinear $\big( \sigma(x, \alpha a + \beta b) = \alpha \sigma(x,a) + \beta \sigma(x,b) \big)$, antisymetric $\big( \sigma(x,y) = - \sigma(y,x) \big)$, and non degenerate $\big( \sigma(x,y) \neq 0 \quad \text{if} \quad x \neq y, \quad \text{and} \quad \sigma(x,0) = 0 = \sigma(0,x) \big)$.
+\end{dfn}
+
+\noindent
+If instead to require that $\sigma$ has to be non-degenrate, we require that $\sigma$ has to be degenerate ($ \forall x \in E $, $ \exists y \in E$ such that $\sigma(x,y)=0$), then we will call $(E,\sigma)$ a real  pre-symplectic space.\\ 
+
+\noindent
+We now are going to define what is a $\ast$ - algebra, cf. \cite[definition 2.1.9]{Landsman1998}.
+
+\begin{dfn} \label{invo}
+ An involution map on an algebra $\mathbb{A}$ \cite{weisAlgebra} is a real linear map $ A \to A^\ast $, such that for all $A, B \in \mathbb{A}$ and $\alpha, \beta \in \mathbb{C}$ one has,
+ \begin{eqnarray}
+  && (\alpha A + \beta B)^\ast = \bar{\alpha} A^\ast + \bar{\beta} B^\ast \quad \text{(antilinearity)}, \\
+  && (AB)^{\ast} = B^{\ast} A^{\ast}, \\
+  && \text{and} \quad  A^{\ast \ast} = A \quad \text{(involutivity)}.
+ \end{eqnarray}
+ A $\ast$ - algebra is an algebra with an involution. \\
+ A homomorphism of $\ast$ - algebras $h : \mathbb{A}_1 \to \mathbb{A}_2$ is a $\ast$ - homomorphism if it preserves the involution, $h(x^{\ast_{1}}) = h(x)^{\ast_{2}}$ for any $x \in \mathbb{A}_1$ ($\ast_1$ is the involution of $\mathbb{A}_1$ and $\ast_2$ the involution in $\mathbb{A}_2$ ), and a $\ast$ - homomorphism is a $\ast$ - isomorphism if it is additionally bijective.
+\end{dfn}
+
+\noindent
+The next step is to define what is a Weyl $\ast$ - algebra.
+
+\begin{dfn} \label{WeylStar}
+ A $\ast$ - algebra is called a Weyl $\ast$ - algebra of $(E,\sigma)$, denoted by $\mathcal{W}(E,\sigma)$, if there exists a family $\big\{ W(u) \big\}_{u \in E}$ of non-zero elements, called the generators, such that,
+ \begin{description}
+  \item (i) \quad Weyl's (commutation) relations hold, 
+  \begin{equation} 
+   W(u) W(v) = \E{ \frac{i\hbar}{2} \sigma(u,v) } W(u+v), \quad W(u)^\ast = W(-u), \quad \forall u,v \in E, 
+  \end{equation}
+  \item (ii) \quad $\mathcal{W}(E,\sigma)$ is generated by $\big\{ W(u) \big\}_{u \in E}$, i.e. $\mathcal{W}(E,\sigma)$ coincides with the linear span of finite combinations of finite products of $\big\{ W(u) \big\}_{u \in E}$.
+ \end{description} 
+\end{dfn}
+
+\begin{lem}
+ Any Weyl $\ast$ - algebra $\mathcal{W}(E,\sigma)$ has a unit $\mathbb{I}$, and
+ \begin{equation}
+  W(0) = \mathbb{I} \quad W(u)^\ast = W(-u) = W(u)^{-1}, \quad u \in E.
+ \end{equation}
+ The generators $\big\{ W(u) \big\}_{u \in E}$ are linearely independent, so in particular $W(u) \neq W(v)$ if $u \neq v$.
+\end{lem}
+
+\begin{demo}
+ In fact, for $u \in E, $ $W(u) W(0) = W(u) = W(0) W(u)$, and $W(u) W(-u) = W(0) = \mathbb{I} = W(-u) W(u)$, then $W(0) = \mathbb{I}$ and $W(-u) = W(u)^\ast = W(u)^{-1}$.
+\end{demo}
+ 
+\noindent 
+We will show now that a real symplectic space $(E,\sigma)$ determines a unique Weyl $\ast$ - algebra up to $\ast$ - isomorphisms. 
+
+\begin{thm}
+ If  $\mathcal{W}(E,\sigma)$, generated by $\big\{ W(u) \big\}_{u \in E}$, and $\mathcal{W}^{'}(E,\sigma)$, generated by $\big\{ W^{'}(u) \big\}_{u \in E}$, are Weyl $\ast$ - Weyl algebras of $(E,\sigma)$, there is a unique $\ast$ - isomorphism $\alpha : \mathcal{W}(E,\sigma) \to \mathcal{W}^{'}(E,\sigma)$, which is determined by imposing,
+ \begin{equation}
+ \alpha \big( W(u) ) = W^{'}(u), \quad \forall u \in E. 
+ \end{equation} 
+\end{thm}
+
+\begin{demo}
+ The Weyl generators are linearely independent, and the product of two is a complex multiple of a generator, whence generators form a basis for the Weyl $\ast$ - algbra.
+\end{demo}
+
+\noindent
+We will represent this Weyl $\ast$ - algebra $\mathcal{W}(E,\sigma)$ on $\mathfrak{B}(H)$, the set of all bounded operator on the Hillbert space $H$, that we will choose. We will show that we can always find a norm on this representation, and to have a more general result we will proof that it doesn't on our choice on how represent the Weyl $\ast$ -  algebra.
+
+\begin{dfn}
+ Given a $\ast$ - algebra $\mathbb{A}$ and a Hilbert space $H$, a $\ast$ - homomorphism $\pi : \mathbb{A} \to \mathfrak{B}(H)$ is called a representation of $\mathbb{A}$ on $H$.
+  \begin{equation}
+  \pi : \mathbb{A} \to \mathfrak{B}(H)
+ \end{equation}
+\end{dfn}
+
+\noindent
+Let's choose as a Hilbert space $L^{2}(E,\mu)$, where $\mu$ is the counting measure \footnote{$\mu$(S) = \big\{number of elements of S\big\}, with $\mu$(S) = $\infty$ if S is infinite.}.
+
+\noindent
+  We represent $\mathcal{W}(E,\sigma)$ on $\mathfrak{B}(L^{2}(E,\mu)$.
+ \begin{equation}
+  \pi : \mathcal{W}(E,\sigma) \to \mathfrak{B}(L^{2}(E,\mu))
+ \end{equation}
+ We defined $W(u) \in \mathfrak{B}(L^{2}(E,\mu))$ by,
+ \begin{equation}
+ \big( W(u) f \big)(v) = \E{i \sigma(u,v) } f(u+v), \quad \psi \in L^{2}(E,\mu), \quad u,v \in E.   
+ \end{equation}
+ It's not so long to show that $W(u)$ represented in this way fullfilled the Weyl's relations. Thus we have well defined a Weyl $\ast$ algebra.
+
+
+\subsection{Weyl $C^{\ast}$-Algebra}
+
+
+\noindent
+Our goal is now to define a $C^{\ast}$ Weyl algebra. To do that we will first define what we call $C^{\ast}$ algebra. 
+
+\begin{dfn}
+ A norm on a vector space $V$ is a map
+ \begin{description}
+  \item 1. $\norm{v}_{V} \leq 0$ $\forall v \in V$,
+  \item 2. $\norm{v}_{V} = 0$ if and only if $\norm{v}_{V} = 0$,
+  \item 3. $\norm{\lambda v}_{V} = |\lambda| \norm{v}_{V}$,
+  \item 4. $\norm{v + w}_{V} \leq \norm{v}_{V} + \norm{w}_{V}$ (triangle inequality).
+ \end{description}
+ A norm on $V$ defines a metric $d$ on $V$ by $d(v, w) := v - w$ . A vector space with a norm which is complete in the associated metric (in the sense that every Cauchy sequence converges) is called a Banach space. We will denote a Banach space by the symbol $B$.
+ \end{dfn}
+ 
+ \begin{dfn}
+ Let $X$ and $Y$ be two normed vector spaces. Then $\mathcal{B}(X,Y)$ is the space comprising all bounded linear operators. For $T \in  \mathcal{B}(X,Y)$ we define the operator norm in the following way,
+ \begin{equation}
+ \norm{T}_{op} = \sup_{ \tiny{
+  \begin{array}{l}
+   x \in X \\
+   \norm{x}_{X} \leq 1
+  \end{array} } }
+ \norm{Tx}_{X}. 
+\end{equation}
+\end{dfn}
+
+\begin{dfn}
+ A bounded operator on a Banach space $B$, is a linear map $A : B \rightarrow B$ for which 
+ \begin{equation}
+  \norm{A}_{op} < \infty.
+ \end{equation}
+ The set of all the bounded operators on a Banach space $B$ is denoted by $\mathfrak{B}$.
+\end{dfn}
+
+\begin{dfn}
+ A Banach algebra is a Banach space $B$ which is at the same time an algebra, in which for all $a, b \in B$ one has
+ \begin{equation}
+  \norm{ab} \leq \norm{a} \norm{b}
+ \end{equation}
+\end{dfn}
+
+\begin{dfn}
+ A C $\ast$ - algebra is a Banach $\ast$ - algebra $\mathbb{B}$ such that for all $a \in B$ one has
+ \begin{equation}
+  \norm{a^{\ast} a} = \norm{a}^2.
+ \end{equation}
+ A such norm is called a $C^\ast$ norm.
+\end{dfn}
+
+\noindent
+We are going to see that we can always find a $C^\ast$ - norm on $\mathcal{W}(E,\sigma)$, and that it is the unique one, and finally we will see why it is necessary to consider the conpletion of the $\mathcal{W}(E,\sigma)$  to obtain a $C^\ast$ -algebra.
+
+\begin{thm}
+ We still consider $E$ as a real vector space, but now $\sigma$ : $E \times$ $E$  $\rightarrow$ $\mathbb{R}$ is a weakly non-degenerate symplectic form. There exists a norm $\norm{.}_{op}$ on $\mathcal{W}(E,\sigma)$, which is our Weyl $\ast$ - algebra, and it satisfys the $C^{\ast}$ property, $\norm{A^{\ast}A}_{op} = \norm{A}_{op}^2$, for any A $\in$  $\mathcal{W}(E,\sigma)$.
+\end{thm}
+
+\begin{dfn}
+ A bilinear form $\sigma$ : $E \times$ $E$  $\rightarrow$ $\mathbb{R}$ is said to be weakly nondegenerate if 
+ \begin{equation}
+  \big\{ \sigma(x,y) = 0 | \forall y \in E \big\} \Rightarrow x = 0.
+ \end{equation}
+\end{dfn}
+
+\begin{demo}
+ ....
+\end{demo}
+
+\begin{thm}
+ If we set, for any $a \in \mathcal{W}(X,\sigma)$:
+ \begin{center}
+  $\norm{a}_{c}$ := $sup \big\{ p(a) \quad | \quad p : \mathcal{W} (X, \sigma) \rightarrow [0,+\infty)$ is a $C^\ast norm \big\}$ ,
+ \end{center}
+ then $\norm{.}_{c}$ is a $C^\ast$ norm.
+\end{thm}
+
+\begin{demo}
+ .....
+\end{demo}
+
+\begin{thm}
+ For $\mathcal{W}(X,\sigma)$ a Weyl $\ast$ -algebra associated to $(X, \sigma )$, we denote by $\overline{\mathcal{W} (X, \sigma )}$ the $C^\ast$ completion of $\mathcal{W}(X,\sigma)$ in the norm $\norm{.}_{c}$. Then $\overline{\mathcal{W} (X, \sigma )}$ is simple: it does not admit two-sided closed ideals invariant under the involution other than $\{0\}$ and $\overline{\mathcal{W} (X, \sigma )}$ itself.
+\end{thm}
+
+\begin{demo}
+ ...
+\end{demo}
+
+\begin{thm}
+ A $\ast$ - homomorphism $\pi : A \to B$ of $C^\ast$ - algebras with unit is continuous, for $\norm{\pi(a)}_{A} \leq \norm{a}_{B}$, for any $a \in A$. Furthermore $\pi$ is one-to-one if and only if isometric, i.e. $\norm{\pi(a)} = \norm{a}$ for any $a \in A$.
+\end{thm}
+
+\begin{demo}
+ ...
+\end{demo}
+
+\begin{thm}
+ There exist a unique norm on $\mathcal{W} (X, \sigma )$ satisfying the $C^\ast$ property: $\norm{a^\ast a} = \norm{a}^2$ for any $a \in  \mathcal{W} (X, \sigma )$.
+\end{thm}
+
+\begin{demo}
+ ....
+\end{demo}
+
+\begin{thm}
+ Let $\overline{W (X,\sigma)}$ be the $C^{\ast}$ - algebra completion of $W (X,\sigma)$ for the $C^\ast$ norm. If $W (X,\sigma)$ is another Weyl $\sigma$ -algebra associated to the same space $(X,\sigma)$ and $\norm{.}$ the unique $C^\ast$ norm, call $\overline{W (X,\sigma)}$ the corresponding $C^{\ast}$ - algebra with unit. Then there is a unique isometric $\ast$ - isomorphism $\gamma : \overline{W (X,\sigma)} \to \overline{W (X,\sigma)}$ such that
+ \begin{equation}
+  \gamma( W (f) ) = W (f), \quad f \in E 
+ \end{equation}
+ where $W(f)$, $W(f)$ are generators of the Weyl $\ast$ - algebras $W(X,\sigma)$, $W(X,\sigma)$.
+\end{thm}
+
+\begin{demo}
+ ....
+\end{demo}
+
+\section{Strict Quantization}
+
+\begin{dfn}
+ A Poisson algebra $\big(\mathcal{P},\PB{.}{.}\big)$ is an associative algebra $\mathbb{A}$ over a field $\mathbb{K}$ with a linear braket $\PB{.}{.} : \mathbb{A} \times \mathbb{A} \rightarrow \mathbb{A}$ such that,
+ \begin{eqnarray}
+  && \PB{f}{g} = - \PB{g}{h} \quad \text{(Antisymetry)} \\
+  && \PB{f}{gh} = g\PB{f,h} + h\PB{f}{g} \quad \text{(Leibniz rule)} \\
+  && \PB{f}{\PB{g}{h}} + \PB{g}{\PB{h}{f}} + \PB{h}{\PB{f}{g}} = 0 \quad \text{(Jacobi Identity)}
+ \end{eqnarray}
+ forall $f,g,h \in \mathbb{A}$.
+\end{dfn}
+
+\begin{ex}
+ ...
+\end{ex}
+
+
+\begin{dfn}
+ A strict quantization $(\mathcal{A}^\hbar , \mathcal{Q}_\hbar)$ of the Poisson algebra $\big(\mathcal{P},\PB{.}{.}\big)$ consists for each value $\hbar \in I$ of a linear, $\ast$ - preserving quantization map $\mathcal{Q}_\hbar$ : $\mathcal{P}$ $\rightarrow$ $\mathcal{A}^\hbar$, where $\mathcal{A}^\hbar$ is a linear $C^\ast$ - algebra with norm $\norm{.}_{\hbar}$ \footnote{this norm is an operator norm.}, such that $Q_{0}$ is the identical embedding of $\mathcal{P}$ into $\mathcal{A}^0$, and such that for all $A, B \in \mathcal{P}$ the following conditions are satisfied:
+ \begin{description}
+  \item \textbf{[Dirac's condition]} The $\hbar$ - scaled commutator $[X,Y] := \frac{i}{\hbar} (XY -YX)$ approaches the Poisson bracket as $\hbar \to 0$,
+  \begin{equation}
+   \lim_{\hbar \to 0} \norm{[Q^{\hbar}(A),Q^{\hbar}(B)] - Q^{\hbar}(\{A,B\})} = 0.
+  \end{equation}
+  \item \textbf{[von Neumann's condition]} In the limit $\hbar \to 0$ one has the asymptotic behaviour for the product,
+  \begin{equation}
+   \lim_{\hbar \to 0} \norm{Q^{\hbar}(A)Q^{\hbar}(B) - Q^{\hbar}(AB) } = 0.
+  \end{equation}
+  \item \textbf{[Rieffel's condition]} $I \ni \hbar \to \norm{Q^{\hbar}(A)}$ is continuous.
+ \end{description}
+\end{dfn}
+
+\begin{thm}
+ ...
+\end{thm}
+
+\begin{demo}
+ ...
+\end{demo}
+
+\section{Field-theoretic Weyl quantization}
+
+\noindent
+[blablabla]
+
+\section{References}
+
+\renewcommand{\section}[2]{}
+ 
+\bibliography{biblio.bib}
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{plain}
+%\bibliographystyle{abbrv}
+%\bibliographystyle{acm}
+%\bibliographystyle{unsrt}
+\bibliographystyle{alpha}
+%\bibliographystyle{apalike}
+%\bibliographystyle{siam}
+
+\end{document}

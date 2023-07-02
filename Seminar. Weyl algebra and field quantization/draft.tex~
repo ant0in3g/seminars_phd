@@ -1,0 +1,196 @@
+% BEGIN ------------------   Version   ------------------- END %
+
+\newcommand{\version}{\today} % Define la commande << version >>, à laquelle on a attribué ici la date d'aujoud'hui.
+
+% BEGIN ------------------   Classe du document   ------------------- END %
+
+\documentclass[a4paper,11pt]{article} % Le format du papier, la taille de police d'écriture, le modèle du document.
+% Classe existante: article, book, letter, beamer, amsart.
+
+% BEGIN-------------------   Packages   ------------------- END %
+
+\usepackage[french,english,german,italian]{babel} % Permet de sélectionner la langue, ici je vais avoir le choix entre le français, l'anglais, l'allemand, et l'italien. 
+\usepackage[utf8]{inputenc} % Evite le problème des accents.
+\usepackage{graphicx} % Permet d'incorporer des images.
+\usepackage{geometry} % Permet de la flexbilité sur la géométrie.
+\usepackage{amsfonts,amsmath,amsthm,amssymb,amscd,amsxtra} % Package pour les maths.
+\usepackage{array} % Package pour dessiner des tableaux.
+\usepackage{color} % Permet d'utiliser des couleurs personnalisées (black, white, red, green, blue, cyan, magenta).
+\usepackage[hyperindex=true,colorlinks=true,linkcolor=black,urlcolor=black, citecolor= black, pagebackref=true]{hyperref} % Insere des liens (liens dans les indexs, colorie les liens, couleur des liens interne, couleur des hyperliens, couleur des citations, permet de faire figurer dans la bibliographie les pages où sont cités les article).
+\usepackage{cancel} % Permet de barrer des éléments.
+\usepackage{multicol} % Permet de mettre une partie de son document sur plusieurs colonnes.
+\usepackage{latexsym} % Permet d'inserer d'autres symboles mathématique.
+ \usepackage{url} % Permet dajouter url dans fichier bibtex
+
+% BEGIN --------------------  Commandes personnalisées  -------------------- END %
+
+\newcommand{\bra}[1]{\langle{#1}|} % Definie le Bra.       
+\newcommand{\ket}[1]{|{#1}\rangle} % Definie le Ket.
+\newcommand{\E}[1]{\text{exp}\bigg({#1}\bigg)} % Definie l'exponentielle.
+\newcommand{\norm}[1]{\|{#1}\|} % Define la norme.
+\newcommand{\abs}[1]{\left|{#1}\right|} % Define la valeur absolue.
+\graphicspath{{./figures/}} % Permet d'aller chercher les figures, images, etc dans un dossier nommé figures.
+
+% BEGIN --------------------  numberwithin  -------------------- END %
+
+\numberwithin{equation}{section} % Permet de numéroter les equations suivant la section où elles se trouvent.
+\numberwithin{figure}{section} % Permet de numéroter les figures suivant la section où elles se trouvent.
+
+% BEGIN --------------------  theoremstyle  -------------------- END %
+
+\theoremstyle{plain} % plain pour les théorèmes, lemmes, corollaires, conjectures.
+\newtheorem{thm}{Theorem}[section] 
+%\renewcommand{\thethm}{\empty{}} 
+\newtheorem{lem}{Lemma}[section] 
+%\renewcommand{\thelem}{\empty{}} 
+\newtheorem{prop}{Proposition}[section]
+%\renewcommand{\theprop}{\empty{}} 
+\newtheorem{cor}{Corollary}[section]
+%\renewcommand{\thecor}{\empty{}} 
+\newtheorem{demo}{Proof}[section]
+%\renewcommand{\thedemo}{\empty{}} 
+
+
+\theoremstyle{definition} % definition : définitions, exemples, problèmes.
+\newtheorem{dfn}{Definition}[section]
+%\renewcommand{\thedfn}{\empty{}} 
+\newtheorem{conj}{Conjecture}[section]
+%\renewcommand{\theconj}{\empty{}} 
+\newtheorem{ex}{Example}[section]
+%\renewcommand{\theex}{\empty{}} 
+
+\theoremstyle{remark} % remark : remarque, note, conclusion.
+\newtheorem{rem}{Remark}[section]
+%\renewcommand{\therem}{\empty{}} 
+\newtheorem{note}{Note}[section]
+%\renewcommand{\thenote}{\empty{}} 
+\newtheorem{case}{Case}[section]
+%\renewcommand{\thecase}{\empty{}} 
+
+% BEGIN --------------------  Presentation du document  -------------------- END %
+
+%\title{} % Titre.
+%\author{} % Auteur.
+%\affil{} % Affiliation.
+%\email{} % Email.
+%\date{} % Date.
+
+
+% BEGIN ======================================================================================================== END %
+% ===== %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        DOCUMENT         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ==== %
+% BEGIN ======================================================================================================== END %
+
+\begin{document}
+
+\selectlanguage{english}
+
+\begin{flushright}
+ \texttt{Antoine's draft}, \\
+ \texttt{\version}.
+\end{flushright}
+
+\section{Weyl Algebras}
+
+\noindent
+Let $E$ be a real vector space, and $\sigma$ a symplectic form. Then we call $(E,\sigma)$ a real symplectic space. 
+
+\begin{dfn}
+ A symplectic form is a 2-form which is,
+\begin{center}$
+ \begin{array}{ll}
+  \text{non degenerate,} & \sigma(x,y) \neq 0 if x \neq y, \quad \forall x,y \in E, \\
+   & \sigma(x,0) = 0 = \sigma(0,x), \quad \forall x \in E \\ 
+   & \\
+  \text{bilinear,} & \sigma(x, \alpha a + \beta b) = \alpha \sigma(x,a) + \beta \sigma(x,b),\\
+   & \sigma(\alpha a + \beta b,x) = \alpha \sigma(a,x) + \beta \sigma(b,x),\\
+   & \forall x,a,b \in E \quad \text{and} \quad \alpha, \beta \in \mathbb{C}, \\
+   & \\
+  \text{and antisymetric,} & \sigma(x,y) = - \sigma(y,x).
+ \end{array}
+$\end{center}
+\end{dfn}
+
+\noindent
+If instead to require that $\sigma$ has to be non-degenrate, we require that $\sigma$ has to be degenerate, then we will call $(E,\sigma)$ a pre-symplectic space.\\ 
+
+
+
+
+
+\noindent
+We now are going to define what is a $\ast$ - algebra.
+
+\begin{dfn}
+ Let's $\mathbb{A}$ be an algebra which means for $A$ and $B$ $\in$ $\mathbb{A}$ and $\alpha$, $\beta$ $\in$ $\mathcal{C}$ we have,
+ \begin{eqnarray}
+  \text{(i)} && \quad (\alpha A + \beta B) \in \mathbb{A}, \\
+  \text{(ii)} && \quad (AB) \in \mathbb{A}.
+ \end{eqnarray}
+ Say that $\mathbb{A}$ is a $\ast$ - algebra amply to add an other condition. For $A$ $\in$ $\mathbb{A}$, we require,
+ \begin{eqnarray}
+  \text{(ii)} \quad A^{\ast} \in \mathbb{A},
+ \end{eqnarray}
+ where the involution map $\ast$ is define as follow, for $A$ and $B$ $\in$ $\mathbb{A}$ and $\alpha$, $\beta$ $\in$ $\mathcal{C}$, we have,
+ \begin{eqnarray}
+  \text{(a)} && \quad (\alpha A + \beta B) = \bar{\alpha} A^\ast + \bar{\beta} B^\ast, \\
+  \text{(b)} && \quad (AB)^{\ast} = B^{\ast} A^{\ast}, \\
+  \text{(c)} && \quad \big( (A)^{\ast} \big)^{\ast} = A.
+ \end{eqnarray}
+ We then had define what is a $\ast$ - algebra.
+\end{dfn}
+
+\noindent
+The next step is to define what is a Weyl $\ast$ - algebra.
+
+\begin{dfn}
+ A Weyl $\ast$ - algebra over a symplectic space $(E,\sigma)$ is a $\ast$ - algebra generated by $W(u)$, $u$ $\in$ $E$, called the Weyl's generators. They satisfy the two following properties, $\forall$ $u$ ,$v$ $\in$ $E$,
+ \begin{eqnarray}
+  \text{(i)} && \quad W(u) W(v) = \E{ \frac{i\hbar}{2} \sigma(u,v) } W(u+v) , \\
+  \text{(ii)} && \quad \bigg( W(u) \bigg)^\ast = W(-u) . 
+ \end{eqnarray}
+ We denote by $\mathcal{W}(E,\sigma)$ the Weyl $\ast$ - algebra over the symplectic space $E,\sigma$.
+\end{dfn}
+
+\noindent
+Thus we have defined a Weyl $\ast$ - algebra, $\mathcal{W}(E,\sigma)$, our goal is now to define a $C^{\ast}$ Weyl algebra. To do that we will show that we can always find a $C^\ast$ - norm on $\mathcal{W}(E,\sigma)$, and that it is the unique one, and fianlly we will see why it is necessary to consider the conpletion of the $\mathcal{W}(E,\sigma)$ to obtain a $C^\ast$ -algebra.
+
+
+
+\begin{thm}
+ Let $E$ be a real vector space, $\sigma$ : $E \times$ $E$  $\rightarrow$ $\mathbb{R}$ a weakly non-degenerate symplectic form, and consider a Weyl $\ast$ - algebra $\mathcal{W}(E,\sigma)$.
+ There exists a norm $\norm{.}_{op}$ on $\mathcal{W}(E,\sigma)$ satisfying the $C^{\ast}$ property, $\norm{A^{\ast}A} = \norm{A}^2$, for any A $\in$  $\mathcal{W}(E,\sigma)$.
+\end{thm}
+
+\begin{demo}
+ (blablabla)
+\end{demo}
+
+\begin{thm}
+ (blablabla)
+\end{thm}
+
+\begin{demo}
+ (blablabla)
+\end{demo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{References}
+
+\renewcommand{\section}[2]{}
+
+\bibliographystyle{plain}
+%\bibliography{CitationsSeminar}
+\bibliography{citations. Pinamonti}
+
+\end{document}

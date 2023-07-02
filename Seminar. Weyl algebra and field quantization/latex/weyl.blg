@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: weyl.aux
+The style file: alpha.bst
+Database file #1: biblio.bib.bib
+Warning--empty note in Landsman1998
+You've used 5 entries,
+            2543 wiz_defined-function locations,
+            576 strings with 4936 characters,
+and the built_in function-call counts, 1270 in all, are:
+= -- 112
+> -- 40
+< -- 5
++ -- 13
+- -- 10
+* -- 55
+:= -- 207
+add.period$ -- 11
+call.type$ -- 5
+change.case$ -- 25
+chr.to.int$ -- 2
+cite$ -- 6
+duplicate$ -- 54
+empty$ -- 115
+format.name$ -- 20
+if$ -- 257
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 24
+num.names$ -- 15
+pop$ -- 47
+preamble$ -- 1
+purify$ -- 30
+quote$ -- 0
+skip$ -- 56
+stack$ -- 0
+substring$ -- 35
+swap$ -- 4
+text.length$ -- 5
+text.prefix$ -- 5
+top$ -- 0
+type$ -- 40
+warning$ -- 1
+while$ -- 10
+width$ -- 7
+write$ -- 49
+(There was 1 warning)

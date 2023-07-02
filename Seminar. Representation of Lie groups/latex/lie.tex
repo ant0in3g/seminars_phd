@@ -1,0 +1,784 @@
+% BEGIN ------------------   Version   ------------------- END %
+
+\newcommand{\version}{\today} % Definie la commande << version >>, à laquelle on a attribué ici la date d'aujoud'hui.
+
+% BEGIN ------------------   Classe du document   ------------------- END %
+
+\documentclass[a4paper,11pt]{article} % Le format du papier, la taille de police d'écriture, le modèle du document.
+% Classe existante: article, book, letter, beamer, amsart.
+
+% BEGIN-------------------   Packages   ------------------- END %
+
+\usepackage[french,english,italian,german]{babel} % Permet de sélectionner la langue, ici je vais avoir le choix entre le français, l'anglais, l'allemand, et l'italien. 
+\usepackage[utf8]{inputenc} % Gestion des accents (source).
+\usepackage[T1]{fontenc} % Gestion des accents (PDF).
+\usepackage{geometry} % Gestion des marges.
+\usepackage{amsfonts,amsmath,amsthm,amssymb,amscd,amsxtra} % Package pour les maths.
+\usepackage{array} % Package pour dessiner des tableaux.
+\usepackage{xcolor} % Gestion des couleurs (black, white, red, green, blue, cyan, magenta, pink).
+\usepackage{hyperref} % Gestion des hyperliens.
+\usepackage{lmodern} % Police de caractère.
+
+% BEGIN-------------------   Hyperref   ------------------- END %
+
+\hypersetup{colorlinks=true, % Permet de colrier les liens au lieu de les encadrer.
+linkcolor=blue, % Permet de changer la couleur des liens.
+filecolor=green, % Permet de changer la couleur des 
+urlcolor=violet, % Permet de changer la couleur des hyperliens.
+citecolor=purple} % Permet de changer la couleur des citations.
+
+% BEGIN --------------------  Commandes personnalisées  -------------------- END %
+
+\newcommand{\bra}[1]{\langle{#1}|} % Definie le Bra.       
+\newcommand{\ket}[1]{|{#1}\rangle} % Definie le Ket.
+\newcommand{\abs}[1]{\left|{#1}\right|} % Define la valeur absolue.
+\newcommand{\E}[1]{\text{exp}\left({#1}\right)} % Definie l'exponentielle.
+\newcommand{\norm}[1]{\|{#1}\|} % Definie la norme.
+\newcommand{\PB}[2]{ \left\{  {#1}, {#2} \right\} } % Define le crochet de Poisson.
+\newcommand{\cg}[6]{ \left( \begin{array}{cc|c} #1 & #3 & #5 \\ #2 & #4 & #6 \end{array} \right) } % Definie le symbole pour les coefficients de Clebsch-Gordan.
+\newcommand{\wig}[6]{ \left( \begin{array}{ccc} #1 & #3 & #5 \\ #2 & #4 & #6 \end{array} \right) } % Definie le symbole pour les 3-j (symbole de Wigner).
+
+% BEGIN --------------------  numberwithin  -------------------- END %
+
+\numberwithin{equation}{section} % Permet de numéroter les equations suivant la section où elles se trouvent.
+\numberwithin{figure}{section} % Permet de numéroter les figures suivant la section où elles se trouvent.
+
+% BEGIN --------------------  theoremstyle  -------------------- END %
+
+\newtheorem{dfn}{Definition}
+%\renewcommand{\thedfn}{\empty{}} % Permet d'enlever la numérotation des définitions.
+\newtheorem{thm}{Theorem}
+%\renewcommand{\thethm}{\empty{}} % Permet d'enlever la numérotation des theoremes.
+\newtheorem{prop}{Proposition}
+%\renewcommand{\theprop}{\empty{}} % Permet d'enlever la numérotation des propositions.
+\newtheorem{lem}{Lemma}
+%\renewcommand{\thelm}{\empty{}} % Permet d'enlever la numérotation des lemmas.
+\newtheorem{corol}{Corollary}
+%\renewcommand{\thecorol}{\empty{}} % Permet d'enlever la numérotation des corrolaires.
+\newtheorem{rem}{Remark}
+%\renewcommand{\therem}{\empty{}} % Permet d'enlever la numérotation des remark.
+\newtheorem{rems}{Remarks}
+%\renewcommand{\therems}{\empty{}} % Permet d'enlever la numérotation des remarks.
+\newtheorem{ex}{Example}
+%\renewcommand{\theex}{\empty{}} % Permet d'enlever la numérotation des exemples.
+\newtheorem{exs}{Examples}
+%\renewcommand{\theex}{\empty{}} % Permet d'enlever la numérotation des exemples.
+\newtheorem{demo}{Proof}
+%\renewcommand{\thedemo}{\empty{}} % Permet d'enlever la numérotation des proofs.
+\newtheorem{conj}{Conjecture}
+%\renewcommand{\theconj}{\empty{}} % Permet d'enlever la numérotation des conjecturess.
+\newtheorem{note}{Note}
+%\renewcommand{\thenote}{\empty{}} % Permet d'enlever la numérotation des notes.
+
+% BEGIN --------------------  Profondeur des sections  -------------------- END %
+
+\setcounter{secnumdepth}{10} % Permet de modifier la profondeur des "sections".
+\setcounter{tocdepth}{10} % Permet de modifier la profondeur de la table des matieres.
+%\section{}  
+%\subsection{}
+%\subsubsection{}
+%\paragraph{} 
+%\subparagraph{}
+
+% BEGIN ======================================================================================================== END %
+% ===== %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        DOCUMENT         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ==== %
+% BEGIN ======================================================================================================== END %
+
+\begin{document}
+
+\selectlanguage{english}
+
+\begin{flushright}
+\texttt{Antoine's notes 
+\footnote{based on the lectures given by \href{http://www.dima.unige.it/~demari/}{Pr. Filippo De Mari} at the \href{http://anarm.dima.unige.it/genova2013/}{Workshop on Applied Harmonic Analysis} which took place in Genova, 2th - 6th September, 2013.},} \\
+\texttt{\version}.
+\end{flushright}
+
+\bigskip
+
+\begin{LARGE}
+\noindent
+\texttt{\textbf{Representation of Lie groups}}
+\end{LARGE}
+
+\vspace{1cm}
+
+For more details see the reference \cite{Varada1984}.
+
+\tableofcontents
+
+For more details see the reference \cite{Varada1984}.
+
+\section{Locally compact group}
+
+We will recall some notions of measure theory. First of all we give the definition of a $\sigma$-algebra, which is some sence specifies which are the good properties that subsets should possess in relationship to the operations of union and intersection. 
+
+\begin{dfn}[$\sigma$-algebra] \cite[Def. 1.30, p. 16]{Moretti2012} \\
+A $\sigma$-algebra over the set $X$ is a collection $\Sigma(X)$ of subsets of $X$ such that,
+\begin{enumerate}
+\item $X \in \Sigma(X)$; 
+\item $E \in \Sigma(X)$ implies $X \backslash E \in \Sigma(X)$, \; (closed under complements);
+\item if $\left\{ E_k \right\} _{k \in \mathbb{N}} \subset \Sigma(X)$ then $\underset{k \in \mathbb{N}}{\bigcup} E_k \in \Sigma(X)$, with $k$ finite \; (closed under countable unions).
+\end{enumerate}
+\end{dfn}
+
+\begin{rems}
+ It is interesting to denote make remarks on this definition. 
+\begin{enumerate}
+\item $\Sigma(X) \in X$ since $E \in X \Rightarrow X \backslash E = E^c \in X \Rightarrow E \cup E^c \in X$;
+\item $\emptyset \in X$ since $\Sigma(X) \in X \Rightarrow \Sigma(X)^c \in X \Rightarrow \Sigma(X) = \emptyset \in X$;
+\item $X$ is closed under countable intersections, suppose $E_1, E_2, ... \in X$, then $\bigcap E_i = \bigcap (E_i^c)^c = ( \bigcup E_i^c )^c \in X$.
+\end{enumerate}
+\end{rems}
+
+A measurable space \cite[Def. 1.30, p. 16]{Moretti2012} is a pair $(X, \Sigma(X))$, where $X$ is a set and $\Sigma(X)$ a $\sigma$-algebra on $X$.
+We call a $\sigma$-algebra generated by $A$, with $A$ a collection of subsets of $X$, a such algebra containing $A$, and we know it is a $\sigma$-algebra because $X$ is closed under countable intersections. Now we will see a notion where topology and measure theory merge.
+
+\begin{dfn}[Borel $\sigma$-algebra] \cite[Def. 1.32, p. 17]{Moretti2012} \\
+If $X$ is a topological space \cite[Def. 1.1, p. 10]{Moretti2012} with topology $\tau$ \cite[Def. 1.1, p. 10]{Moretti2012}, the $\sigma$-algebra on $X$ generated by $\tau$, denoted $\mathcal{B}(X)$, is said Borel $\sigma$-algebra on $X$.
+\end{dfn}
+
+\begin{dfn}[Measure] \cite[Def. 1.39, p. 19]{Moretti2012} \\
+If $(X, \Sigma(X))$ is a measurable space, a $\sigma$-addititive, positive measure on $X$ (with respect to $\Sigma(X)$), is a function 
+\begin{equation}
+\mu : \Sigma(X) \to [0,+\infty] 
+\end{equation}
+which satisfies the two following properties,
+\begin{enumerate}
+\item $\mu(\emptyset) = 0$;
+\item $\mu( \underset{n \in \mathbb{N}}{\bigcup} E_n ) = \underset{n \in \mathbb{N}}{\sum} \mu(E_n)$, if $\left\{E_n\right\}_{n\in\mathbb{N}} \subset \Sigma(x)$, and $E_n \bigcap E_m = \emptyset$ if $n\neq m$,\\ ($\sigma$-addititivity).
+\end{enumerate}
+The triple $(X,\Sigma(X),\mu)$ is called a measure space.
+\end{dfn}
+
+We have seen tha a measurable space possessing a nonnegative measure is a measure space. Most measures met in practice in analysis are Radon measures \ref{Radon}. In measure theory we say that a property holds almost everywhere if the set of elements for which the property doesn's hold is a set a measure zero \cite[Def. 1.46, p.21]{Moretti2012}
+
+\begin{dfn}[Borel space/measure] \cite[Def. 1.42, p. 20]{Moretti2012}
+ A measure space $(X, \Sigma(X), \mu)$ and its (positive, $\sigma$-additive) measure $\mu$ are called are called Borel space and Borel measure, if $\Sigma(X) = \mathcal{B}(X)$ with $X$ locally compact Hausdorff space \cite[Def. 1.19, p. 14]{Moretti2012} and \cite[Def. 1.3, p. 10]{Moretti2012}.
+\end{dfn}
+
+\begin{dfn}[Radon measure] \label{Radon} 
+A Borel measure $\mu$ on the topological space $X$ is called a Radon measure if, 
+\begin{enumerate}
+\item it is finite on compact sets \cite[Def. 1.19, p. 14]{Moretti2012};
+\item it is inner regular \cite[Def. 1.42, p. 20]{Moretti2012} on the open sets, i.e. for every open set $U$ 
+\begin{center}
+$\mu(U) = sup\big\{\mu(K) : K \subset U$, $K$ compact $\big\}$;
+\end{center}
+\item it is outer regular \cite[Def. 1.42, p. 20]{Moretti2012} on the Borel sets, i.e. for every Borel set $E$
+\begin{center}
+$\mu(E) = inf\big\{\mu(U) : U \supset E$, $U$ open $\big\}$ .
+\end{center}
+\end{enumerate}
+\end{dfn}
+
+Let's now define what is a topological group.
+
+\begin{dfn}[Topological group] \cite[Def. 3.1, p.4]{Yvette2005} and \cite[Def. 12.28, p. 552]{Moretti2012} \\
+A topological group $G$ is a group $G$ \cite[A.2, p. 698]{Moretti2012} endowed with a topology in which the group operations
+\begin{equation}
+\begin{array}{lll}
+G \times G & \to & G\\
+(g,h) & \mapsto & gh
+\end{array}
+,\hspace{2cm}
+\begin{array}{lll}
+G & \to & G\\
+g & \mapsto & g^{-1}
+\end{array}
+\end{equation}
+are continous \cite[Def. 1.16, p. 13]{Moretti2012}. $G$ is locally compact if every point has a compact neighborhood. 
+\end{dfn}
+
+We will assume now the groups that we will consider are Hausdorff.
+
+\begin{dfn} \cite[Ex. 12.29, (5), p. 553]{Moretti2012} \\
+A left Haar measure on the topological group $G$ is a non zero Radon measure $\mu$ such that $\mu(xE)=\mu(E)$ for every Borel set $E\subset G$ and every $x\in G$. Similarly for right Haar measures.
+\end{dfn}
+
+The prototype of Haar measure, and more generally of any positive measure, is the Lebesgue measure. Now we will look closely at this Lebesgue measure \cite[sect. 1.46, p. 27]{Moretti2012}.
+
+\begin{prop} \cite[Prop. 1.65, p28]{Moretti2012} \\
+Fix n=1,2,... . There is a unique $\sigma$-addititive, positive Borel measure $\mu_n$ on $\mathbb{R}^n$ satisfying:
+\begin{enumerate}
+\item $\mu_n ( \times_{k=1}^{n} [a_k,b_k] ) = (b_1 - a_1)(b_2 - a_2) ... (b_n - a_n) $, if $a_k \leq b_k$, $a_k, b_k \in \mathbb{R}$;
+\item $\mu_n$ is invariant under translations: $\mu_n (E + t) = \mu_n (E)$ for $E \in \mathcal{B}(\mathbb{R}^n)$, $t \in \mathbb{R}^n$.
+\end{enumerate}
+It is possible to extend $(\mathbb{R}^{n},\mathcal{B}(\mathbb{R}^n),\mu_n)$ to a measure space $(\mathbb{R}^{n},\mathcal{M}(\mathbb{R}^{n}),m_n)$, so that the measure $m_n$: 
+\begin{enumerate}
+\item maps compact sets to finite values;
+\item is complete \cite[Def. 1.46, p.21]{Moretti2012};
+\item is regular \cite[Def. 1.42, (vii), p. 20]{Moretti2012};
+\item is translation-invariant.
+\end{enumerate}
+\end{prop}
+
+$\mathcal{M}(\mathbb{R}^{n})$ is included in the completion of $\mathcal{B}(\mathbb{R}^n)$ with respect to $\mu_n$ \cite[Prop. 1.48, p. 21]{Moretti2012}. Since $\mathcal{M}(\mathbb{R}^{n})$is complere and the completion is the smallest complete extension, we conclude that $(\mathbb{R}^{n},\mathcal{M}(\mathbb{R}^{n}),m_n)$ is the completion of  $(\mathbb{R}^{n},\mathcal{B}(\mathbb{R}^{n}),m_n)$.
+
+\begin{dfn}[Lebesgue measure/$\sigma$-algebra] \cite[Def. A.67, p. 28]{Moretti2012} \\
+The measure $m_n$ and the $\sigma$-algebra $\mathcal{M}(\mathbb{R}^{n})$ are called Lebesgue measure on $\mathbb{R}^{n}$ and Lebesgue $\sigma$-algebra on $\mathbb{R}^{n}$.
+\end{dfn}
+
+Let's now come back to the Haar measure.
+
+\begin{thm} 
+Every locally compact  group  $G$ has a left Haar measure $\lambda$, which is essentially unique in the sense that if $\mu$ is any other left Haar measure, then there exists a positive constant $C$ such that $\mu=c\lambda$.
+\end{thm}
+
+If we fix a left Haar measure $\lambda$ on $G$, then for any $x\in G$ the measure $\lambda_x$ defined by 
+\begin{equation}
+\lambda_x(E)=\lambda(Ex) 
+\end{equation}
+is again a left Haar measure (here $Ex=\{ex:e\in E\}$). Therefore there must exist a positive real number, denoted $\Delta(x)$ such that
+\begin{equation}
+\lambda_x=\Delta(x)\lambda.
+\end{equation}
+The function $\Delta:G\to\mathbb{R}_+$ is called the modular function.
+
+\begin{prop} 
+Let $G$ be a locally compact  group.The modular function $\Delta:G\to\mathbb{R}_+$ is a continuous homomorphism into the multiplicative group $\mathbb{R}_+$. Furthermore, for every $f\in L^1(G,\lambda)$ we have
+\begin{equation}
+\int_Gf(xy)\,dx=\Delta(y)^{-1} \int_Gf(x)\,dx. 
+\end{equation}
+\end{prop}
+
+In the section \ref{HaarLieInt} we give some examples in the context of Lie groups. A group for which every left Haar measure is also a right Haar measure, hence for which the modular function is identically equal to one, is called unimodular. Large classes of groups are unimodular, such as the abelian, compact, nilpotent and semisimple groups. Nevetherless, in Applied Harmonic Analysis non-unimodular groups play a prominent role, such as the affine group $(ax+b)$ that we shall define in the next section.
+
+\section{Lie groups and Lie algebras}
+
+\subsection{Generalities}
+ 
+In this section we recall some notions about Lie groups and Lie algebras. 
+
+\begin{dfn}[Lie group] \cite[Def. 12.38, p. 564]{Moretti2012} \\  
+A Lie group $G$ is a $C^\infty$  (smooth or differentiable) manifold endowed with a  group structure such that the group operations $(g,h)\mapsto gh$ and $g\mapsto g^{-1}$ are smooth, i.e. $C^\infty$.
+\end{dfn}
+
+We can see that $\mathbb{R}^d$ is an additive, abelian Lie group. Similarly $\mathbb{C}^d$ is also one, identified with $\mathbb{R}^{2d}$ as manifolds. 
+
+The sphere $S^1=\{e^{i\theta}:\theta\in[0,2\pi)\}$ is an abelian compact Lie group. A theorem states that the only other spheres that are Lie groups are $S^3$ and $S^7$. 
+
+The multiplicative group $GL(d,\mathbb{R})$ of invertible  matrices is a Lie group. Indeed, it is an open submanifold of $\mathbb{R}^{d^2}$ with the global coordinates $x_{ij}$ that assign to a matrix its ${ij}$-th entry. If $y,z\in GL(d,\mathbb{R})$, then  $x_{ij}(yz)$ and $x_{ij}(y^{-1})$ are rational functions of $\{x_{ij}(y),x_{ij}(z)\}$ and of  $\{x_{ij}(y)\}$, respectively, with non vanishing denominator. Hence they are smooth functions. 
+
+Let's now look at the affine group $(ax+b)$. We consider $G=\mathbb{R}_+\times\mathbb{R}$ as a manifold. One can visualize it as the right half plane. For $(a,b) \in \mathbb{R}_+ \times \mathbb{R}$, the composition of maps is 
+\begin{equation}
+x\mapsto ax+b\mapsto a'(ax+b)+b'=(a'a)x+(a'b+b')
+\end{equation}
+and yields the following product rule
+\begin{equation}
+(a',b')(a,b)=(a'a,a'b+b').
+\end{equation}
+Both functions $a'a$ and $a'b+b'$ are smooth in the global coordinates on $G$, which is then a Lie group, and $G$ is connected \cite[Def. 1.26, .15]{Moretti2012}. 
+
+\begin{dfn} 
+A Lie algebra $\mathfrak{g}$ over the field $\mathbb{K}$ \footnote{Here mostly $\mathbb{K}=\mathbb{R}$ but one may also think of the case $\mathbb{K}=\mathbb{C}$.} is a $\mathbb{K}$-vector space endowed with a bilinear operation $[\cdot,\cdot]:\mathfrak{g}\times\mathfrak{g}\rightarrow\mathfrak{g}$, called bracket, such that 
+\begin{itemize}
+\item[(i)] $[X,Y]=-[Y,X]$ for every $X,Y\in\mathfrak{g}$,
+\item[(ii)] $[X,[Y,Z]]=[[X,Y],Z]+[Y,[X,Z]]$ for every $X,Y,Z\in\mathfrak{g}$.
+\end{itemize}
+\end{dfn}
+
+The condition $(ii)$, known as the Jacobi identity, should be thought as an analogous version of the derivative of the product. Indeed, if  for any $X\in\mathfrak{g}$ we put
+\begin{equation}
+ ad X:\mathfrak{g}\rightarrow\mathfrak{g},\qquad ad X(Y)=[X,Y]
+\end{equation}
+the Jacobi identity can be formulated as follow, 
+\begin{equation}
+ ad X ([Y,Z])=[ad X(Y),Z]+[Y,ad X(Z)]. 
+\end{equation}
+
+If  $V$  is a $\mathbb{K}$-vector space, the set  $End (V)$ of all linear maps of $V$ into itself is a Lie algebra under the commutator $[\phi,\psi]=\phi\psi-\psi\phi$ as bracket. With this structure understood, it is denoted by $\mathfrak{gl}(V)$.
+
+Let $G$ be a Lie group, and denote by  $l_g:G\rightarrow G$ the left translation by $g\in G$, i.e. $l_g(h)=gh$. Let $\mathfrak{X}(G)$ denote the module of the smooth vector fileds on $G$. A vector field $X\in\mathfrak{X}(G)$ is called left invariant on $G$ if for every $g,h\in G$ it holds
+\begin{equation}
+(l_g)_{*h}X_h=X_{gh}, 
+\end{equation}
+where $(l_g)_{*h}:T_h(G)\rightarrow T_h(G)$ denotes the differential of $l_g$ at $h$ and $T_h(G)$ is the tangent space to $G$ at $h$. The set of all left invariant vector fields on  $G$ will be  denoted $\mathcal{L}(G)$.
+
+\subsection{Homomorphisms}
+
+We consider now two Lie groups, $G$ and $H$. A map $\phi:G\rightarrow H$ is a Lie group homomorphism  if it is a group homomorphism (hence if $\phi(xy)=\phi(x)\phi(y)$ for every $x,y\in G$ and if $\phi(e_G)=e_H$, the identities of $G$ and $H$, respectively) and if it is a $C^\infty$ map of smooth manifolds.\\
+
+We say that $\phi$ is a Lie group isomorphism if it is a diffeomorphism, i.e a bijection that is also a morphism, the invers si then also a morphism. An isomorphism of $G$ onto itself is called an automorphism. Observe that the set of  automorphisms of finite dimensional $\mathbb{R}$-vector space $V$ has a natural structure of Lie group, because if a basis is selected, then the group of all linear invertible maps may be identified with the Lie group of invertible matrices. This group is denoted by $Aut (V)$. \\
+
+If  $\mathfrak{g}$ and  $\mathfrak{h}$ are both real Lie algebras, a linear map  $\psi:\mathfrak{g}\rightarrow\mathfrak{h}$ for which $\psi([X,Y])=[\psi(X),\psi(Y)]$ is a Lie algebra homomorphism. Further, if  $\psi$ is a linear isomorphism, then it is called a Lie algebra isomorphism.\\ 
+If $\mathfrak{h}=\mathfrak{gl}(V)$ is the Lie algebra of all endomorphisms of a vector space $V$, a Lie algebra homomorphism $\psi:\mathfrak{g} \rightarrow\mathfrak{h}$ is called a  representation of $\mathfrak{g}$ on $V$. This is the case of the homomorphism $X\mapsto ad X$, which defines the adjoint representation of $\mathfrak{g}$, a representation of $\mathfrak{g}$ on itself. \\
+
+Let $\phi:G\rightarrow H$ be a Lie group homomorphism, i.e. a morphism of group. Its differential $\phi_{*e}:T_e(G)\rightarrow T_e(H)$ is a linear map. By the natural identifications $T_e(G) \simeq \mathcal{L}(G)$ and $T_e(H) \simeq \mathcal{L}(H)$, $\phi_{*e}$  induces a linear map $\mathcal{L}(G)\rightarrow \mathcal{L}(H)$  denoted $d\phi$.
+More precisely, if $X\in\mathcal{L}(G)$, then $d\phi(X)$ is the unique left invariant vector field on $G$ such that,
+\begin{equation}
+(d\phi(X))_e=\phi_{*e}X_e.
+\end{equation}
+
+\begin{prop} 
+Let $\phi:G\rightarrow H$ be a Lie group homomorphism. Then $\phi_{*g}X_g=(d\phi (X))_{\phi(X)}$ for every $X\in\mathcal{L}(G)$, and $d\phi$ is a Lie algebra homomorphism.
+\end{prop}
+
+Take again a Lie group homomorphism $i:G\rightarrow H$ and assume that  $i$ is injective and that also its differential is injective in every point (such a map is called an injective immersion). In this case the pair $(i,H)$ is called a Lie subgroup of  $G$.
+
+\begin{thm} 
+Let $G$ be a Lie group with Lie algebra $\mathfrak{g}$ and take a Lie subalgebra $\mathfrak{h}$ of $\mathfrak{g}$. Then there exists a connected Lie subgroup $(i,H)$ of $G$, unique up to isomorphisms, such that $di(\mathcal{L}(H))=\mathfrak{h}$. Therefore there is a bijective correspondence between the connected Lie subgroup of a Lie group and the subalgebras of its Lie algebra.
+\end{thm}
+
+The following theorem is of central importance in the  theory of Lie groups.
+
+\begin{thm} 
+Let $G_1$ and $G_2$ be two  Lie groups with Lie algebras $\mathfrak{g}_1$ and $\mathfrak{g}_2$, respectively, and let $\lambda:\mathfrak{g}_1\rightarrow\mathfrak{g}_2$ be a Lie algebra homomorphism. Then there cannot be more than one Lie group homomorphism $\phi:G_1\to G_2$ such that $d\phi=\lambda$. If $G_1$ is simply connected \cite[Rem. p. 63]{Yvette2005}, then such a $\phi$ exists.
+\end{thm}
+
+\subsection{Exponential mapping}
+
+We will now be interested in the definition of the fundamental map linking the group and its Lie algebra, namely the exponential mapping $exp:\mathfrak{g}\rightarrow G$. Let $\mathbb{R}$ be the additive Lie group of real numbers. Its Lie algebra is one-dimensional and is generated by the vector field $\frac{d}{dt}$. \\ 
+If we take now a Lie group $G$ with Lie algebra $\mathfrak{g}$, and $X\in\mathfrak{g}$, the map 
+\begin{equation}
+a\frac{d}{dt}\mapsto a X,\qquad a\in\mathbb{R}
+\end{equation}
+is a Lie algebra homomorphism. Since $\mathbb{R}$ is simply connected \cite[Def. 1.28, p. 16]{Moretti2012}, there exists a unique homomorphism $\xi_X:\mathbb{R}\rightarrow G$ such that:
+\begin{equation}
+\begin{cases}
+(\xi_X)_{*a}\frac{d}{dt}\Bigr|_{t=a}=X_{\xi_X(a)}\\
+(\xi_X)_{*0}\frac{d}{dt}\Bigr|_{t=0}=X_{e}.
+\end{cases}
+\end{equation}
+
+Conversely, if $\eta:\mathbb{R}\rightarrow G$ is a Lie group homomorphism, then $X=d\eta(\frac{d}{dt})$ satisfies $\eta=\xi_X$. Hence, the correspondence $X\mapsto\xi_X$ establishes a bijection between $\mathfrak{g}$ and the set of homomorphisms from  $\mathbb{R}$ into $G$ with the property that $d\xi_X(\frac{d}{dt})=X$ for every $X\in\mathfrak{g}$.\\
+
+We fix now  $a\in\mathbb{R}$ and $X\in\mathfrak{g}$. Then, if $m_a$ denotes the multiplication by $a$ in $\mathbb{R}$, the map $\eta(t)=\xi_X(a t)=\xi_X\circ m_a(t)$ is again a homomorphism from $\mathbb{R}$ into $G$ and since,
+\begin{equation}
+\eta_{*0}\frac{d}{dt} \big|_{t=0}=(\xi_X)_{*0}a\frac{d}{dt}\big|_{t=0}=a X_e,
+\end{equation}
+it follows that $a=\xi_{a X}$, that is
+\begin{equation}
+\xi_{a X}(t)=\xi_X(a t), \qquad t,a\in\mathbb{R},\;X\in\mathfrak{g}.
+\end{equation}
+We define
+\begin{equation}
+exp X=\xi_X(1), \qquad X\in\mathfrak{g}.
+\end{equation}
+The map $exp:\mathfrak{g}\rightarrow G$ is called the exponential mapping. It follows that
+\begin{eqnarray}
+\xi_X(t)&=&exp (tX),\qquad t\in\mathbb{R},\quad X\in\mathfrak{g} \\
+\mathbb{I}&=& exp(0).
+\end{eqnarray}
+
+\begin{lem} \cite[Lem. 2.1, p.52]{Yvette2005} \\
+The map $a \mapsto exp(ax)$ is differentiable and 
+\begin{equation}
+\frac{d}{dt} exp(aX) = X exp(aX) = exp(aX) X, 
+\end{equation}
+for $a\in \mathbb{R}$ and $X \in \mathfrak{g}$.
+\end{lem}
+
+\begin{demo}
+This proof is done when we see the exponential mapping as the matrix exponetiation \eqref{MatrixExpo}. 
+\begin{equation}
+\frac{d}{dt} \sum^{\infty}_{p=0} \frac{X^p}{p!} a^p = \sum^{\infty}_{p=1} X^p \frac{a^{p-1}}{(p-1)!} = X \sum^{\infty}_{p=0} X^p \frac{a^p}{p!} = X exp(aX) = exp(aX) = X.  
+\end{equation}
+\end{demo}
+
+An immediate consequence of the fact that  $\xi_X$ is a homomorphism are these formulas,
+\begin{eqnarray}
+ \exp (t+s)X&=&\exp tX\exp sX\\
+ \exp (-tX)&=&(\exp tX)^{-1}.
+\end{eqnarray}
+
+Indeed $exp\big[ (a+b) X \big] = \xi_{X}(a+b) \xi_{X}(a) \xi_X(b) = exp(aX) exp(bX)$.
+
+\begin{prop} \cite[Prop. 3.2, p.52]{Yvette2005}
+For every $X, Y \in \mathfrak{g}$ and $a \in \mathbb{R}$, we have,
+\begin{equation}
+exp(tX) exp(tY) = exp\{t(X+Y)+\frac{1}{2}t^2[X,Y]+O(t^3)\} \label{BCH}
+\end{equation}
+\end{prop}
+
+Formula \eqref{BCH} is known as the Baker-Campbell-Hausdorff formula.
+
+\begin{demo}
+This proof is done when we see the exponential mapping as the matrix exponetiation \eqref{MatrixExpo}. \\
+For $a$ near $0$, on the one hand,
+\begin{eqnarray}
+exp(aX) exp(aY) &=& \big( \mathbb{I} + aX + \frac{a^2}{2} X^2 + O(a^3) \big) \big( \mathbb{I} + aY + \frac{a^2}{2} Y^2 + O(a^3) \big) \\
+&=& \mathbb{I} + a(X+Y) + \frac{a^2}{2}(X^2 + 2XY + Y^2) + O(a^3).
+\end{eqnarray}
+On the other hand,
+\begin{equation}
+exp\{a(X+Y)+\frac{1}{2}a^2[X,Y]+O(a^3)\} = \mathbb{I} + a(X+Y) + \frac{a^2}{2}(X^2 + 2XY + Y^2) + O(a^3). 
+\end{equation}
+The two expressions are thus equal.
+\end{demo}
+
+From \eqref{BCH} we have the two followinf formulas,
+\begin{eqnarray}
+ && exp(-tX) exp(-tY) exp(tX) exp(tY) = exp\{t^2[X,Y]+O(t^3)\}\\
+ && exp(tX) exp(tY) exp(-tX) = exp\{tY+t^2[X,Y]+O(t^3)\}. 
+\end{eqnarray}
+The exponential map is in general neither injective nor surjective, but it is locally very nice.
+
+\begin{prop} \cite[Prop. 3.2, p. 52]{Yvette2005} \\
+The exponential map is $C^\infty$ and its differntial at zero is the  identity map of $\mathfrak{g}$. Consequently, $exp$ establishes a diffeomorphism of a neighborhood of $0\in\mathfrak{g}$ onto a a neighborhood of $e\in G$.
+\end{prop}
+
+\begin{demo}
+We have,
+\begin{eqnarray}
+exp(X) &=& \mathbb{I} + X + X \sum^{\infty}_{p=2} \frac{X^{p-1}}{p!} \\
+&=& exp(0) + X + X \sum^{infty}_{p=2} \frac{X^{p-1}}{p!}
+\end{eqnarray}
+whence $\norm{exp(x) - exp(O) - X} \leq \norm{X} \epsilon(X)$, where $\norm{\sum^{\infty}_{q=0} \frac{X^{q}}{(q+2)!}}$. The last series converge, so $\lim_{\norm{X}\to0} \norm{\epsilon(X)} = 0$, which shows that $exp$ is differentiable at $0$, whith its differential the identity of $\mathfrak{g}$. 
+\end{demo}
+
+The following result is fundamental.
+\begin{thm} 
+Let $\phi:G\rightarrow H$ be a Lie group homomorphism with differential $d\phi:\mathfrak{g}\rightarrow\mathfrak{h}$. Then, for every $X\in\mathfrak{g}$ 
+\begin{equation}
+\phi\big( exp (X) \big) = exp(d\phi X).
+\end{equation}
+\end{thm}
+
+By looking at the previous result we can show the next one, which is of great practical use because it allows to calculate the Lie algebra of a subgroup of $G$ as a subalgebra of the Lie algebra of $G$.
+\begin{prop} 
+Let $H$ be a Lie subgroup of the Lie group $G$ and let $\mathfrak{h}\subset\mathfrak{g}$ be the corresponding Lie algebras. Let $X\in\mathfrak{g}$. If $X\in\mathfrak{h}$, then $exp(tX) \in H$ for every $t\in\mathbb{R}$. Conversely, if $exp(tX) \in H$ for every  $t\in \mathbb{R}$, then $X\in\mathfrak{h}$.
+\end{prop}
+
+Redefining the above result one obtains the next, which is very useful when dealing with the classical matrix groups and algebras. 
+\begin{prop}
+Let $A$ be an abstract subgroup of the Lie group $G$ and let $\mathfrak{v}$ be a vector subspace of the Lie algebra $\mathfrak{g}$ of $G$. Let $U$ be a neighborhood of $0\in\mathfrak{g}$ diffeomorphic via $exp$ to the neighborood $V$ of $1 \in G$. Suppose that
+\begin{equation}
+ exp (U\cap\mathfrak{v})=A\cap V.
+\end{equation}
+Then, endowed with the relative topology, $A$ is a Lie subgroup of $G$ and $\mathfrak{v}$ is its Lie algebra.
+\end{prop}
+
+The set  of all $n\times n$ real matrices endowed with the bracket $[A,B]=AB-BA$ is a Lie algebra, and, as any vector space, a smooth manifold with coordinates given by any choice of a basis. Denote by $\mathfrak{g}$ the Lie algebra of $GL(d,\mathbb{R})$ and let $\alpha:\mathfrak{gl}(d,\mathbb{R})_e\rightarrow \mathfrak{gl}(d,\mathbb{R})$ the canonical identification of the tangent space at the identity $e\in\mathfrak{gl}(d,\mathbb{R})$ with $\mathfrak{gl}(d,\mathbb{R})$. Thus, if  $v\in\mathfrak{gl}(d,\mathbb{R})_e$ 
+\begin{equation}
+\alpha(v)_{ij}=v(x_{ij}).
+\end{equation}
+Since $GL(d,\mathbb{R})_e=\mathfrak{gl}(d,\mathbb{R})_e$, there is a natural map,
+\begin{equation}
+\beta:\mathfrak{g}\rightarrow\mathfrak{gl}(d,\mathbb{R}),\qquad\beta(X)=\alpha(X_e). 
+\end{equation}
+We can see that $\beta$ is a Lie algebra isomorphism. The matrix exponentiation
+\begin{equation}
+ A\mapsto e^A \label{MatrixExpo}
+\end{equation}
+satisfies all the properties of the exponential mapping and it thus coincides with it, from $\mathfrak{gl}(d,\mathbb{R})$ into $GL(d,\mathbb{R})$.
+
+\begin{prop} \cite[Propo. 2.6, p.53]{Yvette2005}
+For each $X \in \mathfrak{gl}(n,\mathbb{K})$, 
+\begin{equation}
+exp(Tr(X)) = det(exp(X)). 
+\end{equation}
+In particular the exponential of a traceless matrix is a matrix of determinant 1. 
+\end{prop}
+
+\begin{demo}
+Over $\mathbb{C}$, one can triangularize the Mtrix X, If X is similar to a triangular matrix T, the exp(X) is similar to exp(T). If the diagonal coefficients of T are $a_1, ... a_n$ then the diagonal coefficients of the matrix $exp(T)$ are $e^{a_1}$, $e^{a_2}$, ..., $e^{a_n}$. Hence,
+\begin{equation}
+det \left( exp(X) \right) = \Pi^{n}_{i=1} e^{a_i} = exp\left( \sum^{n}_{i=1} a_i \right) = e^{Tr(X)}. 
+\end{equation}
+\end{demo}
+
+We take now a neighborhood  $U$ of  $0\in\mathfrak{gl}(d,\mathbb{C})$ diffeomorphic under $exp$ to the neighborhood $V$ of $I\in GL(d,\mathbb{C})$. We now prove that the Lie algebra of $Sp(d,\mathbb{R})$ is $\mathfrak{sp}(d,\mathbb{R})$, where 
+\begin{eqnarray}
+Sp(d,\mathbb{R}) &=& \{g\in GL(d,\mathfrak{R}) \quad:\quad ^{t}gJg=J \} \\
+\mathfrak{sp}(d,\mathbb{R})&=& \{ X\in \mathfrak{gl}(d,\mathbb{R}) \quad:\quad,^{t}X J + JX = 0 \},
+\end{eqnarray}
+and where $J$ is the canonical skew-symmetric matrix,
+\begin{equation}
+ J= 
+\left[
+\begin{array}{ll}
+0 & I_d \\
+-I_d & 0
+\end{array}
+\right].
+\end{equation}
+If $X\in U\cap \mathfrak{sp}(d,\mathbb{R})$, the relation $^{t}XJ=-JX$ implies 
+\begin{equation}
+ ^{t}(e^X)J(e^X) = e^{^{t}X}Je^X = e^{^{t}X}J\mathbb{I}e^X = e^{^{t}X}JJJ^{-1}e^X = J(Je^{^{t}X}J^{-1})e^X = Je^{-J ^{t}XJ}e^X = Je^{-X}e^X = J. 
+\end{equation}
+And if $Y=e^X\in V\cap Sp(d,\mathbb{R})$, we can show that ${t}^XJ+JX=0$. \\
+
+We conclude this section with two important results.
+
+\begin{thm}[Cartan] 
+Let $G$ be a Lie group and let $A$ be a closed subgroup of $G$. Then $A$ has a unique smooth (in fact analytic) structure that makes it a Lie subgroup of $G$. 
+\end{thm}
+
+\begin{thm} 
+Let $G$ be a connected Lie group  with Lie algebra $\mathfrak{g}$ and let $\phi:G\rightarrow H$ be a Lie group homomorphism of $G$ into the Lie group $H$, whose Lie
+algebra is $\mathfrak{h}$. Then,
+\begin{itemize}
+\item[(i)] $ ker (\phi)$ is a closed Lie subgroup of $G$ with Lie algebra $ker (d\phi)$;
+\item[(ii)] $\phi (G)$ is a Lie subgroup of $H$ with Lie algebra $d\phi (\mathfrak{g})\in \mathfrak{h}$.
+\end{itemize}
+\end{thm}
+
+\subsection{Adjoint representations}
+
+The most important finite dimensional representation of a Lie group $G$  is certainly the adjoint representation, which acts on its Lie algebra $\mathfrak{g}$. Given any real Lie algebra $\mathfrak{g}$, we shall denote by $\mathfrak{gl}(g)$ the Lie algebra of all endomorphisms of $\mathfrak{g}$ with the commutator as bracket and by $GL(\mathfrak{g})$ the group of all non singular endomorphisms of $\mathfrak{g}$ as a vector space. Hence $\mathfrak{gl}(g)$ is the Lie algebra of $GL(\mathfrak{g})$. \\
+The map $B \mapsto Ad B$ defines as,
+\begin{equation}
+Ad B(X) = \frac{d}{dt} \left( B exp(tX) B^{-1} \right) \big|_{t=0} = B X B^{-1}, 
+\end{equation}
+with $X \in \mathfrak{g}$ and $B \in G$ is called the adjoint representation of the Lie group \cite[Def. 7.7, p.65]{Yvette2005}. \\
+To the map $Ad$ of the Lie group $G$ on $\mathfrak{g}$, there corresponds a representation of the Lie algebra $\mathfrak{g}$ on itself, called the adjoint representation of the Lie algebra $\mathfrak{g}$, denoted by $ad$. We have for every $t \in \mathbb{R}$, and each $X \in \mathfrak{g}$, 
+\begin{equation}
+Ad exp(tX) = exp(t adX). 
+\end{equation}
+
+\begin{prop} \cite[Prop. 7.8, p. 65]{Yvette2005} 
+\begin{description}
+\item[(i)] Let $A$ be an invertible matrix belonging to the Lie group $G$ and let $X$ be a matrix belonging to the Lie algebra $\mathfrak{g} \in G$. Then $Ad A(X) = A X A^{-1}$.
+\item[(ii)] Let $X$ and $Y$ $\in \mathfrak{g}$. Then $ad X(Y) = [X,Y]$.
+\item[(iii)] Let $X$ and $Y$ $\in \mathfrak{g}$. Then $ad [X,Y] = [ad X, ad Y]$.
+\end{description}
+\end{prop}
+
+\begin{demo}
+\begin{description}
+\item[(i)] By definition for $B \in G$, we have 
+\begin{equation}
+Ad B(X) = \frac{d}{dt} \left( B exp(tX) B^{-1} \right) \big|_{t=0} = B X B^{-1}.
+\end{equation}
+\item[(ii)] Furthermore, $ad X(Y) = \frac{d}{dt} Ad exp(tX) (Y) \big|_{t=0} = \frac{d}{dt} exp(tX) Y exp(-tX) \big|_{t=0} = XY-YX = [X,Y]$. 
+\item[(iii)] This last point express the fact that $ad$ is a Lie algebra representation. It is a direct consequence of the Jacobi identity.
+\end{description} 
+\end{demo}
+
+\subsection{Haar measure on Lie groups and integration} \label{HaarLieInt}
+
+Some comments on integration and modular functions on Lie groups are in order. First of all, left Haar measures are very easy to construct. One takes any positive definite inner product on the tangent space at the identity $T_eG$ and carries it around with the differential of left translations, thereby obtainining a Riemannian structure.  The corresponding volume form is a Haar measure. Furthermore, in every local coordinate system, it is given by a $C^\infty$ density times the Lebesgue measure. The following proposition is quite handy. 
+
+\begin{prop} 
+If $G$ is a Lie group whose underlying manifold is an open set in $\mathbb{R}^d$ and if the left translations are given by affine maps, that is
+\begin{equation}
+ xy=A(x)y+b(x),
+\end{equation}
+where $A(x)$ is a linear transformation and $b(x)\in\mathbb{R}^d$, then $|det A(x)|^{-1} dx$ is a Haar measure on $G$. 
+\end{prop}
+
+For example, in the group $(ax+b)$ the left translations are 
+\begin{equation}
+ l_{(a,b)}(\alpha,\beta)=
+ \left[
+\begin{array}{ll}
+a & 0\\
+0 & a
+\end{array}
+\right]
+\left[
+\begin{array}{l}
+\alpha \\
+\beta
+\end{array}
+\right]
++
+\left[
+\begin{array}{l}
+0 \\
+b
+\end{array}
+\right],
+\end{equation}
+
+so we have
+\begin{equation}
+ |det A(a,b)|^{-1} da db = \frac{da}{a^2} db.
+\end{equation}
+
+As for the modular function, in any Lie group we have
+\begin{equation}
+ \Delta(g)=|det Ad(g)|^{-1}.
+\end{equation}
+It is possible to realize the $(ax+b)$ group as a matrix group. The correspondence
+\begin{equation}
+(a,b)\leftrightarrow
+\begin{bmatrix} 
+a&b\\0&1
+\end{bmatrix} 
+\end{equation}
+establishes an isomorphism of $(ax+b)$ with a closed Lie subgroup of $GL(2,\mathbb{R})$, whose Lie algebra can be seen as the matrices
+\begin{equation}
+\begin{bmatrix} 
+A&B\\0&0
+\end{bmatrix}. 
+\end{equation}
+The adjoint representation takes the form
+\begin{equation}
+\begin{bmatrix} 
+a&b\\0&1
+\end{bmatrix}
+\begin{bmatrix} 
+A&B\\0&0
+\end{bmatrix}
+\begin{bmatrix} 
+a^{-1}&-ba^{-1}\\0&1
+\end{bmatrix}
+=
+\begin{bmatrix} 
+A&-bA+aB\\0&0
+\end{bmatrix} 
+\end{equation}
+and it is thus the linear map
+\begin{equation}
+\begin{bmatrix} 
+A\\B
+\end{bmatrix}
+\mapsto
+\begin{bmatrix} 
+1&0\\-b&a
+\end{bmatrix}
+\begin{bmatrix} 
+A\\B
+\end{bmatrix}. 
+\end{equation}
+It follows that
+\begin{equation}
+\Delta(a,b)=|\det
+\begin{bmatrix} 
+1&0\\-b&a
+\end{bmatrix}
+|^{-1}=a^{-1}. 
+\end{equation}
+
+\section{Representation theory}
+
+Let  $\mathcal{H}_1$ and  $\mathcal{H}_2$ be two Hilbert spaces \cite[Def. 3.10, p. 101]{Moretti2012} and suppose that  $T:\mathcal{H}_1\rightarrow\mathcal{H}_2$ is  linear and bounded, that is $T\in\mathcal{B}(\mathcal{H}_1,\mathcal{H}_2)$. Recall that $T$ is an isometry if $\|Tu\|=\|u\|$ for every  $u\in\mathcal{H}_1$. Since $\|Tu\|^2=\langle Tu,Tu\rangle=\langle T^*Tu,u\rangle$ and $\|u\|^2=\langle u,u\rangle$, it implies that $T$ is an isometry if and only if  $T^*T=id_{\mathcal{H}_1}$. Hence, isometries are injective, but they are not necessarily surjective. A bijective isometry is called a unitary map. If $T$ is unitary, such is also $T^{-1}$ and in this case $TT^*=id_{\mathcal{H}_2}$. In particular if $\mathcal{H}_1=\mathcal{H}_2=\mathcal{H}$, the set
+\begin{equation}
+\mathcal{U}(\mathcal{H})=\big\{T\in\mathcal{B}(\mathcal{H}) : T \text{ is unitary}\big\} 
+\end{equation}
+forms a group.\\
+
+Let now $G$ be a Lie group \footnote{In all what follows, it would suffice to consider a locally compact Hausdorff topological group.}.
+
+\begin{dfn} 
+A unitary representation of $G$ on the Hilbert space  $\mathcal{H}$ is a group homomorphism $\pi:G\rightarrow\mathcal{U}(\mathcal{H})$ continuous in the strong operator topology \cite[Def. 2.68, p. 67]{Moretti2012}. This means,
+\begin{itemize}
+\item[(i)] $\pi(gh)=\pi(g)\pi(h)$ for every  $g,h\in G$;
+\item[(ii)] $\pi(g^{-1})=\pi(g)^{-1}=\pi(g)^*$  for every  $g\in G$;
+\item[(iii)] $g\mapsto \pi(g)u$  is continuous from $G$ to  $\mathcal{H}$, for every $u\in\mathcal{H}$.
+\end{itemize} 
+\end{dfn}
+Observe that from the equality $\|\pi(g)u-\pi(h)u\|=\|\pi(h^{-1}g)u-u\|$ it follows that it is enough to check (iii) for $g=e$,  the identity of $G$. \\
+
+Let $G=\mathbb{R}$ be the additive group and $\mathcal{H}=\mathbb{C}$. For every  $s\in\mathbb{R}$ we define the function $\chi_s(t)=e^{its}$ and we identify the complex number $e^{its}$ with the multiplication operator on $\mathbb{C}$ defined by $z\mapsto ze^{its}$. Thus, $\chi_s:\mathbb{R}\rightarrow\mathcal{U}(\mathcal{C})$ is a unitary representation, because 
+\begin{eqnarray}
+&&\chi_s(x+y)=\chi_s(x)\chi_s(y)\\
+&&\chi_s(-x)=\chi_s(x)^{-1}=\overline{\chi_s(-x)} \\
+&&t\mapsto  e^{its}z\text{ is continuous for every }z\in\mathbb{C}.
+\end{eqnarray} \\
+
+Let $G$ be the $(ax+b)$ group and $\mathcal{H}=L^2(\mathbb{R})$, with $(a,b) \in \mathbb{R}^{\ast}_{+} \times \mathbb{R}$. Define
+\begin{equation}
+\pi(a,b)f(x)=\frac{1}{\sqrt a}f\left(\frac{x-b}{a}\right),
+\end{equation}
+the so-called wavelet representation. Notice that it is just the composition of the two very important unitary maps
+\begin{eqnarray}
+T_bf(x)&=& f(x-b)\quad \text{(translation operator)}  \\
+D_af(x)&=& \frac{1}{\sqrt a}f\left(\frac{x}{a}\right) \quad \text{(dilation operator)}    
+\end{eqnarray}
+for indeed
+\begin{equation}
+T_bD_af(x)=T_b(D_af)(x)=D_af(x-b)=\frac{1}{\sqrt a}f\left(\frac{x-b}{a}\right). 
+\end{equation}
+Observe that
+\begin{equation}
+ T_bT_{b'}=T_{b+b'}, \qquad D_aD_{a'}=D_{aa'}.
+\end{equation}
+It is important to observe that $T_bD_a\not=D_aT_b$. More precisely, 
+\begin{equation}
+ D_aT_bf(x)=\frac{1}{\sqrt a}(T_bf)\left(\frac{x}{a}\right)
+=\frac{1}{\sqrt a}f\left(\frac{x}{a}-b\right)
+=\frac{1}{\sqrt a}f\left(\frac{x-ab}{a}\right)=T_{ab}D_af(x).
+\end{equation}
+In other words 
+\begin{equation}
+D_aT_b=T_{ab}D_a. 
+\end{equation}
+It follows that
+\begin{equation}
+(T_\beta D_\alpha)(T_bD_a)=T_\beta(D_\alpha T_b)D_a
+=T_\beta(T_{\alpha b}D_a)D_a
+=(T_\beta T_{\alpha b})(D_aD_a)
+=T_{\beta+\alpha b}D_{\alpha a}. 
+\end{equation}
+so that $\pi$ is a homomorphism:
+\begin{equation}
+\pi(\alpha,\beta)\pi(a,b)=\pi(\alpha a,\beta+\alpha b)=\pi((\alpha,\beta)(a,b)). 
+\end{equation}
+Finally, we check the strong continuity.
+\begin{eqnarray*}
+&& \norm{\pi(a,b) f(x) - f(x)}_{L^2}^2 = < \pi(a,b) f(x) - f(x) | \pi(a,b) f(x) - f(x) > \\
+&& = < \pi(a,b) f(x) | \pi(a,b) f(x) > - 2 < \pi(a,b) f(x) | f(x) > + < f(x) | f(x) >  \\
+&& = \norm{\pi(a,b) f(x)}^2 - 2 < \pi(a,b) f(x) | f(x) > + \norm{f(x)}^2 
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\norm{\pi(a,b) f(x)}^2 &=& \int_{\mathbb{R}} dx \quad \left| \pi(a,b) f(x) \right|^2 \\
+&=& \int_{\mathbb{R}} dx \quad \left| \frac{1}{\sqrt{a}} f\left( \frac{x-b}{a} \right) \right|^2 \\
+&=& \int_{\mathbb{R}} \frac{dy}{|a|} \quad \left| \frac{1}{\sqrt{a}} f(y) \right|^2 \\
+&=& \int_{\mathbb{R}} dy \quad \left| f(y) \right|^2 \\
+&=& \norm{f(y)}^2
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\int_{\mathbb{R}} dx \quad \left| \frac{1}{\sqrt{a}} f\left(\frac{x-b}{a}\right) f(x) \right| &<& \infty  
+\end{eqnarray*}
+
+\begin{equation*}
+\lim_{(a,b) \to (1,0)} < \pi(a,b) f(x) | f(x) > = \norm{f(x)}^2
+\end{equation*}
+
+Thus,
+\begin{equation}
+\lim_{(a,b) \to (1,0)}  \norm{\pi(a,b) f(x) - f(x)}_{L^2}^2 = 0.
+\end{equation}
+
+\begin{dfn} \cite[Def. 3.2, p. 37]{Yvette2005} \\
+Let $(E_1 , \pi_1)$ and $(E_2 , \pi_2)$ be unitary representations of G. An intertwining operator for $\pi_1$ and $\pi_2$ is defined to be any continuous linear mapping $T : E_1 \to E_2$ such that for every $g \in G$, $\pi_2(g) \circ T = T \circ \pi_ (g)$. 
+\end{dfn}
+
+\begin{dfn} \cite[Def. 3.3, p.37]{Yvette2005} \\
+A representation $(E, \pi)$ of $G$ is called irreducible if $E = \{0\}$ and if no closed nontrivial vector subspace of $E$ is invariant under $\pi$.
+\end{dfn}
+
+A representation is called completely reducible (or semisimple) if it is the Hilbert direct sum of irreducible representations.
+
+\begin{thm}[Shur's lemma] \cite[Thm. 3.6, p. 38]{Yvette2005} \\
+Let $G$ be a topological group and let $(E_1 , \pi_1)$ and $(E_2 , \pi_2)$ be irreducible unitary representations of $G$. Let $T$ be a continuous linear mapping of $E_1$ into $E_2$ that intertwines $\pi_1$ and $\pi_2$. Then either $T = 0$ or $T$ is an isomorphism (and consequently $\pi_1$ and $\pi_2$ are equivalent), and $T$ is then unique up to a multiplicative constant. 
+\end{thm}
+
+In summary, if $\pi_2(g) \circ T = T \circ \pi_1(g)$ for every $g \in G$, then either $\pi_1 \nsim \pi_2$ and $T=0$, or $\pi_1 \sim \pi_2$ and $T$ is an isomorphism. 
+
+\begin{corol} \cite[Corol. 3.7, p. 38]{Yvette2005} \label{Corol(1)Shur} \\
+Let $G$ be a topological group and let $(E, \pi)$ be a unitary representation of $G$. The representation $\pi$ is irreducible if and only if every endomorphism of $E$ that commutes with $\pi$ is a scalar multiple of the identity. 
+\end{corol}
+
+\begin{demo}
+If $\pi$ is not irreducible, the projection onto a nontrivial closed invariant subspace is a nonscalar endomorphism of E that commutes with $\pi$. The converse is a consequence of Schur’s lemma. 
+\end{demo}
+
+\begin{corol} \cite[Corol. 3.8, p. 39]{Yvette2005} \\
+The unitary irreducible representations of an abelian group are one-dimensional. 
+\end{corol}
+
+\begin{demo}
+Let $(E,\pi)$ be an unitary irreducible representation of an abelian group $G$. Let $g$ be an element of $G$. Then for every $h \in G$, $\pi(g)\pi(h) = \pi(h)\pi(g)$, and thus $\pi(g)$ commutes with $\pi$. By Corollary \ref{Corol(1)Shur} of Schur’s lemma, $G$ acts by scalar multiplication. Because the representation $\pi$ is assumed irreducible, it must be one-dimensional. 
+\end{demo}
+
+\section{References}
+
+\renewcommand{\section}[2]{}
+ 
+\bibliography{biblio.bib}
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{plain}
+%\bibliographystyle{abbrv}
+%\bibliographystyle{acm}
+%\bibliographystyle{unsrt}
+\bibliographystyle{alpha}
+%\bibliographystyle{apalike}
+%\bibliographystyle{siam}
+
+\end{document}

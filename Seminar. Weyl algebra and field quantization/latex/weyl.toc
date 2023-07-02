@@ -1,0 +1,8 @@
+\select@language {german}
+\select@language {english}
+\contentsline {section}{\numberline {1}Weyl Algebras}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Weyl $^{\ast }$-algebra}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Weyl $C^{\ast }$-Algebra}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Strict Quantization}{4}{section.2}
+\contentsline {section}{\numberline {3}Field-theoretic Weyl quantization}{4}{section.3}
+\contentsline {section}{\numberline {4}References}{4}{section.4}

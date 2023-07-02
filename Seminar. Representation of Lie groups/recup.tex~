@@ -1,0 +1,10655 @@
+%% ================================================================================
+%% This LaTeX file was created by AbiWord.                                         
+%% AbiWord is a free, Open Source word processor.                                  
+%% More information about AbiWord is available at http://www.abisource.com/        
+%% ================================================================================
+
+\documentclass[a4paper,portrait,12pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{calc}
+\usepackage{setspace}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+%% Please revise the following command, if your babel
+%% package does not support en-US
+\usepackage[en]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+ 
+\begin{document}
+
+
+\begin{flushleft}
+THE USE OF REPRESENTATIONS
+\end{flushleft}
+
+
+\begin{flushleft}
+IN APPLIED HARMONIC ANALYSIS
+\end{flushleft}
+
+
+\begin{flushleft}
+NOTES BY FILIPPO DE MARI
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Table of Contents
+\end{flushleft}
+
+
+\begin{flushleft}
+1. Representations of Lie groups.
+\end{flushleft}
+
+
+\begin{flushleft}
+1.1. Locally compact groups
+\end{flushleft}
+
+
+\begin{flushleft}
+1.2. Lie groups and Lie algebras
+\end{flushleft}
+
+
+\begin{flushleft}
+1.3. Representation theory
+\end{flushleft}
+
+
+\begin{flushleft}
+1.4. Unbounded operators. Stone's Theorem and C $\infty$ -vectors
+\end{flushleft}
+
+
+\begin{flushleft}
+2. The Heisenberg group and its representations
+\end{flushleft}
+
+
+\begin{flushleft}
+2.1. The group and its Lie algebra
+\end{flushleft}
+
+
+\begin{flushleft}
+2.2. The Schr¨dinger representation
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+2.3. Time-frequency analysis
+\end{flushleft}
+
+
+\begin{flushleft}
+3. The metaplectc representation
+\end{flushleft}
+
+
+\begin{flushleft}
+3.1. The symplectic group
+\end{flushleft}
+
+
+\begin{flushleft}
+3.2. Construction of the metaplectic representation
+\end{flushleft}
+
+
+\begin{flushleft}
+3.3. An outline of the full construction
+\end{flushleft}
+
+
+\begin{flushleft}
+4. Restriction to triangular subgroups
+\end{flushleft}
+
+
+\begin{flushleft}
+Bibliografy
+\end{flushleft}
+
+
+
+
+
+1
+
+
+2
+
+
+3
+
+
+11
+
+
+13
+
+
+19
+
+
+19
+
+
+24
+
+
+27
+
+
+30
+
+
+30
+
+
+33
+
+
+35
+
+
+36
+
+
+36
+
+
+
+
+
+\begin{flushleft}
+1. Representations of Lie groups.
+\end{flushleft}
+
+
+\begin{flushleft}
+Representation theory of groups is a vast subject. Many of the aspects of this theory
+\end{flushleft}
+
+
+\begin{flushleft}
+that are of interest in Harmonic Analysis, and, in particular, of that body of ideas
+\end{flushleft}
+
+
+\begin{flushleft}
+and techniques that might be collectively referred to as Applied Harmonic Analysis,
+\end{flushleft}
+
+
+\begin{flushleft}
+can be studied within the class of locally compact and second countable topological
+\end{flushleft}
+
+
+\begin{flushleft}
+groups, a family whose nickname in the group-theory jargon is {``}lcsc''. To be honest,
+\end{flushleft}
+
+
+\begin{flushleft}
+though, most interesting examples belong to the smaller and nicer class of Lie groups,
+\end{flushleft}
+
+
+\begin{flushleft}
+for which not only much more is known, but that also have the additional feature of
+\end{flushleft}
+
+
+\begin{flushleft}
+possessing a geometric nature that allows, for instance, to speak about dimension. For
+\end{flushleft}
+
+
+\begin{flushleft}
+this reason we work mostly with this family, even though we shall by no means use the
+\end{flushleft}
+
+
+\begin{flushleft}
+full force of the representation thereof. On the reader's side, we shall take for granted
+\end{flushleft}
+
+
+\begin{flushleft}
+basic knowledge of diﬀerential geometry.
+\end{flushleft}
+
+
+1
+
+
+
+
+
+\newpage
+2
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+1.1. Locally compact groups. We start with some fundamental deﬁnitions and results. For a detailed account on these matters the reader may consult [F1].
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.1. A topological group is a group G endowed with a topology relative to
+\end{flushleft}
+
+
+\begin{flushleft}
+which the group operations
+\end{flushleft}
+
+
+\begin{flushleft}
+(g, h) $\rightarrow$ gh,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g $\rightarrow$ g $-$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+are continuous as maps G × G $\rightarrow$ G and G $\rightarrow$ G, respectively. G is locally compact
+\end{flushleft}
+
+
+\begin{flushleft}
+if every point has a compact neighborhood. We shall also assume our groups to be
+\end{flushleft}
+
+
+\begin{flushleft}
+Hausdorﬀ.
+\end{flushleft}
+
+
+A Borel measure $\mu$ on the topological space $E$ is called a Radon measure if, \\
+(i) it is ﬁnite on compact sets;
+(ii) it is outer regular on the Borel sets: for every Borel set E
+\begin{equation}
+ \mu(E) = inf\{\mu(U) : U \supset E, U open \} 
+\end{equation}
+
+
+
+
+
+\begin{flushleft}
+(iii) it is inner regular on the open sets: for every open set U
+\end{flushleft}
+
+
+\begin{flushleft}
+$\mu$(U ) = sup\{$\mu$(K) : K $\subset$ E, K compact \}.
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.3. A left Haar measure on the topological group G is a non zero Radon
+\end{flushleft}
+
+
+\begin{flushleft}
+measure $\mu$ such that $\mu$(xE) = $\mu$(E) for every Borel set E $\subset$ G and every x $\in$ G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Similarly for right Haar measures.
+\end{flushleft}
+
+
+\begin{flushleft}
+Of course, the prototype of Haar measure is the Lebesgue measure on the additive
+\end{flushleft}
+
+
+\begin{flushleft}
+group Rd , which is invariant under left (and right) translations.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.4. Every locally compact group G has a left Haar measure $\lambda$, which is
+\end{flushleft}
+
+
+\begin{flushleft}
+essentially unique in the sense that if $\mu$ is any other left Haar measure, then there
+\end{flushleft}
+
+
+\begin{flushleft}
+exists a positive constant C such that $\mu$ = c$\lambda$.
+\end{flushleft}
+
+
+\begin{flushleft}
+If we ﬁx a left Haar measure $\lambda$ on G, then for any x $\in$ G the measure $\lambda$x deﬁned
+\end{flushleft}
+
+
+\begin{flushleft}
+by
+\end{flushleft}
+
+
+\begin{flushleft}
+$\lambda$x (E) = $\lambda$(Ex)
+\end{flushleft}
+
+
+\begin{flushleft}
+is again a left Haar measure (here Ex = \{ex : e $\in$ E\}). Therefore there must exist a
+\end{flushleft}
+
+
+\begin{flushleft}
+positive real number, denoted ∆(x) such that
+\end{flushleft}
+
+
+\begin{flushleft}
+$\lambda$x = ∆(x)$\lambda$.
+\end{flushleft}
+
+
+\begin{flushleft}
+The function ∆ : G $\rightarrow$ R+ is called the modular function.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.5. Let G be a locally compact group.The modular function ∆ : G $\rightarrow$ R+
+\end{flushleft}
+
+
+\begin{flushleft}
+is a continuous homomorphism into the multiplicative group R+ . Furthermore, for
+\end{flushleft}
+
+
+\begin{flushleft}
+every f $\in$ L1 (G, $\lambda$) we have
+\end{flushleft}
+
+
+\begin{flushleft}
+f (xy) dx = ∆(y)$-$1
+\end{flushleft}
+
+
+\begin{flushleft}
+G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f (x) dx.
+\end{flushleft}
+
+
+\begin{flushleft}
+G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+3
+
+
+
+
+
+\begin{flushleft}
+In the Section 1.2.4 below we give some examples in the context of Lie groups. A
+\end{flushleft}
+
+
+\begin{flushleft}
+group for which every left Haar measure is also a right Haar measure, hence for which
+\end{flushleft}
+
+
+\begin{flushleft}
+the modular function is identically equal to one, is called unimodular. Large classes
+\end{flushleft}
+
+
+\begin{flushleft}
+of groups are unimodular, such as the abelian, compact, nilpotent, semisimple and
+\end{flushleft}
+
+
+\begin{flushleft}
+reductive groups. Nevetherless, in Applied Harmonic Analysis non-unimodular groups
+\end{flushleft}
+
+
+\begin{flushleft}
+play a prominent role, such as the aﬃne group {``}ax + b'' that we shall deﬁne in the
+\end{flushleft}
+
+
+\begin{flushleft}
+next section.
+\end{flushleft}
+
+
+\begin{flushleft}
+1.2. Lie groups and Lie algebras. In this section we recall, without proofs, some
+\end{flushleft}
+
+
+\begin{flushleft}
+basic facts about Lie groups and Lie algebras. For a concise and eﬀective exposition,
+\end{flushleft}
+
+
+\begin{flushleft}
+see [W]. Classical references with a wider scope are [K1] and [V].
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.6. A Lie group G is a C $\infty$ (smooth or diﬀerentiable) manifold endowed
+\end{flushleft}
+
+
+\begin{flushleft}
+with a group structure such that the group operations (g, h) $\rightarrow$ gh and g $\rightarrow$ g $-$1 are
+\end{flushleft}
+
+
+\begin{flushleft}
+smooth, that is, C $\infty$ .
+\end{flushleft}
+
+
+\begin{flushleft}
+Examples. 1. Clearly, Rd is an additive, abelian Lie group. Similarly Cd , identiﬁed
+\end{flushleft}
+
+
+\begin{flushleft}
+with R2d as manifolds.
+\end{flushleft}
+
+
+\begin{flushleft}
+2. The sphere S 1 = \{ei$\theta$ : $\theta$ $\in$ [0, 2$\pi$)\} is an abelian compact Lie group. A famous
+\end{flushleft}
+
+
+\begin{flushleft}
+theorem states that the only other spheres that are Lie groups are S 3 and S 7 .
+\end{flushleft}
+
+
+\begin{flushleft}
+3. The multiplicative group GL(d, R) of invertible matrices is a Lie group. Indeed,
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+it is an open submanifold of Rd with the global coordinates xij that assign to a matrix
+\end{flushleft}
+
+
+\begin{flushleft}
+its ij --th entry. If y, z $\in$ GL(d, R), then xij (yz) and xij (y $-$1 ) are rational functions of
+\end{flushleft}
+
+
+\begin{flushleft}
+\{xij (y), xij (z)\} and of \{xij (y)\}, respectively, with non vanishing denominator. Hence
+\end{flushleft}
+
+
+\begin{flushleft}
+they are smooth functions.
+\end{flushleft}
+
+
+\begin{flushleft}
+As we shall mention brieﬂy, all closed subgroups of GL(d, R) are nice Lie groups.
+\end{flushleft}
+
+
+\begin{flushleft}
+Most notably, from our point of view, the symplectic group Sp(d, R) to be deﬁned
+\end{flushleft}
+
+
+\begin{flushleft}
+below.
+\end{flushleft}
+
+
+\begin{flushleft}
+4. The aﬃne group {``}ax + b''. There are several possible versions of this group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Let G = R+ × R as a manifold. One can visualize it as the right half plane. The
+\end{flushleft}
+
+
+\begin{flushleft}
+multiplication is obtained by thinking of the pair (a, b), with a $>$ 0 and b $\in$ R, as
+\end{flushleft}
+
+
+\begin{flushleft}
+identifying the aﬃne transformation of the real line given by x $\rightarrow$ ax + b, whence the
+\end{flushleft}
+
+
+\begin{flushleft}
+name. The composition of maps
+\end{flushleft}
+
+
+\begin{flushleft}
+x $\rightarrow$ ax + b $\rightarrow$ a (ax + b) + b = [a a]x + [a b + b]
+\end{flushleft}
+
+
+\begin{flushleft}
+yields the product rule
+\end{flushleft}
+
+
+\begin{flushleft}
+(a , b )(a, b) = (a a, a b + b).
+\end{flushleft}
+
+
+\begin{flushleft}
+Evidently, both functions a a and a b + b are smooth in the global coordinates on G,
+\end{flushleft}
+
+
+\begin{flushleft}
+which is then a Lie group. Evidently, G is connected. When speaking of the {``}ax + b''
+\end{flushleft}
+
+
+\begin{flushleft}
+group we refer to this group.
+\end{flushleft}
+
+
+\begin{flushleft}
+A non-connected version arises by taking a $\in$ R instead of a $>$ 0. Yet another
+\end{flushleft}
+
+
+\begin{flushleft}
+slightly diﬀerent construction comes from thinking of the pair (a, b) as identifying the
+\end{flushleft}
+
+
+\begin{flushleft}
+aﬃne transformation x $\rightarrow$ a(x + b). This point of view yields both a connected and a
+\end{flushleft}
+
+
+\begin{flushleft}
+non-connected Lie group.
+\end{flushleft}
+
+
+\begin{flushleft}
+4. The Heisenberg group Hd . We refer to the next section for the explicit deﬁnition.
+\end{flushleft}
+
+
+
+
+
+\newpage
+4
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Deﬁnition 1.7. A Lie algebra g over the ﬁeld1 K is a K-vector space endowed with
+\end{flushleft}
+
+
+\begin{flushleft}
+a bilinear operation [·, ·] : g × g $\rightarrow$ g, called bracket, such that
+\end{flushleft}
+
+
+\begin{flushleft}
+i) [X, Y ] = $-$[Y, X] for every X, Y $\in$ g,
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) [X, [Y, Z]] = [[X, Y ], Z] + [Y, [X, Z]] for every X, Y, Z $\in$ g.
+\end{flushleft}
+
+
+\begin{flushleft}
+Item ii), oterwise known as the Jacobi identity, should be thought of as an analogous
+\end{flushleft}
+
+
+\begin{flushleft}
+version of the derivative of the product. Indeed, if for any X $\in$ g we put
+\end{flushleft}
+
+
+(1.1)
+
+
+
+
+
+\begin{flushleft}
+ad X : g $\rightarrow$ g,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+ad X(Y ) = [X, Y ]
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+the Jacobi identity may be formulated:
+\end{flushleft}
+
+
+\begin{flushleft}
+ad X([Y, Z]) = [ad X(Y ), Z] + [Y, ad X(Z)].
+\end{flushleft}
+
+
+\begin{flushleft}
+If V is a K-vector space, the set End(V ) of all linear maps of V into itself is a Lie
+\end{flushleft}
+
+
+\begin{flushleft}
+algebra under the commutator [$\phi$, $\psi$] = $\phi$$\psi$ $-$ $\psi$$\phi$ as bracket. With this structure
+\end{flushleft}
+
+
+\begin{flushleft}
+understood, it is denoted by gl(V ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Let G be a Lie group, and let X(G) denote the C $\infty$ (G)-module of the smooth vector
+\end{flushleft}
+
+
+\begin{flushleft}
+ﬁleds on G. Denote by lg : G $\rightarrow$ G the left translation by g $\in$ G, that is lg (h) = gh.
+\end{flushleft}
+
+
+\begin{flushleft}
+A vector ﬁeld X $\in$ X(G) is called left invariant on G if for every g, h $\in$ G it holds
+\end{flushleft}
+
+
+\begin{flushleft}
+(lg )∗h Xh = Xgh ,
+\end{flushleft}
+
+
+\begin{flushleft}
+where (lg )∗h : Th (G) $\rightarrow$ Th (G) denotes the diﬀerential of lg at h and Th (G) is the
+\end{flushleft}
+
+
+\begin{flushleft}
+tangent space to G at h. The set of all left invariant vector ﬁelds on G will be
+\end{flushleft}
+
+
+\begin{flushleft}
+denoted L(G).
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.8. Let G be a Lie group and denote by L(G) the set of left invariant
+\end{flushleft}
+
+
+\begin{flushleft}
+vector ﬁelds on G. Then:
+\end{flushleft}
+
+
+\begin{flushleft}
+i) L(G) is an R-vector space and the map $\alpha$ : L(G) $\rightarrow$ Te (G) deﬁned by $\alpha$(X) =
+\end{flushleft}
+
+
+\begin{flushleft}
+Xe is a vector space isomorphism between L(G) and the tangent space to G at
+\end{flushleft}
+
+
+\begin{flushleft}
+the identity e $\in$ G. Consequently, dim L(G) = dim Te (G) = dim G.
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) The commutator [X, Y ] = X ◦ Y $-$ Y ◦ X of two left invariant vector ﬁelds
+\end{flushleft}
+
+
+\begin{flushleft}
+is again a left invariant vector ﬁeld. With this bracket, L(G) becomes a Lie
+\end{flushleft}
+
+
+\begin{flushleft}
+algebra, which will be called the Lie algebra of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+1.2.1. Homomorphisms. Take now two Lie groups, G ed H . A map ϕ : G $\rightarrow$ H is a
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie group homomorphism if it is a group homomorphism (hence if ϕ(xy) = ϕ(x)ϕ(y)
+\end{flushleft}
+
+
+\begin{flushleft}
+for every x, y $\in$ G and if ϕ(e) = e, the identities of G and H , respectively) and if
+\end{flushleft}
+
+
+\begin{flushleft}
+it is a C $\infty$ map of smooth manifolds. We say that ϕ is a Lie group isomorphism if
+\end{flushleft}
+
+
+\begin{flushleft}
+it is a diﬀeomorphism. An isomorphism of G onto itself is called an automorphism.
+\end{flushleft}
+
+
+\begin{flushleft}
+Observe that the set of automorphisms of a ﬁnite dimensional R--vector space V has
+\end{flushleft}
+
+
+\begin{flushleft}
+a natural structure of Lie group, because if a basis is selected, then the group of all
+\end{flushleft}
+
+
+\begin{flushleft}
+linear invertible maps may be identiﬁed with the Lie group of invertible matrices.
+\end{flushleft}
+
+
+\begin{flushleft}
+This group is denoted by Aut(V ). As we shall see in Section 1.3, a homomorphism
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$ : G $\rightarrow$ Aut(V ) is a ﬁnite dimensional representation of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+1Here
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+mostly K = R but one may also think of the case K = C .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+5
+
+
+
+
+
+\begin{flushleft}
+If g and h sare both real Lie algebras, a linear map $\psi$ : g $\rightarrow$ h for which $\psi$([X, Y ]) =
+\end{flushleft}
+
+
+\begin{flushleft}
+[$\psi$(X), $\psi$(Y )] is a Lie algebra homomorphism. Further, if $\psi$ is a linear isomorphism,
+\end{flushleft}
+
+
+\begin{flushleft}
+then it is called a Lie algebra isomorphism. If h = gl(W ) is the Lie algebra of all
+\end{flushleft}
+
+
+\begin{flushleft}
+endomorphisms of a vector space W , a Lie algebra homomorphism $\psi$ : g $\rightarrow$ h is called
+\end{flushleft}
+
+
+\begin{flushleft}
+a representation of g on W . This is the case of the homomorphism X $\rightarrow$ ad X , which
+\end{flushleft}
+
+
+\begin{flushleft}
+deﬁnes the adjoint representation of g, a representation of g on itself.
+\end{flushleft}
+
+
+\begin{flushleft}
+Let ϕ : G $\rightarrow$ H be a Lie group homomorphism. Its diﬀerential ϕ∗e : Te (G) $\rightarrow$ Te (H)
+\end{flushleft}
+
+
+\begin{flushleft}
+is a linear map. By the natural identiﬁcations Te (G) L(G) and Te (H) L(H), ϕ∗e
+\end{flushleft}
+
+
+\begin{flushleft}
+induces a linear map L(G) $\rightarrow$ L(H) denoted dϕ. More precisely, if X $\in$ L(G), then
+\end{flushleft}
+
+
+\begin{flushleft}
+dϕ(X) is the unique left invariant vector ﬁeld on G such that
+\end{flushleft}
+
+
+\begin{flushleft}
+(dϕ(X))e = ϕ∗e Xe .
+\end{flushleft}
+
+
+\begin{flushleft}
+The following result clariﬁes matters.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.9. Let ϕ : G $\rightarrow$ H be a Lie group homomorphism. Then ϕ∗g Xg =
+\end{flushleft}
+
+
+\begin{flushleft}
+(dϕ(X))ϕ(X) for every X $\in$ L(G) and dϕ is a Lie algebra homomorphism.
+\end{flushleft}
+
+
+\begin{flushleft}
+Take again a Lie group homomorphism i : G $\rightarrow$ H and assume that i is injective
+\end{flushleft}
+
+
+\begin{flushleft}
+and that also its diﬀerential is injective in every point (such a map is called an injective
+\end{flushleft}
+
+
+\begin{flushleft}
+immersion). In this case the pair (i, H) is called a Lie subgroup of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.10. Let G be a Lie group with Lie algebra g and take a Lie subalgebra h of
+\end{flushleft}
+
+
+\begin{flushleft}
+g. Then there exists a connected Lie subgroup (i, H) of G, unique up to isomorphisms,
+\end{flushleft}
+
+
+\begin{flushleft}
+such that di(L(H)) = h. Therefore there is a bijective correspondence between the
+\end{flushleft}
+
+
+\begin{flushleft}
+connected Lie subgroup of a Lie group and the subalgebras of its Lie algebra.
+\end{flushleft}
+
+
+\begin{flushleft}
+The theory of covering groups is also very important, and relevant in the present
+\end{flushleft}
+
+
+\begin{flushleft}
+context, but we content ourselves with the observation that every connected Lie group
+\end{flushleft}
+
+
+\begin{flushleft}
+has a simply connected covering that admits the structure of Lie group and for which
+\end{flushleft}
+
+
+\begin{flushleft}
+the covering homomorphism is a Lie group homomorphism. Furthermore, a Lie group
+\end{flushleft}
+
+
+\begin{flushleft}
+homomorphism ϕ : G $\rightarrow$ H is a covering map if and only if dϕ is a Lie algebra
+\end{flushleft}
+
+
+\begin{flushleft}
+isomorphism. The following theorem is of central importance in the theory of Lie
+\end{flushleft}
+
+
+\begin{flushleft}
+groups.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.11. Let G1 and G2 be two Lie groups with Lie algebras g1 and g2 , respectively, and let $\lambda$ : g1 $\rightarrow$ g2 be a Lie algebra homomorphism. Then there cannot be
+\end{flushleft}
+
+
+\begin{flushleft}
+more than one Lie group homomorphism ϕ : G1 $\rightarrow$ G2 such that dϕ = $\lambda$. If G1 is
+\end{flushleft}
+
+
+\begin{flushleft}
+simply connected, then such a ϕ exists.
+\end{flushleft}
+
+
+\begin{flushleft}
+1.2.2. Exponential mapping. We now review in some detail the deﬁnition of the ﬁundamental map linking the group and its Lie algebra, namely the exponential mapping
+\end{flushleft}
+
+
+\begin{flushleft}
+exp : g $\rightarrow$ G. Let R be the additive Lie group of real numbers. Its Lie algebra is
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+one-dimensional and is generated by the vector ﬁeld dt . Take now a Lie group G with
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie algebra g, and ﬁx X $\in$ g. The map
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+$\tau$ $\rightarrow$ $\tau$ X,
+\end{flushleft}
+
+
+\begin{flushleft}
+$\tau$ $\in$R
+\end{flushleft}
+
+
+\begin{flushleft}
+dt
+\end{flushleft}
+
+
+
+
+
+\newpage
+6
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+is a Lie algebra homomorphism. Since Ris simply connected, there exists a unique
+\end{flushleft}
+
+
+\begin{flushleft}
+homomorphism $\xi$X : R $\rightarrow$ G such that:
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+($\xi$X )∗$\tau$ d
+\end{flushleft}
+
+
+\begin{flushleft}
+= X$\xi$X ($\tau$ )
+\end{flushleft}
+
+
+\begin{flushleft}
+dt
+\end{flushleft}
+
+
+\begin{flushleft}
+t=$\tau$
+\end{flushleft}
+
+
+(1.2)
+
+
+\begin{flushleft}
+($\xi$X )∗0 d
+\end{flushleft}
+
+
+\begin{flushleft}
+= Xe
+\end{flushleft}
+
+
+\begin{flushleft}
+dt
+\end{flushleft}
+
+
+\begin{flushleft}
+t=0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+Conversely, if $\eta$ : R $\rightarrow$ G is a Lie group homomorphism, then X = d$\eta$( dt ) satisﬁes
+\end{flushleft}
+
+
+\begin{flushleft}
+$\eta$ = $\xi$X . Hence, the correspondence X $\rightarrow$ $\xi$X establishes a bijection between g and the
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+set of homomorphisms from R into G with the property that d$\xi$X ( dt ) = X for every
+\end{flushleft}
+
+
+\begin{flushleft}
+X $\in$ g.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Fix now $\tau$ $\in$ R and X $\in$ g. Then, if m$\tau$ denotes the multiplication by $\tau$ in R, the
+\end{flushleft}
+
+
+\begin{flushleft}
+map $\eta$(t) = $\xi$X ($\tau$ t) = $\xi$X ◦ m$\tau$ (t) is again a homomorphism from R into G and since
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+$\eta$∗0 t=0 = ($\xi$X )∗0 $\tau$
+\end{flushleft}
+
+
+\begin{flushleft}
+= $\tau$ Xe ,
+\end{flushleft}
+
+
+\begin{flushleft}
+dt
+\end{flushleft}
+
+
+\begin{flushleft}
+dt t=0
+\end{flushleft}
+
+
+\begin{flushleft}
+it follows that $\eta$ = $\xi$$\tau$ X , that is
+\end{flushleft}
+
+
+(1.3)
+
+
+
+
+
+\begin{flushleft}
+$\xi$$\tau$ X (t) = $\xi$X ($\tau$ t),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t, $\tau$ $\in$ R, X $\in$ g.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+We deﬁne
+\end{flushleft}
+
+
+(1.4)
+
+
+
+
+
+\begin{flushleft}
+exp X = $\xi$X (1),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+X $\in$ g.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The map exp : g $\rightarrow$ G is called the exponential mapping. From (1.3) it follows that
+\end{flushleft}
+
+
+\begin{flushleft}
+$\xi$X (t) = exp(tX),
+\end{flushleft}
+
+
+\begin{flushleft}
+exp 0 = e.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t $\in$ R, X $\in$ g
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It is easy to check that if X $\in$ g e x $\in$ G sare ﬁxed, the map t $\rightarrow$ x exp(tX) deﬁnes
+\end{flushleft}
+
+
+\begin{flushleft}
+the integral curve relative to X passing through x. Hence, for every C $\infty$ -function f
+\end{flushleft}
+
+
+\begin{flushleft}
+in a neighborhood of x we have
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+(1.5)
+
+
+\begin{flushleft}
+Xx (f ) =
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x exp tX).
+\end{flushleft}
+
+
+\begin{flushleft}
+dt t=0
+\end{flushleft}
+
+
+\begin{flushleft}
+An immediate consequence of the fact that $\xi$X is a homomorphism are the formulae
+\end{flushleft}
+
+
+(1.6)
+
+
+
+
+
+\begin{flushleft}
+exp(t + s)X = exp tX exp sX
+\end{flushleft}
+
+
+
+
+
+(1.7)
+
+
+
+
+
+\begin{flushleft}
+exp($-$tX) = (exp tX)$-$1 .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The following formulae require some harder work:
+\end{flushleft}
+
+
+(1.8)
+
+
+
+
+
+1
+
+
+\begin{flushleft}
+exp tX exp tY = exp\{t(X + Y ) + 2 t2 [X, Y ] + O(t3 )\}
+\end{flushleft}
+
+
+
+
+
+(1.9)
+
+
+
+
+
+\begin{flushleft}
+exp($-$tX)exp($-$tY ) exp tX exp tY = exp\{t2 [X, Y ] + O(t3 )\}
+\end{flushleft}
+
+
+
+
+
+(1.10)
+
+
+
+
+
+\begin{flushleft}
+exp tX exp tY exp($-$tX) = exp\{tY + t2 [X, Y ] + O(t3 )\}.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Formula (1.8) is the well-known di Baker--Campbell--Hausdorﬀ formula. The exponential map is in general neither injective nor surjective, but it is locally very nice:
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.12. The exponential map is C $\infty$ and its diﬀerntial at zero is the identity
+\end{flushleft}
+
+
+\begin{flushleft}
+map of g. Consequently, exp establishes a diﬀeomorphism of a neighborhood of 0 $\in$ g
+\end{flushleft}
+
+
+\begin{flushleft}
+onto a a neighborhood of e $\in$ G.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+7
+
+
+
+
+
+\begin{flushleft}
+The following is fundamental.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.13. Let ϕ : G $\rightarrow$ H be a Lie group homomorphism with diﬀerential
+\end{flushleft}
+
+
+\begin{flushleft}
+dϕ : g $\rightarrow$ h. Then, for every X $\in$ g
+\end{flushleft}
+
+
+(1.11)
+
+
+
+
+
+\begin{flushleft}
+ϕ(exp X) = exp(dϕX).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+By means of the previous result it is easy to show the next one, which is of great
+\end{flushleft}
+
+
+\begin{flushleft}
+practical use because it allows to calculate the Lie algebra of a subgroup of G as a
+\end{flushleft}
+
+
+\begin{flushleft}
+subalgebra of the Lie algebra of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.14. Let H be a Lie subgroup of the Lie group G and let h $\subset$ g be the
+\end{flushleft}
+
+
+\begin{flushleft}
+corresponding Lie algebras. Fix X $\in$ g. If X $\in$ h, then exp tX $\in$ H for every t $\in$ R.
+\end{flushleft}
+
+
+\begin{flushleft}
+Conversely, if exp tX $\in$ H for every t $\in$ R, then X $\in$ h.
+\end{flushleft}
+
+
+\begin{flushleft}
+Reﬁning the above result one obtains the next, which is very useful when dealing
+\end{flushleft}
+
+
+\begin{flushleft}
+with the classical matrix groups and algebras.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.15. Let A be an abstract subgroup of the Lie group G and let a be a
+\end{flushleft}
+
+
+\begin{flushleft}
+vector subspace of the Lie algebra g of G. Let U be a neighborhood of 0 $\in$ g diﬀeomorphic via exp to the neighborood V of e $\in$ G. Suppose that
+\end{flushleft}
+
+
+\begin{flushleft}
+exp(U $\cap$ a) = A $\cap$ V.
+\end{flushleft}
+
+
+\begin{flushleft}
+Then, endowed with the relative topology, A is a Lie subgroup of G and a is its Lie
+\end{flushleft}
+
+
+\begin{flushleft}
+algebra.
+\end{flushleft}
+
+
+\begin{flushleft}
+Examples. The set of all n × n real matrices endowed with the bracket [A, B] =
+\end{flushleft}
+
+
+\begin{flushleft}
+AB$-$BA is a Lie algebra, and, as any vector space, a smooth manifold with coordinates
+\end{flushleft}
+
+
+\begin{flushleft}
+given by any choice of a basis. Denote by g the Lie algebra of GL(d, R) and let
+\end{flushleft}
+
+
+\begin{flushleft}
+$\alpha$ : gl(d, R)e $\rightarrow$ gl(d, R) the canonical identiﬁcation of the tangent space at the identity
+\end{flushleft}
+
+
+\begin{flushleft}
+e $\in$ gl(d, R) with gl(d, R). Thus, if v $\in$ gl(d, R)e
+\end{flushleft}
+
+
+\begin{flushleft}
+$\alpha$(v)ij = v(xij ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Since GL(d, R)e = gl(d, R)e , there is a natural map:
+\end{flushleft}
+
+
+\begin{flushleft}
+$\beta$ : g $\rightarrow$ gl(d, R),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\beta$(X) = $\alpha$(Xe ).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It is easy to see (exercise) that $\beta$ is a Lie algebra isomorphism. The ordinary matrix
+\end{flushleft}
+
+
+\begin{flushleft}
+exponentiation
+\end{flushleft}
+
+
+\begin{flushleft}
+A $\rightarrow$ eA
+\end{flushleft}
+
+
+\begin{flushleft}
+satisﬁes all the properties of the exponential mapping and it thus coincides with it,
+\end{flushleft}
+
+
+\begin{flushleft}
+from gl(d, R) into GL(d, R). We recall also that
+\end{flushleft}
+
+
+\begin{flushleft}
+det eA = etr A .
+\end{flushleft}
+
+
+\begin{flushleft}
+Take now a neighborhood U of 0 $\in$ gl(d, C) diﬀeomorphic under exp to the neighborhood V of I $\in$ GL(d, C). We now prove that the Lie algebra of Sp(d, R) is sp(d, R),
+\end{flushleft}
+
+
+\begin{flushleft}
+where
+\end{flushleft}
+
+
+\begin{flushleft}
+Sp(d, R) = g $\in$ GL(d, R) : tgJg = J
+\end{flushleft}
+
+
+\begin{flushleft}
+sp(d, R) = X $\in$ gl(d, R) : tXJ + XJ = 0 ,
+\end{flushleft}
+
+
+
+
+
+\newpage
+8
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+and where J is the canonical skew-symmetric matrix
+\end{flushleft}
+
+
+\begin{flushleft}
+J=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+0 Id
+\end{flushleft}
+
+
+,
+
+
+\begin{flushleft}
+$-$Id 0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+that deﬁnes the standard symplectic form (see Section 3.1 for more details). If X $\in$
+\end{flushleft}
+
+
+\begin{flushleft}
+U $\cap$ sp(d, R), the relation tXJ = $-$JX implies
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(eX )J(eX ) = e X JeX = J(Je X J $-$1 )eX = Je$-$J
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+tXJ
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+eX = Je$-$X eX = J.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Elementary manipulations show that if Y = eX $\in$ V $\cap$ Sp(d, R), then tXJ + JX = 0.
+\end{flushleft}
+
+
+\begin{flushleft}
+Applying nw Proposition 1.15 one may conclude (exercise: ﬁll in the details).
+\end{flushleft}
+
+
+\begin{flushleft}
+We conclude this section with two important results.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.16. (Cartan) Let G be a Lie group and let A be a closed subgroup of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Then A has a unique smooth (in fact analytic) structure that makes it a Lie subgroup
+\end{flushleft}
+
+
+\begin{flushleft}
+of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.17. Let G be a connected Lie group with Lie algebra g and let ϕ : G $\rightarrow$ H
+\end{flushleft}
+
+
+\begin{flushleft}
+be a Lie group homomorphism of G into the Lie group H , whose Lie algebra is h.
+\end{flushleft}
+
+
+\begin{flushleft}
+Then:
+\end{flushleft}
+
+
+\begin{flushleft}
+i) ker(ϕ) is a closed Lie subgroup of G with Lie algebra ker(dϕ);
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) ϕ(G) is a Lie subgroup of H with Lie algebra dϕ(g) $\in$ h.
+\end{flushleft}
+
+
+\begin{flushleft}
+1.2.3. Adjoint representations. The most important ﬁnite dimensional representation
+\end{flushleft}
+
+
+\begin{flushleft}
+of a Lie group G is certainly the adjoint representation, which acts on its Lie algebra
+\end{flushleft}
+
+
+\begin{flushleft}
+gg . Passiamo inﬁne a descrivere la pi` importante rappresentazione (ﬁnito dimensionu
+\end{flushleft}
+
+
+\begin{flushleft}
+ale) di un gruppo di Lie, cio` quella naturale sulla sua algebra di Lie. Given any real
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie algebra g, we shall denote by gl(g) the Lie algebra of all endomorphisms of g with
+\end{flushleft}
+
+
+\begin{flushleft}
+the commutator as bracket and by GL(g) the group of all non singular endomorphisms
+\end{flushleft}
+
+
+\begin{flushleft}
+of g as a vector space. Hence gl(g) is the Lie algebra of GL(g). The map X $\rightarrow$ ad X
+\end{flushleft}
+
+
+\begin{flushleft}
+is a Lie algebra homomorphism whose image is a Lie subalgebra of gl(g) denoted ad g.
+\end{flushleft}
+
+
+\begin{flushleft}
+Let Int(g) be the connected Lie subgroup of GL(g) whose Lie algebra is ad g. The
+\end{flushleft}
+
+
+\begin{flushleft}
+group Int(g) is called the adjoint group of g. Schematically:
+\end{flushleft}
+
+
+\begin{flushleft}
+gl(g) $\leftarrow$$\rightarrow$ GL(g)
+\end{flushleft}
+
+
+$\cup$
+
+
+$\cup$
+
+
+\begin{flushleft}
+ad g $\leftarrow$$\rightarrow$ Int(g)
+\end{flushleft}
+
+
+\begin{flushleft}
+where the arrows stand for the correspondence group-algebra. Next, let Aut(g) be
+\end{flushleft}
+
+
+\begin{flushleft}
+the Lie subgroup of GL(g) consisting of all the automorphisms of g (the invertible
+\end{flushleft}
+
+
+\begin{flushleft}
+homomorphisms of g onto itself) and let $\partial$g its Lie algebra. Sappiamo che $\partial$g `
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+formata da tutti gli endomorﬁsmi D $\in$ gl(g) tali che exp tD $\in$ Aut(g) per ogni t $\in$ R.
+\end{flushleft}
+
+
+\begin{flushleft}
+Dalla relazione exp(tD)[X, Y ] = [exp(tD)X, exp(tD)Y ] segue, calcolando la derivata
+\end{flushleft}
+
+
+\begin{flushleft}
+per t = 0
+\end{flushleft}
+
+
+\begin{flushleft}
+D[X, Y ] = [DX, Y ] + [X, DY ].
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+9
+
+
+
+
+
+\begin{flushleft}
+Un tale operatore si chiama una derivazione di g. Viceversa, se D ` una derivazione,
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+allora per induzione
+\end{flushleft}
+
+
+\begin{flushleft}
+k! i
+\end{flushleft}
+
+
+\begin{flushleft}
+Dk [X, Y ] =
+\end{flushleft}
+
+
+\begin{flushleft}
+[D X, Dj Y ],
+\end{flushleft}
+
+
+\begin{flushleft}
+i!j!
+\end{flushleft}
+
+
+\begin{flushleft}
+i+j=k
+\end{flushleft}
+
+
+\begin{flushleft}
+cosicch´ exp(tD)[X, Y ] = [exp(tD)X, exp(tD)Y ]. Ne segue che $\partial$g ` formata da tutte
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+le derivazioni di g. Inﬁne, siccome ad X ` una derivazione di g per ogni X $\in$ g,
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+possiamo raﬃnare il diagramma precedente:
+\end{flushleft}
+
+
+\begin{flushleft}
+gl(g) $\leftarrow$$\rightarrow$ GL(g)
+\end{flushleft}
+
+
+$\cup$
+
+
+$\cup$
+
+
+\begin{flushleft}
+$\partial$g $\leftarrow$$\rightarrow$ Aut(g)
+\end{flushleft}
+
+
+$\cup$
+
+
+$\cup$
+
+
+\begin{flushleft}
+ad g $\leftarrow$$\rightarrow$ Int(g)
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.18. Int(g) ` un sottogruppo normale di Aut(g) e ad g ` un ideale in
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+$\partial$g.
+\end{flushleft}
+
+
+\begin{flushleft}
+Sia G un gruppo di Lie e sia g $\in$ G. Denotiamo con ig la coniugazione interna di
+\end{flushleft}
+
+
+\begin{flushleft}
+G deﬁnita da x $\rightarrow$ gxg $-$1 e poniamo:
+\end{flushleft}
+
+
+\begin{flushleft}
+Ad g := dig : g $\rightarrow$ g.
+\end{flushleft}
+
+
+\begin{flushleft}
+Siccome ig ` un isomorﬁsmo di G, Ad g $\in$ Aut(g). La mappa
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Ad : G $\rightarrow$ Aut(g),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g $\rightarrow$ Ad g
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+` un omomorﬁsmo di gruppi che sia chiama la rappresentazione aggiunta di G. Sui
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+gruppi classici di matrici risulta Ad g(X) = gXg $-$1 . Si osservi che a causa delle
+\end{flushleft}
+
+
+\begin{flushleft}
+propriet` di exp, si ha:
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+exp(Ad g(X)) = exp(dig (X)) = ig (exp X) = g(exp X)g $-$1 .
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.19. Ad ` una mappa C $\infty$ ed inoltre d Ad = ad. In particolare, per ogni
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+X $\in$ g: Ad(exp X) = ead X .
+\end{flushleft}
+
+
+\begin{flushleft}
+Corollary 1.20. La rappresentazione aggiunta di G ` un omomorﬁsmo surgettivo e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+$\infty$
+
+
+\begin{flushleft}
+liscio (C ) di G su Int(g) con nucleo il centro ZG di G. In particolare
+\end{flushleft}
+
+
+\begin{flushleft}
+G/ZG
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Int(g).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+E' chiaro dal risultato precedente che il centro di un gruppo di Lie connesso ` un
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+sottogruppo di Lie chiuso, e che si ha il seguente fondamentale diagramma
+\end{flushleft}
+
+
+\begin{flushleft}
+ad
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g $-$$\rightarrow$ ad g
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+ exp
+\end{flushleft}
+
+
+\begin{flushleft}
+exp 
+\end{flushleft}
+
+
+\begin{flushleft}
+Ad
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+G $-$$\rightarrow$ Int(g)
+\end{flushleft}
+
+
+
+
+
+\newpage
+10
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Ne segue che l'algebra di Lie del centro ZG ` il centro
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+zg = X $\in$ g : [X, Y ] = 0 per ogni Y $\in$ g
+\end{flushleft}
+
+
+\begin{flushleft}
+di g. Quindi, un gruppo di Lie ` abeliano se e solo se la sua algebra di Lie ` abeliana.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+1.2.4. Haar measure on Lie groups and integration. Some comments on integration
+\end{flushleft}
+
+
+\begin{flushleft}
+and modular functions on Lie groups are in order. First of all, left Haar measures are
+\end{flushleft}
+
+
+\begin{flushleft}
+very easy to construct. One takes any positive deﬁnite inner product on the tangent
+\end{flushleft}
+
+
+\begin{flushleft}
+space at the identity Te G and carries it around with the diﬀerential of left translations,
+\end{flushleft}
+
+
+\begin{flushleft}
+thereby obtainining a Riemannian structure. The corresponding volume form is a Haar
+\end{flushleft}
+
+
+\begin{flushleft}
+measure. Furthermore, in every local coordinate system, it is given by a C $\infty$ density
+\end{flushleft}
+
+
+\begin{flushleft}
+times the Lebesgue measure. The following proposition is quite handy.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.21. If G is a Lie group whose underlying manifold is an open set in
+\end{flushleft}
+
+
+\begin{flushleft}
+Rd and if the left translations are given by aﬃne maps, that is
+\end{flushleft}
+
+
+\begin{flushleft}
+xy = A(x)y + b(x),
+\end{flushleft}
+
+
+\begin{flushleft}
+where A(x) is a linear transformation and b(x) $\in$ Rd , then | det A(x)|$-$1 dx is a Haar
+\end{flushleft}
+
+
+\begin{flushleft}
+measure on G.
+\end{flushleft}
+
+
+\begin{flushleft}
+For example, in the group {``}ax + b'' the left translations are
+\end{flushleft}
+
+
+\begin{flushleft}
+l(a,b) ($\alpha$, $\beta$) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+a 0
+\end{flushleft}
+
+
+\begin{flushleft}
+0 a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\alpha$
+\end{flushleft}
+
+
+0
+
+
++
+
+
+,
+
+
+\begin{flushleft}
+$\beta$
+\end{flushleft}
+
+
+\begin{flushleft}
+b
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+so that by Proposition 1.21 we have
+\end{flushleft}
+
+
+\begin{flushleft}
+da
+\end{flushleft}
+
+
+\begin{flushleft}
+db.
+\end{flushleft}
+
+
+\begin{flushleft}
+a2
+\end{flushleft}
+
+
+\begin{flushleft}
+As for the modular function, in any Lie group we have
+\end{flushleft}
+
+
+\begin{flushleft}
+| det A(a, b)|$-$1 da db =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+∆(g) = | det Ad(g)|$-$1 .
+\end{flushleft}
+
+
+\begin{flushleft}
+It is possible to realize the {``}ax + b'' group as a matrix group. The reader may check
+\end{flushleft}
+
+
+\begin{flushleft}
+that the correspondence
+\end{flushleft}
+
+
+\begin{flushleft}
+a b
+\end{flushleft}
+
+
+\begin{flushleft}
+(a, b) ↔
+\end{flushleft}
+
+
+0 1
+
+
+\begin{flushleft}
+establisehes an isomorphism of {``}ax+b'' with a closed Lie subgroup of GL(2, R), whose
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie algebra ie easily seen to consists of the matrices
+\end{flushleft}
+
+
+\begin{flushleft}
+A B
+\end{flushleft}
+
+
+.
+
+
+0 0
+
+
+\begin{flushleft}
+The adjoint representation takes the form
+\end{flushleft}
+
+
+\begin{flushleft}
+a b
+\end{flushleft}
+
+
+0 1
+
+
+
+
+
+\begin{flushleft}
+A B
+\end{flushleft}
+
+
+0 0
+
+
+
+
+
+\begin{flushleft}
+a$-$1 $-$ba$-$1
+\end{flushleft}
+
+
+\begin{flushleft}
+A $-$bA + aB
+\end{flushleft}
+
+
+=
+
+
+0
+
+
+1
+
+
+0
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+and it is thus the linear map
+\end{flushleft}
+
+
+\begin{flushleft}
+A
+\end{flushleft}
+
+
+1 0
+
+
+$\rightarrow$
+
+
+\begin{flushleft}
+B
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$b a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+B
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+11
+
+
+
+
+
+\begin{flushleft}
+It follows that
+\end{flushleft}
+
+
+1 0 $-$1
+
+
+\begin{flushleft}
+| = a$-$1 .
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$b a
+\end{flushleft}
+
+
+\begin{flushleft}
+One can check directly with a change of variable that indeed
+\end{flushleft}
+
+
+\begin{flushleft}
+da
+\end{flushleft}
+
+
+\begin{flushleft}
+da
+\end{flushleft}
+
+
+\begin{flushleft}
+f ((a, b)($\alpha$, $\beta$)) 2 db = $\alpha$
+\end{flushleft}
+
+
+\begin{flushleft}
+f ((a, b)) 2 db.
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+R+ ×R
+\end{flushleft}
+
+
+\begin{flushleft}
+R+ ×R
+\end{flushleft}
+
+
+\begin{flushleft}
+∆(a, b) = | det
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+1.3. Representation theory. Let H1 and H2 be two Hilbert spaces and suppose
+\end{flushleft}
+
+
+\begin{flushleft}
+that T : H1 $\rightarrow$ H2 is linear and bounded, that is T $\in$ B(H1 , H2 ). Recall that T is
+\end{flushleft}
+
+
+\begin{flushleft}
+an isometry if T u = u for every u $\in$ H1 . Since T u 2 = T u, T u = T ∗ T u, u
+\end{flushleft}
+
+
+\begin{flushleft}
+e u 2 = u, u , the polarition identity implies that T is an isometry if and only if
+\end{flushleft}
+
+
+\begin{flushleft}
+T ∗ T = idH1 . Hence, isometries are injective, but they are not necessarily surjective. A
+\end{flushleft}
+
+
+\begin{flushleft}
+bijective isometry is called a unitary map. If T is unitary, such is also T $-$1 and in this
+\end{flushleft}
+
+
+\begin{flushleft}
+case T T ∗ = idH2 . In particular if H1 = H2 = H, the set
+\end{flushleft}
+
+
+\begin{flushleft}
+U(H) = T $\in$ B(H) : T is unitary
+\end{flushleft}
+
+
+\begin{flushleft}
+forms a group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Let now G be a Lie2 group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.22. A unitary representation of G on the Hilbert space H is a group
+\end{flushleft}
+
+
+\begin{flushleft}
+homomorphism $\pi$ : G $\rightarrow$ U(H) continuous in the strong operator topology. This means:
+\end{flushleft}
+
+
+\begin{flushleft}
+i) $\pi$(gh) = $\pi$(g)$\pi$(h) for every g, h $\in$ G;
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) $\pi$(g $-$1 ) = $\pi$(g)$-$1 = $\pi$(g)∗ for every g $\in$ G;
+\end{flushleft}
+
+
+\begin{flushleft}
+iii) g $\rightarrow$ $\pi$(g)u is continuous from G to H, for every u $\in$ H.
+\end{flushleft}
+
+
+\begin{flushleft}
+Observe that from the equality $\pi$(g)u $-$ $\pi$(h)u = $\pi$(hg $-$1 )u $-$ u it follows that it
+\end{flushleft}
+
+
+\begin{flushleft}
+is enough to check iii) for g = e, the identity of G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Examples. 1. Let G = R be additive group and H = C. For every s $\in$ R we
+\end{flushleft}
+
+
+\begin{flushleft}
+deﬁne the function $\chi$s (t) = eits and we identify the complex number eits with the
+\end{flushleft}
+
+
+\begin{flushleft}
+multiplication operator on C deﬁned by z $\rightarrow$ zeits . Clearly, $\chi$s : R $\rightarrow$ U(C) is a
+\end{flushleft}
+
+
+\begin{flushleft}
+unitary representation, because
+\end{flushleft}
+
+
+\begin{flushleft}
+$\chi$s (x + y) = $\chi$s (x)$\chi$s (y)
+\end{flushleft}
+
+
+\begin{flushleft}
+$\chi$s ($-$x) = $\chi$s (x)$-$1 = $\chi$s ($-$x)
+\end{flushleft}
+
+
+\begin{flushleft}
+t $\rightarrow$ eits z is continuous for every z $\in$ C.
+\end{flushleft}
+
+
+\begin{flushleft}
+2. Let G be any locally compact group and choose H = L2 (G). Deﬁne
+\end{flushleft}
+
+
+(1.12)
+
+
+
+
+
+\begin{flushleft}
+L : G $\rightarrow$ U(H),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g $\rightarrow$ Lx ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Lx f (y) = f (x$-$1 y).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It is easy to check that this is a unitary representation, the so-called left regular representation.
+\end{flushleft}
+
+
+\begin{flushleft}
+2In
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+all what follows, it would suﬃce to consider a locally compact Hausdorﬀ topological group.
+\end{flushleft}
+
+
+
+
+
+\newpage
+12
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+3. Let G be the {``}ax + b'' group and H = L2 (R). Deﬁne
+\end{flushleft}
+
+
+(1.13)
+
+
+
+
+
+1
+
+
+\begin{flushleft}
+$\pi$(a, b)f (x) = $\surd$ f
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x$-$b
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+,
+
+
+
+
+
+\begin{flushleft}
+the so-called wavelet representation. Notice that it is just the composition of the two
+\end{flushleft}
+
+
+\begin{flushleft}
+very important and basic unitary maps
+\end{flushleft}
+
+
+(1.14)
+
+
+(1.15)
+
+
+
+
+
+\begin{flushleft}
+Tb f (x) = f (x $-$ b)
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+x
+\end{flushleft}
+
+
+\begin{flushleft}
+Da f (x) = $\surd$ f
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(translation operator)
+\end{flushleft}
+
+
+\begin{flushleft}
+(dilation operator)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+for indeed
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+Tb Da f (x) = Tb (Da f )(x) = Da f (x $-$ b) = $\surd$ f
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x$-$b
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+.
+
+
+
+
+
+\begin{flushleft}
+Observe that
+\end{flushleft}
+
+
+\begin{flushleft}
+Tb Tb = Tb+b ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Da Da = Daa .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It is important to observe that Tb Da = Da Tb . More precisely,
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+x
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+x
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+Da Tb f (x) = $\surd$ (Tb f )
+\end{flushleft}
+
+
+\begin{flushleft}
+=$\surd$ f
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$b = $\surd$ f
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x $-$ ab
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= Tab Da f (x).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+In other words
+\end{flushleft}
+
+
+\begin{flushleft}
+Da Tb = Tab Da .
+\end{flushleft}
+
+
+\begin{flushleft}
+It follows that
+\end{flushleft}
+
+
+\begin{flushleft}
+(T$\beta$ D$\alpha$ )(Tb Da ) = T$\beta$ (D$\alpha$ Tb )Da = T$\beta$ (T$\alpha$b Da )Da = (T$\beta$ T$\alpha$b )(Da Da ) = T$\beta$+$\alpha$b D$\alpha$a .
+\end{flushleft}
+
+
+\begin{flushleft}
+so that $\pi$ is a homomorphism:
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$($\alpha$, $\beta$)$\pi$(a, b) = $\pi$($\alpha$a, $\beta$ + $\alpha$b) = $\pi$(($\alpha$, $\beta$)(a, b)).
+\end{flushleft}
+
+
+\begin{flushleft}
+Finally, it is instructive to check the strong continuity, which is left as an exercise.
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.23. Sia M $\subset$ H un sottospazio chiuso dello spazio di Hilbert H. Diremo
+\end{flushleft}
+
+
+\begin{flushleft}
+che M ` un sottospazio invariante per la rappresentazione unitaria $\pi$ : G $\rightarrow$ U(H) se
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(g)M $\subset$ M per ogni g $\in$ G. Diremo che $\pi$ ` irriducibile se H non contiene sottospazi
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+invarianti propri non banali, cio` diversi da \{0\}.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Esercizio. Provare che se M ` un sottospazio invariante per $\pi$ tale ` anche M $\perp$ e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+che $\pi$ = $\pi$M $\oplus$ $\pi$M $\perp$ , dove $\pi$M ` la restrizione di $\pi$ ad M e similmente per M $\perp$ .
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.24. Siano $\pi$i : G $\rightarrow$ U(Hi ), i = 1, 2 due rappresentazioni unitarie di G.
+\end{flushleft}
+
+
+\begin{flushleft}
+Esse sono dette equivalenti se esiste un operatore unitario U : H1 $\rightarrow$ H2 tale che
+\end{flushleft}
+
+
+(1.16)
+
+
+
+
+
+\begin{flushleft}
+$\pi$2 (g) ◦ U = U ◦ $\pi$1 (g),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+per ogni g $\in$ G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+In questo caso U si chiama un operatore di intrallacciamento tra $\pi$1 e $\pi$2 . L'insieme
+\end{flushleft}
+
+
+\begin{flushleft}
+di tutti gli operatori di intrallacciamento tra $\pi$1 e $\pi$2 si denoter` I($\pi$1 , $\pi$2 ), Se $\pi$1 =
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$2 = $\pi$ , scriveremo I($\pi$, $\pi$) = I($\pi$),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+13
+
+
+
+
+
+\begin{flushleft}
+Esercizi. 1) Sia L la rappresentazione di R su L2 (R) deﬁnita mediante Lx f (y) =
+\end{flushleft}
+
+
+\begin{flushleft}
+f (y $-$ x). Esibire un operatore unitario su L2 (R) che intrallaccia R ed L.
+\end{flushleft}
+
+
+\begin{flushleft}
+2) Sia M $\subset$ H chiuso, P la proiezione orogonale su M . Provare che M ` $\pi$ --
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+invariante se e solo se P $\in$ I($\pi$).
+\end{flushleft}
+
+
+\begin{flushleft}
+Il prossimo risultato ` di cruciale importanza in teoria delle rappresentazioni. Per
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+una dimostrazione si veda, ad esempio [F2].
+\end{flushleft}
+
+
+\begin{flushleft}
+Lemma 1.25. (di Schur.) i) Una rappresentazione unitaria di G ` irriducibile se e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+solo se I($\pi$) contiene solo multipli scalari dell'identit`.
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) Siano $\pi$1 e $\pi$2 due rappresentazioni irriducibili e unitarie di G. Se esse sono
+\end{flushleft}
+
+
+\begin{flushleft}
+equivalenti I($\pi$1 , $\pi$2 ) ha dimensione uno, altrimenti I($\pi$1 , $\pi$2 ) = \{0\}.
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.26. Sia $\pi$ una rappresentazione unitaria di G su H e siano $\xi$, $\eta$ $\in$ H.
+\end{flushleft}
+
+
+\begin{flushleft}
+La funzione sul gruppo g $\rightarrow$ $\pi$(g)$\xi$, $\eta$ $\in$ C si chiama il coeﬃciente di $\pi$ relativo a
+\end{flushleft}
+
+
+\begin{flushleft}
+($\xi$, $\eta$). Se $\xi$ = $\eta$ , esso si dice un coeﬃciente diagonale. Si osservi che i coeﬃcienti
+\end{flushleft}
+
+
+\begin{flushleft}
+sono funzioni continue e che | $\pi$(g)$\xi$, $\eta$ | $\leq$ $\xi$ $\eta$ .
+\end{flushleft}
+
+
+\begin{flushleft}
+Esercizio. Provare che se $\pi$1 e $\pi$2 sono equivalenti, esse hanno gli stessi coeﬃcienti.
+\end{flushleft}
+
+
+\begin{flushleft}
+Viceversa, siano $\pi$1 e $\pi$2 irriducibili e si supponga che esse abbiano gli stessi coeﬃcienti
+\end{flushleft}
+
+
+\begin{flushleft}
+diagonali non--nulli. Si provi che allora $\pi$1 e $\pi$2 sono equivalenti.
+\end{flushleft}
+
+
+\begin{flushleft}
+[Traccia: si considerino $\xi$1 e $\xi$2 tali che $\pi$1 (g)$\xi$1 , $\xi$1 = $\pi$2 (g)$\xi$2 , $\xi$2 = 0 per ogni
+\end{flushleft}
+
+
+\begin{flushleft}
+g $\in$ G e si deﬁnisca U sugli elementi del tipo $\xi$ = k $\alpha$j $\pi$1 (xj )$\xi$1 mediante la formula
+\end{flushleft}
+
+
+\begin{flushleft}
+j=1
+\end{flushleft}
+
+
+\begin{flushleft}
+k
+\end{flushleft}
+
+
+\begin{flushleft}
+U $\xi$ = j=1 $\alpha$j $\pi$2 (xj )$\xi$2 .]
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+1.4. Unbounded operators. Stone's Theorem and C $\infty$ -vectors. In questo paragrafo H sar` uno spazio di Hilbert ﬁssato. Diremo che T ` un operatore su H se T `
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+una mappa lineare deﬁnita su un dominio D(T ) $\subset$ H con immagine R(T ) $\subset$ H. Non
+\end{flushleft}
+
+
+\begin{flushleft}
+si assume dunque che T sia limitato o continuo. Naturalmente, se T ` continuo allora
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+esso ha una estensione continua sulla chiusura di D(T ) e quindi su H; in altre parole,
+\end{flushleft}
+
+
+\begin{flushleft}
+in questo caso T ` la restrizione a D(T ) di un qualche T $\in$ B(H). Il graﬁco di T
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+in H × H verr` denotato G(T ). Si osservi che S ` una estensione di T se e solo se
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+G(T ) $\subset$ G(S), cosicch`, in questo caso, scriveremo T $\subset$ S . Un operatore si dir` chiuso
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+se tale ` il suo graﬁco. Il teorema del graﬁco chiuso dice semplicemente che T $\in$ B(H)
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+se e solo se D(T ) = H e T ` un operatore chiuso.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Vogliamo ora deﬁnire l'aggiunto hilbertiano di T , che denoteremo T ∗ . Il suo dominio
+\end{flushleft}
+
+
+\begin{flushleft}
+D(T ∗ ) sar` costituito da tutti i vettori y $\in$ H per i quali il funzionale lineare
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+(1.17)
+
+
+
+
+
+\begin{flushleft}
+x $\rightarrow$ T x, y
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+` continuo su D(T ). Se quindi y $\in$ D(T ∗ ), il teorema di Hahn--Banach ci consente
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+di estendere il funzionale 1.17 ad un funzionale lineare continuo su tutto H e quindi
+\end{flushleft}
+
+
+\begin{flushleft}
+esiste un elemento, denotato T ∗ y per il quale risulta
+\end{flushleft}
+
+
+(1.18)
+
+
+
+
+
+\begin{flushleft}
+T x, y = x, T ∗ y ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x $\in$ D(T ).
+\end{flushleft}
+
+
+
+
+
+\newpage
+14
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+E' evidente che T ∗ y ` individuato univocamente da 1.18 se e solo se D(T ) ` denso in
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+∗
+
+
+\begin{flushleft}
+H. Deﬁniremo quindi T solo per gli operatori T densamente deﬁniti in H.
+\end{flushleft}
+
+
+\begin{flushleft}
+Esercizi.
+\end{flushleft}
+
+
+\begin{flushleft}
+1. Provare che se T ` un operatore densamente deﬁnito, allora T ∗ ` un operatore
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+∗
+
+
+\begin{flushleft}
+su H. Provare inoltre che se T $\in$ B(H), allora la deﬁnizione di T coincide con la
+\end{flushleft}
+
+
+\begin{flushleft}
+deﬁnizione usuale e che, in particolare, D(T ∗ ) = H e T ∗ $\in$ B(H).
+\end{flushleft}
+
+
+\begin{flushleft}
+2. Siano R, S e T operatori su H. Provare le seguenti relazioni.
+\end{flushleft}
+
+
+\begin{flushleft}
+D(S + T ) = D(S) $\cap$ D(T );
+\end{flushleft}
+
+
+\begin{flushleft}
+D(ST ) = x $\in$ D(T ) : T x $\in$ D(S) ;
+\end{flushleft}
+
+
+\begin{flushleft}
+(R + S) + T = R + (S + T );
+\end{flushleft}
+
+
+\begin{flushleft}
+(RS)T = R(ST );
+\end{flushleft}
+
+
+\begin{flushleft}
+(R + S)T = RT + ST ;
+\end{flushleft}
+
+
+\begin{flushleft}
+T R + T S $\subset$ T (R + S).
+\end{flushleft}
+
+
+\begin{flushleft}
+3. Siano S , T e ST operatori densamente deﬁniti su H. Provare che allora T ∗ S ∗ $\subset$
+\end{flushleft}
+
+
+\begin{flushleft}
+(ST )∗ . Se inoltre S $\in$ B(H), allora T ∗ S ∗ = (ST )∗ .
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.27. Un operatore su H si dice simmetrico se
+\end{flushleft}
+
+
+(1.19)
+
+
+
+
+
+\begin{flushleft}
+T x, y = x, T y
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+per ogni x $\in$ D(T ) ed y $\in$ D(T ). Gli operatori simmetrici densamente deﬁniti sono
+\end{flushleft}
+
+
+\begin{flushleft}
+quindi quelli per cui
+\end{flushleft}
+
+
+\begin{flushleft}
+T $\subset$ T∗
+\end{flushleft}
+
+
+
+
+
+(1.20)
+
+
+
+
+
+\begin{flushleft}
+Se T = T ∗ , allora T si dice autoaggiunto (selfadjoint).
+\end{flushleft}
+
+
+\begin{flushleft}
+autoaggiunto (skewadjoint) se iT ` autoaggiunto.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Si dice che T ` anti--
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Si osservi che un operatore limitato ` simmetrico se e solo se ` autoaggiunto. In
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+generale questo non ` vero. Si osservi inoltre che se D(T ) ` denso e T x, y = x, Sy
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+per ogni x $\in$ D(T ) ed ogni y $\in$ D(S) allora S $\subset$ T ∗ .
+\end{flushleft}
+
+
+\begin{flushleft}
+Esempio. Sia H = L2 ([0, 1]) con la misura di Lebesgue, e siano
+\end{flushleft}
+
+
+\begin{flushleft}
+D(T1 ) = f $\in$ A.C.[0, 1] : f $\in$ L2 ;
+\end{flushleft}
+
+
+\begin{flushleft}
+D(T2 ) = D(T1 ) $\cap$ f : f (0) = f (1) ;
+\end{flushleft}
+
+
+\begin{flushleft}
+D(T3 ) = D(T1 ) $\cap$ f : f (0) = f (1) = 0 ;
+\end{flushleft}
+
+
+\begin{flushleft}
+siano poi
+\end{flushleft}
+
+
+\begin{flushleft}
+Tk f = if ,
+\end{flushleft}
+
+
+\begin{flushleft}
+f $\in$ D(Tk ), k = 1, 2, 3.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proveremo ora che
+\end{flushleft}
+
+
+∗
+
+
+\begin{flushleft}
+T1 = T3 ,
+\end{flushleft}
+
+
+
+
+
+∗
+
+
+\begin{flushleft}
+T2 = T2 ,
+\end{flushleft}
+
+
+
+
+
+∗
+
+
+\begin{flushleft}
+T3 = T1 .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Siccome evidentemente T3 $\subset$ T2 $\subset$ T1 , ne risulta che T2 ` una estensione autoaggiunta
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+dell'operatore T3 che ` simmetrico (ma non autoaggiunto) e che l'estensione T1 di T2
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+non ` simmetrica.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+15
+
+
+
+
+
+\begin{flushleft}
+Innanzitutto ` necessario provare che i tre domini in questione sono densi in L2 , il
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+che ` lasciato per esercizio. Notiamo poi che se f $\in$ D(Tk ) e g $\in$ D(Tm ) con m + k = 4
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+(cio` (k, m) $\in$ \{(1, 3), (2, 2), (3, 1)\}), Allora f (1)¯(1) = f (0)¯(0), cosicch´
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+g
+\end{flushleft}
+
+
+\begin{flushleft}
+g
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+1
+
+
+
+
+
+1
+
+
+
+
+
+\begin{flushleft}
+(if )¯ =
+\end{flushleft}
+
+
+\begin{flushleft}
+g
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Tk f, g =
+\end{flushleft}
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+f (ig ) = f, Tm g .
+\end{flushleft}
+
+
+0
+
+
+
+
+
+∗
+
+
+\begin{flushleft}
+Ne segue che Tm $\subset$ Tk , ovvero
+\end{flushleft}
+
+
+∗
+
+
+\begin{flushleft}
+T1 $\subset$ T3 ,
+\end{flushleft}
+
+
+
+
+
+∗
+
+
+\begin{flushleft}
+T2 $\subset$ T2 ,
+\end{flushleft}
+
+
+
+
+
+∗
+
+
+\begin{flushleft}
+T3 $\subset$ T1 .
+\end{flushleft}
+
+
+
+
+
+∗
+
+
+∗
+
+
+\begin{flushleft}
+Sia ora g $\in$ D(Tk ) e sia $\phi$ = Tk g . Poniamo $\Phi$(x) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x
+\end{flushleft}
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+$\phi$. Allora, per f $\in$ D(Tk ) si ha:
+\end{flushleft}
+
+
+
+
+
+1
+
+
+
+
+
+1
+
+
+
+
+
+¯
+
+
+\begin{flushleft}
+f $\Phi$.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(if )¯ = Tk f, g = f, $\phi$ = f (1)$\Phi$(1) $-$
+\end{flushleft}
+
+
+\begin{flushleft}
+g
+\end{flushleft}
+
+
+
+
+
+(1.21)
+
+
+0
+
+
+
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+Ora, se k = 1, 2, il corrispondente dominio contiene le f costanti; siccome 1.21 deve
+\end{flushleft}
+
+
+\begin{flushleft}
+valere anche per le costanti non nulle, ne risulta $\Phi$(1) = 0. Se invece k = 3 allora
+\end{flushleft}
+
+
+\begin{flushleft}
+f (1) = 0. Quindi in ogni caso
+\end{flushleft}
+
+
+(1.22)
+
+
+
+
+
+\begin{flushleft}
+ig $-$ $\Phi$ $\in$ R(Tk )$\perp$ .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Sia ora k = 1. Siccome R(Tk ) = L2 , ig = $\Phi$ cosicch´ g(0) = $-$i$\Phi$(0) = 0 = $-$i$\Phi$(1) =
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+∗
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+g(1) e g $\in$ D(T3 ). Perci` T1 $\subset$ T3 . Se invece k = 2, 3 allora R(Tk ) ` costituito dalle
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+1
+
+
+2
+
+
+\begin{flushleft}
+u $\in$ L tali che 0 u = 0 e possiamo scrivere
+\end{flushleft}
+
+
+(1.23)
+
+
+
+
+
+\begin{flushleft}
+R(T2 ) = R(T3 ) = Y $\perp$ ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+dove Y ` il sottospazio uno--dimensionale di L2 delle costanti. Ma allora 1.22 implica
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+che ig $-$ $\Phi$ ` costante, il che ` equivalente ad aﬀermare che g ` assolutamente continua
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+ed ha derivata in L2 . In altre parole g $\in$ D(T1 ). Perci` T3 $\subset$ T1 . Inﬁne, se k = 2 allora
+\end{flushleft}
+
+
+\begin{flushleft}
+o ∗
+\end{flushleft}
+
+
+∗
+
+
+\begin{flushleft}
+$\Phi$(1) = 0 e g(0) = g(1), cio` g $\in$ D(T2 ) e T2 $\subset$ T2 . Questo conclude la dimostrazione
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+delle aﬀermazioni fatte.
+\end{flushleft}
+
+
+\begin{flushleft}
+Sulla scorta dell'esempio precedente, possiamo descrivere un altro fenomeno che
+\end{flushleft}
+
+
+\begin{flushleft}
+rivedremo sul gruppo di Heisenberg. Se infatti H ` ancora L2 [0, 1] come sopra, T f = f
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+su D(T2 ) e M f (t) = tf (t), allora ` immediato veriﬁcare che (DM $-$ M D)f = f , ossia
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+(1.24)
+
+
+
+
+
+\begin{flushleft}
+DM $-$ M D = I,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+dove I ` l'identit` sul dominio di D . In altre parole, l'operatore identit` appare come
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+il commutatore di due operatori uno solo dei quali ` limitato. Ci si pu` porre la doe
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+manda se sia possibile realizzare una analoga identit` con due operatori limitati, una
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+domanda naturale in meccanica quantistica. La risposta ` negativa non solo nell'algebra
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+di Banach B(H) ma in ogni algebra di Banach con identit`. La dimostrazione partia
+\end{flushleft}
+
+
+\begin{flushleft}
+colarmente elegante del teorema che segue ` dovuta a Wielandt.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.28. Sia A un'algebra di Banach con identit` e. Se x, y $\in$ A allora
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+xy $-$ yx = e
+\end{flushleft}
+
+
+
+
+
+\newpage
+16
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Proof. Supponiamo che xy $-$ yx = e e facciamo l'ipotesi induttiva
+\end{flushleft}
+
+
+\begin{flushleft}
+xn y $-$ yxn = nxn$-$1 ,
+\end{flushleft}
+
+
+\begin{flushleft}
+veriﬁcata per n = 1. Risulta allora
+\end{flushleft}
+
+
+\begin{flushleft}
+xn+1 y $-$ yxn+1 = xn (xy $-$ yx) + (xn y $-$ yxn )x
+\end{flushleft}
+
+
+\begin{flushleft}
+= xn e + nxn$-$1 x
+\end{flushleft}
+
+
+\begin{flushleft}
+= (n + 1)xn ,
+\end{flushleft}
+
+
+\begin{flushleft}
+cosicch´ la relazione ` vera per ogni n. Ne segue che
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+n xn$-$1 = xn y $-$ yxn $\leq$ 2 xn
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+y $\leq$ 2 xn$-$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x y ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+cio` n $\leq$ 2 x y per ogni n. Questo ` impossibile.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.29. Un gruppo ad un parametro di operatori su H ` una famiglia \{Ut :
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+t $\in$ R\} $\subset$ B(H) che soddisfa
+\end{flushleft}
+
+
+\begin{flushleft}
+i) U0 = I ;
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) Ut+s = Ut Us ;
+\end{flushleft}
+
+
+\begin{flushleft}
+iii) limt$\rightarrow$0 Ut x $-$ x = 0 per ogni x $\in$ H
+\end{flushleft}
+
+
+\begin{flushleft}
+Si osservi che se $\pi$ ` una rappresentazione su H di un gruppo di Lie G con algebra
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+di Lie g, allora per ogni ﬁssato X $\in$ g la famiglia \{Ut = $\pi$(exp tX) : t $\in$ R\} costituisce
+\end{flushleft}
+
+
+\begin{flushleft}
+un gruppo ad un parametro di operatori su H. Se inoltre $\pi$ ` unitaria, allora i gruppi
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+ad un parametro sono gruppi di operatori unitari.
+\end{flushleft}
+
+
+\begin{flushleft}
+In analogia con il caso H = C in cui ogni funzione continua f che soddisﬁ f (s + t) =
+\end{flushleft}
+
+
+\begin{flushleft}
+f (s)f (t) ` della forma f (t) = eat con a = f (0), ad ogni gruppo ad un parametro si
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+associa un operatore, in genere illimitato, come precisato dalla deﬁnizione che segue.
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.30. Sia \{Ut : t $\in$ R\} un gruppo ad un parametro di operatori su H e
+\end{flushleft}
+
+
+\begin{flushleft}
+sia D(A) il sottospazio di H costituito dai vettori x per i quali
+\end{flushleft}
+
+
+(1.25)
+
+
+
+
+
+\begin{flushleft}
+Ut x $-$ x
+\end{flushleft}
+
+
+\begin{flushleft}
+= Ax
+\end{flushleft}
+
+
+\begin{flushleft}
+t$\rightarrow$0
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+lim
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+esiste nella topologia della norma in H. L'operatore A (necessariamente lineare)
+\end{flushleft}
+
+
+\begin{flushleft}
+deﬁnito su D(A) mediante 1.25 si chiama il generatore inﬁnitesimale del gruppo.
+\end{flushleft}
+
+
+\begin{flushleft}
+Diamo adesso l'enunciato del classico teorema di M.H. Stone. Per la dimostrazione
+\end{flushleft}
+
+
+\begin{flushleft}
+si veda, ad esempio [R].
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.31. (di Stone) Sia \{Ut \} un gruppo ad un parametro di operatori unitari
+\end{flushleft}
+
+
+\begin{flushleft}
+su H. Il generatore inﬁnitesimale A di \{Ut \} ` densamente deﬁnito su H ed ` anti--
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+autoaggiunto. Viceversa, se A ` un operatore densamente deﬁnito su H ed anti--
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+autoaggiunto, allora esiste un unico gruppo ad un parametro di operatori unitari su H
+\end{flushleft}
+
+
+\begin{flushleft}
+il cui generatore inﬁnitesimale ` A.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representations of Lie groups
+\end{flushleft}
+
+
+
+
+
+17
+
+
+
+
+
+\begin{flushleft}
+Ritorniamo al caso in cui H sia lo spazio della rappresentazione $\pi$ di un gruppo di
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie G. Mediante 1.25 possiamo deﬁnire il diﬀerenziale d$\pi$ su g. In altre parole
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(exp tX)x $-$ x
+\end{flushleft}
+
+
+\begin{flushleft}
+t$\rightarrow$0
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+(1.26)
+
+
+
+
+
+\begin{flushleft}
+d$\pi$(X)x = lim
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+che alle volte riscriveremo
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(exp tX)x.
+\end{flushleft}
+
+
+\begin{flushleft}
+dt t=0
+\end{flushleft}
+
+
+\begin{flushleft}
+Il nostro prossimo obiettivo consiste nel provare che d$\pi$ deﬁnisce una rappresentazione
+\end{flushleft}
+
+
+\begin{flushleft}
+di g, ossia nel provare che i vari operatori d$\pi$(X) possono essere composti e soddisfano
+\end{flushleft}
+
+
+\begin{flushleft}
+d$\pi$([X, Y ]) = d$\pi$(X) ◦ d$\pi$(Y ) $-$ d$\pi$(Y ) ◦ d$\pi$(X). Si tratta in altre parole di studiare i
+\end{flushleft}
+
+
+\begin{flushleft}
+vari domini D(d$\pi$(X)).
+\end{flushleft}
+
+
+
+
+
+(1.27)
+
+
+
+
+
+\begin{flushleft}
+d$\pi$(X)x =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Ricordiamo che una funzione f deﬁnita su un sottonisieme aperto Ω $\in$ Rd a valori
+\end{flushleft}
+
+
+\begin{flushleft}
+in uno spazio vettoriale topologico V (di dimensione arbitraria) si dice diﬀerenziabile
+\end{flushleft}
+
+
+\begin{flushleft}
+in x0 $\in$ Ω se esiste una mappa lineare -- necessariamente unica -- dfx0 : Rd $\rightarrow$ V tale
+\end{flushleft}
+
+
+\begin{flushleft}
+che
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x) $-$ f (x0 ) $-$ dfx0 (x $-$ x0 )
+\end{flushleft}
+
+
+\begin{flushleft}
+lim
+\end{flushleft}
+
+
+= 0,
+
+
+\begin{flushleft}
+x$\rightarrow$x0
+\end{flushleft}
+
+
+\begin{flushleft}
+x $-$ x0
+\end{flushleft}
+
+
+\begin{flushleft}
+dove ·
+\end{flushleft}
+
+
+\begin{flushleft}
+f in x0 .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+` una norma qualunque in Rd . La mappa dfx0 si chiama il diﬀerenziale di
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Se f ` diﬀerenziabile in ogni punto di Ω, allora x $\rightarrow$ dfx ` una mappa da Ω a valori
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+in End(R , V ), che ` uno spazio vettoriale topologico in modo canonico. Diremo allora
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+che f ` di classe C 1 se x $\rightarrow$ dfx ` continua, di classe C 2 se x $\rightarrow$ dfx ` di classe C 1 , e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+$\infty$
+
+
+\begin{flushleft}
+k
+\end{flushleft}
+
+
+\begin{flushleft}
+cos´ via. Diremo inﬁne che f ` di classe C se ` di classe C per ogni k .
+\end{flushleft}
+
+
+\begin{flushleft}
+\i{}
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+Come nel caso di funzioni a valori in uno spazio ﬁnito--dimensionale, si pu` provare
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+che
+\end{flushleft}
+
+
+\begin{flushleft}
+i) f ` di classe C k se e solo se tutte le sue derivate parziali ﬁno all'ordine k
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+esistono e sono continue;
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) la regola di derivazione di funzioni composte vale per una composizione del tipo
+\end{flushleft}
+
+
+\begin{flushleft}
+f ◦ h dove ` una mappa diﬀerenziabile deﬁnita su un sottoinsieme aperto di uno
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+spazio euclideo a valori in Ω.
+\end{flushleft}
+
+
+\begin{flushleft}
+La nozione di mappa C $\infty$ ` dunque locale in natura e si applica al caso di mappe da
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+un gruppo di Lie G a valori in uno spazio di Hilbert H. Enunciamo in particolare un
+\end{flushleft}
+
+
+\begin{flushleft}
+risultato che costituisce l'analogo della formula 1.5 per funzioni su un gruppo di Lie a
+\end{flushleft}
+
+
+\begin{flushleft}
+valori in uno spazio di Hilbert.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.32. Sia G un gruppo di Lie con algebra di Lie g e sia X $\in$ g. Se
+\end{flushleft}
+
+
+\begin{flushleft}
+F : G $\rightarrow$ H ` una mappa C $\infty$ a valori in uno spazio di Hilbert, allora la mappa
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+(1.28)
+
+
+
+
+
+\begin{flushleft}
+F (g exp tX) $-$ F (g)
+\end{flushleft}
+
+
+\begin{flushleft}
+t$\rightarrow$0
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g $\rightarrow$ Xg F = lim
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+` anch'essa di classe C $\infty$ .
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\newpage
+18
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Proof. La composta (g, t) $\rightarrow$ (g, exp tX) $\rightarrow$ g exp tX $\rightarrow$ F (g exp tX) ` di classe
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+C . Quindi, in virt` della i) vista sopra, la sua derivata parziale rispetto a t in zero
+\end{flushleft}
+
+
+\begin{flushleft}
+u
+\end{flushleft}
+
+
+\begin{flushleft}
+` di classe C $\infty$ rispetto a g .
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+$\infty$
+
+
+
+
+
+\begin{flushleft}
+Introduciamo ﬁnalmente lo spazio naturale su cui sono deﬁniti gli operatori che
+\end{flushleft}
+
+
+\begin{flushleft}
+provengono dal diﬀerenziale di una rappresentazione di un gruppo di Lie.
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 1.33. Sia $\pi$ : G $\rightarrow$ B(H) una rappresentazione del gruppo di Lie G. Un
+\end{flushleft}
+
+
+\begin{flushleft}
+elemento $\xi$ $\in$ H si chiama vettore C $\infty$ se g $\rightarrow$ $\pi$(g)$\xi$ ` di classe C $\infty$ su G. Lo spazio
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+$\infty$
+
+
+$\infty$
+
+
+\begin{flushleft}
+dei vettori C verr` denotato con C ($\pi$).
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.34. Sia $\pi$ : G $\rightarrow$ B(H) una rappresentazione del gruppo di Lie G. Per
+\end{flushleft}
+
+
+\begin{flushleft}
+ogni X $\in$ g, d$\pi$(X) manda C $\infty$ ($\pi$) in se' e
+\end{flushleft}
+
+
+(1.29)
+
+
+
+
+
+\begin{flushleft}
+d$\pi$([X, Y ])$\xi$ = d$\pi$(X) ◦ d$\pi$(Y ) $-$ d$\pi$(Y ) ◦ d$\pi$(X) $\xi$,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\xi$ $\in$ C $\infty$ ($\pi$).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Lasciamo come esercizio la non diﬃcile dimostrazione della seguente proposizione:
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 1.35. Sia $\pi$ una rappresentazione unitaria del gruppo di Lie G sullo
+\end{flushleft}
+
+
+\begin{flushleft}
+spazio di Hilbert H, e sia g l'algebra di Lie di G. Allora:
+\end{flushleft}
+
+
+\begin{flushleft}
+i) per ogni X $\in$ g, d$\pi$(X) ` anti--autoaggiunto su C $\infty$ ($\pi$);
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) per ogni g $\in$ G, $\pi$(g) manda C $\infty$ ($\pi$) in se';
+\end{flushleft}
+
+
+\begin{flushleft}
+iii) per ogni g $\in$ G ed ogni X $\in$ g si ha $\pi$(g)d$\pi$(X)$\pi$(g)$-$1 = d$\pi$(Ad gX).
+\end{flushleft}
+
+
+\begin{flushleft}
+Concludiamo questo capitolo con un risultato che implica che gli operatori d$\pi$(X)
+\end{flushleft}
+
+
+\begin{flushleft}
+sono densamente deﬁniti su H. Alla luce del Teorema di Stone, questo fatto ` di
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+notevole importanza. Per la dimostrazione si veda ad esempio [K2]
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 1.36. Sia $\pi$ una rappresentazione unitaria del gruppo di Lie G sullo spazio
+\end{flushleft}
+
+
+\begin{flushleft}
+di Hilbert H. Lo spazio C $\infty$ ($\pi$) ` denso in H.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Heisenberg group
+\end{flushleft}
+
+
+
+
+
+19
+
+
+
+
+
+\begin{flushleft}
+2. The Heisenberg group and its representations
+\end{flushleft}
+
+
+\begin{flushleft}
+2.1. The group and its Lie algebra. We shall denote by Hd the Heisenberg group,
+\end{flushleft}
+
+
+\begin{flushleft}
+namely the smooth diﬀerentiable manifold Rd × Rd × R endowed with the product
+\end{flushleft}
+
+
+(2.30)
+
+
+
+
+
+\begin{flushleft}
+((q, p, t)(q , p , t ) = (q + q , p + p , t + t $-$ 1 ( tqp $-$ tpq)).
+\end{flushleft}
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+Let $\omega$ : R2d × R2d $\rightarrow$ R be the standard symplectic form
+\end{flushleft}
+
+
+(2.31)
+
+
+
+
+
+\begin{flushleft}
+$\omega$(x, x ) = txJx,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+J=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+0 Id
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+$-$Id 0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Upon writing x = x(q,p) = t [q, p] $\in$ R2d , we may formulate (2.30) in terms of the
+\end{flushleft}
+
+
+\begin{flushleft}
+symplectic form, namely:
+\end{flushleft}
+
+
+1
+
+
+(2.32)
+
+
+\begin{flushleft}
+((x, t)(x , t ) = (x + x , t + t $-$ $\omega$(x, x )).
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+It is clear from (2.30) and (2.32) that the product in Hd is given by functions that are
+\end{flushleft}
+
+
+\begin{flushleft}
+C $\infty$ in the global R2d+1 coordinates (q, p, t). Furthermore, one checks at once that
+\end{flushleft}
+
+
+\begin{flushleft}
+(x, t)$-$1 = ($-$x, $-$t),
+\end{flushleft}
+
+
+\begin{flushleft}
+another C $\infty$ formula. Hence Hd is a Lie group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercises. 1) Prove that the center of Hd is Z = \{(0, t) : t $\in$ R\}.
+\end{flushleft}
+
+
+\begin{flushleft}
+2) Write explicitely the inner conjugation ig (h) = ghg $-$1 .
+\end{flushleft}
+
+
+\begin{flushleft}
+3) Prove that L1 = \{(q, 0, t) : q $\in$ Rd , t $\in$ R\} and L2 = \{(0, p, t) : p $\in$ Rd , t $\in$ R\}
+\end{flushleft}
+
+
+\begin{flushleft}
+are two Lie subgroups of Hd which are mutually isomorphic but not conjugate.
+\end{flushleft}
+
+
+\begin{flushleft}
+We next want to identify the Lie algebra hd of Hd in terms of left invariant vector
+\end{flushleft}
+
+
+\begin{flushleft}
+ﬁelds. To this end, ﬁx (q, p, t) $\in$ Hd and f $\in$ C $\infty$ (Hd ) and consider the smooth curve
+\end{flushleft}
+
+
+\begin{flushleft}
+qj (s) = (sej , 0, 0), with s $\in$ ($-$$\epsilon$, $\epsilon$), where ej denotes the j --th unit coordinate vector
+\end{flushleft}
+
+
+\begin{flushleft}
+in Rd . Then
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+f ((q, p, t)(sej , 0, 0) =
+\end{flushleft}
+
+
+\begin{flushleft}
+f (q + sej , p, t + spj )
+\end{flushleft}
+
+
+\begin{flushleft}
+ds s=0
+\end{flushleft}
+
+
+\begin{flushleft}
+ds s=0
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+$\partial$f
+\end{flushleft}
+
+
+\begin{flushleft}
+1 $\partial$f
+\end{flushleft}
+
+
+=
+
+
+\begin{flushleft}
+(q, p, t) + pj (q, p, t).
+\end{flushleft}
+
+
+\begin{flushleft}
+$\partial$qj
+\end{flushleft}
+
+
+\begin{flushleft}
+2 $\partial$t
+\end{flushleft}
+
+
+\begin{flushleft}
+An analogous calculation with the curves pj (s) = (0, sej , 0) and t(s) = (0, 0, s) shows
+\end{flushleft}
+
+
+\begin{flushleft}
+that a basis for hd is given by the vector ﬁelds \{Q1 , . . . , Qd , P1 , . . . , Pd , T \}, where
+\end{flushleft}
+
+
+$\partial$
+
+
+1 $\partial$
+
+
+\begin{flushleft}
+Qj =
+\end{flushleft}
+
+
+\begin{flushleft}
++ pj ,
+\end{flushleft}
+
+
+\begin{flushleft}
+j = 1, . . . , d
+\end{flushleft}
+
+
+\begin{flushleft}
+$\partial$qj 2 $\partial$t
+\end{flushleft}
+
+
+$\partial$
+
+
+1 $\partial$
+
+
+\begin{flushleft}
+Pj =
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$ qj ,
+\end{flushleft}
+
+
+\begin{flushleft}
+j = 1, . . . , d
+\end{flushleft}
+
+
+\begin{flushleft}
+$\partial$pj
+\end{flushleft}
+
+
+\begin{flushleft}
+2 $\partial$t
+\end{flushleft}
+
+
+$\partial$
+
+
+\begin{flushleft}
+T = .
+\end{flushleft}
+
+
+\begin{flushleft}
+$\partial$t
+\end{flushleft}
+
+
+\begin{flushleft}
+A straightforward computation shows that
+\end{flushleft}
+
+
+\begin{flushleft}
+[Qj , Pk ] = $-$$\delta$jk T,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+j, k = 1, . . . , d
+\end{flushleft}
+
+
+
+
+
+\newpage
+20
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+[Qj , T ] = [Pj , T ] = 0,
+\end{flushleft}
+
+
+\begin{flushleft}
+j = 1, . . . , d
+\end{flushleft}
+
+
+\begin{flushleft}
+the celebrated Heisenberg commutation relations. Therefore, identifying R2d+1 with
+\end{flushleft}
+
+
+\begin{flushleft}
+hd via the map (x1 , . . . , xd , y1 , . . . , yd , z) $\rightarrow$ d (xj Qj + yj Pj ) + zT , we obtain the
+\end{flushleft}
+
+
+\begin{flushleft}
+j=1
+\end{flushleft}
+
+
+\begin{flushleft}
+following Lie algebra structure on R2d+1 :
+\end{flushleft}
+
+
+(2.33)
+
+
+
+
+
+\begin{flushleft}
+[(X, z), (X , z )] = (0, $-$$\omega$(X, X )).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+From this commutator rule, one sees immediately that [A, [B, C]] = 0 for every choice
+\end{flushleft}
+
+
+\begin{flushleft}
+of A, B and C in hd . Similarly, any higher order bracket vanishes. This fact can
+\end{flushleft}
+
+
+\begin{flushleft}
+be expressed technically by saying that hd is a two-step nilpotent Lie algebra. The
+\end{flushleft}
+
+
+\begin{flushleft}
+Baker--Campbell--Hausdorﬀ formula becomes A, B $\in$ hd
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+exp A exp B = exp(A + B + [A, B])
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+and since for A = (X, z) and B = (X , z ) it holds
+\end{flushleft}
+
+
+1
+
+
+1
+
+
+\begin{flushleft}
+A + B + [A, B] = (X + X , z + z $-$ $\omega$(X, X )),
+\end{flushleft}
+
+
+2
+
+
+2
+
+
+\begin{flushleft}
+which coincides with the product (2.32), we infer that
+\end{flushleft}
+
+
+(2.34)
+
+
+
+
+
+\begin{flushleft}
+exp(X, z) = (X, z)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+for every (X, z) $\in$ R2d+1 .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+This simply says that the exponential mapping is nothing else but the identity map of
+\end{flushleft}
+
+
+\begin{flushleft}
+R2d+1 , when we identify the latter with hd on the one hand and with Hd on the other
+\end{flushleft}
+
+
+\begin{flushleft}
+hand.
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise 4) Prove that the adjoint action of Hd on hd is given by
+\end{flushleft}
+
+
+(2.35)
+
+
+
+
+
+\begin{flushleft}
+Ad(y, s)(X, t) = (X, t $-$ $\omega$(y, X)).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A diﬀerent presentation. Given (q, p, t) $\in$ R2d+1 , write
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+0 p 1 p2 . . . p d t
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+0
+
+
+\begin{flushleft}
+q1 
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+. .
+\end{flushleft}
+
+
+..
+
+
+\begin{flushleft}
+.
+\end{flushleft}
+
+
+\begin{flushleft}
+m(q, p, t) = 
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+.
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+q 
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+Observe that
+\end{flushleft}
+
+
+\begin{flushleft}
+i) m(q, p, t)m(q , p , t ) = m(0, 0, tpq );
+\end{flushleft}
+
+
+\begin{flushleft}
+ii) [m(q, p, t), m(q , p , t )] = m(0, 0, $-$$\omega$(x(q,p) , x(q ,p ) )).
+\end{flushleft}
+
+
+\begin{flushleft}
+From i) it follows that m(q, p, t)2 = m(0, 0, tpq) and m(q, p, t)3 = 0, so that, in
+\end{flushleft}
+
+
+\begin{flushleft}
+particular
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+1 p1 p2 . . . pn t + 2 ( tpq)
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+q1
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+m(q,p,t)
+\end{flushleft}
+
+
+..
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+.
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+=
+\end{flushleft}
+
+
+.
+
+
+.
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+q
+\end{flushleft}
+
+
+\begin{flushleft}
+n
+\end{flushleft}
+
+
+
+
+
+1
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Heisenberg group
+\end{flushleft}
+
+
+
+
+
+21
+
+
+
+
+
+\begin{flushleft}
+Thus, if we set
+\end{flushleft}
+
+
+\begin{flushleft}
+M (q, p, t) = In + m(q, p, t),
+\end{flushleft}
+
+
+\begin{flushleft}
+then
+\end{flushleft}
+
+
+
+
+
+1
+
+
+\begin{flushleft}
+em(q,p,t) = M (q, p, t + ( tpq)).
+\end{flushleft}
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+It is also easy to see that
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+exp m(q, p, t) exp m(q, p, t) = exp m(q + q , p + p , t + t $-$ $\omega$(x(q,p) , x(q ,p ) )).
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+Therefore, the map
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+$\Phi$ : R2d+1 $\rightarrow$ GL(d + 2, R), (q, p, t) $\rightarrow$ M (q, p, t + ( tpq))
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+deﬁnes an isomorphism of Hd onto the closed subgroup of GL(d + 2, R), denoted Hd ,
+\end{flushleft}
+
+
+\begin{flushleft}
+and consisting of the matrices
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+1 a1 a2 . . . a d c
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+b1 
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+. .
+\end{flushleft}
+
+
+\begin{flushleft}
+m(q,p,t)
+\end{flushleft}
+
+
+..
+
+
+\begin{flushleft}
+.
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+=
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+.
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+bd 
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+Notice also that, by means of ii),
+\end{flushleft}
+
+
+\begin{flushleft}
+hd = \{m(q, p, t) : (q, p, t) $\in$ R2n+1 \} $\subset$ gl(n + 2, R)
+\end{flushleft}
+
+
+\begin{flushleft}
+is a Lie algebra isomorphic to hd . One has to be careful because in this setting the
+\end{flushleft}
+
+
+\begin{flushleft}
+exponential mapping is no longer the identity map of matrices, rather the usual matrix
+\end{flushleft}
+
+
+\begin{flushleft}
+exponential.
+\end{flushleft}
+
+
+\begin{flushleft}
+The picture discussed so far can be summarized in the following diagram:
+\end{flushleft}
+
+
+\begin{flushleft}
+hd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+m(·)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+R2d+1 $-$$\rightarrow$ hd $\subset$ gl(d + 2, R)
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\begin{flushleft}
+ exp(·)=e(·)
+\end{flushleft}
+
+
+\begin{flushleft}
+exp(·)=id(·) 
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Hd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\Phi$
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+R2d+1 $-$$\rightarrow$ Hd $\subset$ GL(d + 2, R)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Automorphisms. Given a Lie group G with Lie algebra g it is often interesting
+\end{flushleft}
+
+
+\begin{flushleft}
+(and many times diﬃcult) to understand their automorphism groups. An automorphism of the Lie group G is an invertible group homomorphism. Unravelling this
+\end{flushleft}
+
+
+\begin{flushleft}
+deﬁnition, this means a bijective smooth map ϕ : G $\rightarrow$ G preserving products, namely
+\end{flushleft}
+
+
+\begin{flushleft}
+satisfying ϕ(xy) = ϕ(x)ϕ(y) and ϕ(e) = e. The collection of all such maps is, in
+\end{flushleft}
+
+
+\begin{flushleft}
+turn, a group under composition, denoted Aut(G). Under favorable circumstances3,
+\end{flushleft}
+
+
+\begin{flushleft}
+and surely this is the case for Hd , the group Aut(G) has itself a natural structure of
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie group, though we shall not insist on this. Notice that since we have identiﬁed Hd
+\end{flushleft}
+
+
+\begin{flushleft}
+with R2d+1 , we are in fact looking at maps ϕ : R2d+1 $\rightarrow$ R2d+1 .
+\end{flushleft}
+
+
+\begin{flushleft}
+3As
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+it was shown by Hochschild in 1951, it is enough that the group of components of G is ﬁnitely
+\end{flushleft}
+
+
+\begin{flushleft}
+generated.
+\end{flushleft}
+
+
+
+
+
+\newpage
+22
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Similarly, one may consider the automorphisms of g, namely the bijective linear
+\end{flushleft}
+
+
+\begin{flushleft}
+maps $\Phi$ : g $\rightarrow$ g satisfying $\Phi$([X, Y ]) = [$\Phi$(X), $\Phi$(Y )]. Again, under composition they
+\end{flushleft}
+
+
+\begin{flushleft}
+form a group, denoted by Aut(g). Since its elements are linear maps, Aut(g) is in fact
+\end{flushleft}
+
+
+\begin{flushleft}
+a (closed) subgroup of GL(d, R) in a natural fashion, where d is the dimension of g.
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence Aut(g) can be given the structure of a Lie group without problems. Also, the
+\end{flushleft}
+
+
+\begin{flushleft}
+diﬀerential dϕ of any ϕ $\in$ Aut(G) is easily seen to belong to Aut(g). This accounts for
+\end{flushleft}
+
+
+\begin{flushleft}
+an immersion of Aut(G) into Aut(g) whenever G is connected. When looking at the
+\end{flushleft}
+
+
+\begin{flushleft}
+Heisenberg group, things are even nicer, this, and the following results show exactly
+\end{flushleft}
+
+
+\begin{flushleft}
+how. The proofs and arguments below are from [F2].
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 2.1. Aut(Hd ) = Aut(hd ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Proof. Under our identiﬁcations, the group and algebra operations are related by:
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+X · Y = X + Y + [X, Y ].
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+Take now $\alpha$ $\in$ Aut(hd ). Then
+\end{flushleft}
+
+
+1
+
+
+1
+
+
+\begin{flushleft}
+$\alpha$(X + Y + [X, Y ]) = $\alpha$(X) + $\alpha$(Y ) + [$\alpha$(X), $\alpha$(Y )] = $\alpha$(X) · $\alpha$(Y )
+\end{flushleft}
+
+
+2
+
+
+2
+
+
+\begin{flushleft}
+shows that $\alpha$ $\in$ Aut(Hd ). Conversely, let $\alpha$ $\in$ Aut(Hd ) and take X, Y $\in$ hd such that
+\end{flushleft}
+
+
+\begin{flushleft}
+[X, Y ] = 0. Then
+\end{flushleft}
+
+
+\begin{flushleft}
+$\alpha$(X + Y ) = $\alpha$(X · Y )
+\end{flushleft}
+
+
+\begin{flushleft}
+= $\alpha$(X) · $\alpha$(Y )
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+= $\alpha$(X) + $\alpha$(Y ) + [$\alpha$(X), $\alpha$(Y )]
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+= $\alpha$(Y · X)
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+= $\alpha$(X) + $\alpha$(Y ) + [$\alpha$(Y ), $\alpha$(X)],
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+so that necessarily [$\alpha$(Y ), $\alpha$(X)] = 0 and therefore $\alpha$(X + Y ) = $\alpha$(X) + $\alpha$(Y ). In
+\end{flushleft}
+
+
+\begin{flushleft}
+particular, $\alpha$ is additive on one-dimensional subspaces and is continuous; hence it
+\end{flushleft}
+
+
+\begin{flushleft}
+commutes with scalar multiplication4. Therefore, if X, Y $\in$ R2n+1 and s $\in$ R
+\end{flushleft}
+
+
+\begin{flushleft}
+s2
+\end{flushleft}
+
+
+\begin{flushleft}
+s
+\end{flushleft}
+
+
+\begin{flushleft}
+s$\alpha$(X + Y + [X, Y ]) = $\alpha$(sX + sY + [X, Y ])
+\end{flushleft}
+
+
+2
+
+
+2
+
+
+\begin{flushleft}
+= $\alpha$(sX · sY )
+\end{flushleft}
+
+
+\begin{flushleft}
+= s$\alpha$(X) s$\alpha$(Y )
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+= s$\alpha$(X) + s$\alpha$(Y ) + s2 [$\alpha$(X), $\alpha$(Y )]
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+If we divide by s and let s $\rightarrow$ 0, we get that $\alpha$ is additive on the whole of R2d+1 ,
+\end{flushleft}
+
+
+\begin{flushleft}
+namely that it is linear. The last equality with s = 1 yields $\alpha$([X, Y ]) = [$\alpha$(X), $\alpha$(Y )],
+\end{flushleft}
+
+
+\begin{flushleft}
+that is $\alpha$ $\in$ Aut(hd ), as desired.
+\end{flushleft}
+
+
+\begin{flushleft}
+4Show
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+this!
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Heisenberg group
+\end{flushleft}
+
+
+
+
+
+23
+
+
+
+
+
+\begin{flushleft}
+It is actually possible to give an explicit description of the automorphisms of Hd . It
+\end{flushleft}
+
+
+\begin{flushleft}
+is immediate to see that each of the following families of maps are automorphisms:
+\end{flushleft}
+
+
+\begin{flushleft}
+(i) Symplectic maps: For any X $\in$ Sp(d, R), (
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+q
+\end{flushleft}
+
+
+\begin{flushleft}
+q
+\end{flushleft}
+
+
+\begin{flushleft}
+, t) $\rightarrow$ (X
+\end{flushleft}
+
+
+\begin{flushleft}
+, t).
+\end{flushleft}
+
+
+\begin{flushleft}
+p
+\end{flushleft}
+
+
+\begin{flushleft}
+p
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(ii) Inner automorphisms.
+\end{flushleft}
+
+
+\begin{flushleft}
+(iii) Homogeneous dilations: For any r $\in$ R+ , $\delta$r (x, t) = (rx, r2 t). Observe that
+\end{flushleft}
+
+
+\begin{flushleft}
+for any r, s $>$ 0 it holds $\delta$r $\delta$s = $\delta$rs .
+\end{flushleft}
+
+
+\begin{flushleft}
+(iv) Inversion: (q, p, y) $\rightarrow$ (p, q, $-$t).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+We shall momentarily denote by Gj the automorphism group generated by the
+\end{flushleft}
+
+
+\begin{flushleft}
+trasformations of type j , with j $\in$ \{(i), (ii), (iii), (iv)\}.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 2.2. Every automorphism of Hd can be written uniquely as $\alpha$1 $\alpha$2 $\alpha$3 $\alpha$4 , with
+\end{flushleft}
+
+
+\begin{flushleft}
+$\alpha$j $\in$ Gj .
+\end{flushleft}
+
+
+\begin{flushleft}
+Proof. If $\alpha$ $\in$ Aut(Hd ), then $\alpha$ preserves the center. Since $\alpha$ is linear by Proposition 2.1, it must be
+\end{flushleft}
+
+
+\begin{flushleft}
+$\alpha$(q, p, t) = (T (q, p), st + taq + tbp)
+\end{flushleft}
+
+
+\begin{flushleft}
+with T $\in$ GL(d, R), a, b $\in$ Rd , s $\in$ R \ensuremath{\backslash} \{0\}. Composing $\alpha$ with the inversion if
+\end{flushleft}
+
+
+\begin{flushleft}
+necessary, we may assume s $>$ 0 and composing then with the dilation $\delta$s1/2 , we may
+\end{flushleft}
+
+
+\begin{flushleft}
+assume s = 1. Finally, composing with a suitable inner automorphism, we infer that
+\end{flushleft}
+
+
+\begin{flushleft}
+$\alpha$ is of the type $\alpha$(q, p, t) = (T (q, p), t) with T $\in$ GL(d, R). In order that this map is
+\end{flushleft}
+
+
+\begin{flushleft}
+an automorsphism, it is necessary (and suﬃcient) that T $\in$ Sp(d, R).
+\end{flushleft}
+
+
+\begin{flushleft}
+It is very important to observe that the only automorphisms that leave the center
+\end{flushleft}
+
+
+\begin{flushleft}
+ﬁxed are precisely those of the kind (i) e (ii). We shall denote by T the group
+\end{flushleft}
+
+
+\begin{flushleft}
+generated by them.
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise 5) Deﬁne the semidirect product R2d
+\end{flushleft}
+
+
+\begin{flushleft}
+endowed with the product
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Sp(d, R) as the set R2d × Sp(d, R)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(x, A)(x , A ) = (x + Ax , AA ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Show that the map (x, A) $\rightarrow$ $\Psi$(x,A) , where
+\end{flushleft}
+
+
+\begin{flushleft}
+$\Psi$(x,A) (y, t) = i(x,0) (Ay, t),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(x, 0), (y, t) $\in$ Hd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+deﬁnes an isomorphism of R2d Sp(d, R) with T . Deﬁne further the semidirect product
+\end{flushleft}
+
+
+\begin{flushleft}
+Hd Sp(d, R) via the formula
+\end{flushleft}
+
+
+\begin{flushleft}
+((x, t); A)((x, t); A) = ((x, t)(Ax , t ); AA).
+\end{flushleft}
+
+
+\begin{flushleft}
+Calculate its center Z and prove that Hd Sp(d, R)/Z is isomorphic to R2d Sp(d, R).
+\end{flushleft}
+
+
+
+
+
+\newpage
+24
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+2.2. The Schr¨dinger representation. Let $\pi$ be a unitary and irreducible repreo
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+sentation of H on the Hilbert space H. Then all the operators $\pi$(0, 0, t) are in I($\pi$)
+\end{flushleft}
+
+
+\begin{flushleft}
+because the center of Hd consists of the elements of the form (0, 0, t). But then Schur's
+\end{flushleft}
+
+
+\begin{flushleft}
+Lemma implies that there exists a complex number of modulus one, denoted $\chi$(t), such
+\end{flushleft}
+
+
+\begin{flushleft}
+that
+\end{flushleft}
+
+
+(2.36)
+
+
+
+
+
+\begin{flushleft}
+$\pi$(0, 0, t) = $\chi$(t)IH .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Hence t $\rightarrow$ $\chi$(t) is a continuous function from R into T that satisﬁes the equality
+\end{flushleft}
+
+
+\begin{flushleft}
+$\chi$(s + t) = $\chi$(s)$\chi$(t). Therefore there exists a unique $\lambda$ $\in$ R such that
+\end{flushleft}
+
+
+(2.37)
+
+
+
+
+
+\begin{flushleft}
+$\chi$(t) = ei$\lambda$t .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Now, if $\lambda$ = 0, then $\pi$(0, 0, t) = IH , so that Z $\subset$ ker $\pi$ and the representaion $\pi$ projects
+\end{flushleft}
+
+
+\begin{flushleft}
+onto a representation $\pi$ on the quotient Hd /Z
+\end{flushleft}
+
+
+˜
+
+
+\begin{flushleft}
+R2d . The representation $\pi$ is still
+\end{flushleft}
+
+
+˜
+
+
+\begin{flushleft}
+2d
+\end{flushleft}
+
+
+\begin{flushleft}
+unitary and irreducible. But R is abelian and hence all the operators $\pi$ (x, y), with
+\end{flushleft}
+
+
+˜
+
+
+\begin{flushleft}
+(x, y) $\in$ R2d commute with each other and therefore belong to I($\pi$). But then they are
+\end{flushleft}
+
+
+\begin{flushleft}
+multiples of the identity on H and every one-dimensional subspace of H is a proper
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$ --invariant subspace. Since $\pi$ is irreducible, necessarily dim H = 1, namely H = C.
+\end{flushleft}
+
+
+˜
+
+
+˜
+
+
+\begin{flushleft}
+Therefore, there exists a unique vector ($\xi$, $\eta$) $\in$ R2d such that
+\end{flushleft}
+
+
+(2.38)
+
+
+
+
+
+\begin{flushleft}
+$\pi$ (x, y) = ei($\xi$·x+$\eta$·y) IC .
+\end{flushleft}
+
+
+˜
+
+
+
+
+
+\begin{flushleft}
+Consider ﬁrst the case $\lambda$ = 0. From (2.36) e (2.37), taking the diﬀerential, it follows
+\end{flushleft}
+
+
+(2.39)
+
+
+
+
+
+\begin{flushleft}
+d$\pi$(T ) = i$\lambda$IH .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+In particular d$\pi$(T ) is a bounded operator. But we also know that for every j = 1, . . . , d
+\end{flushleft}
+
+
+\begin{flushleft}
+it holds [Qj , Pj ] = $-$T , so that it must be
+\end{flushleft}
+
+
+\begin{flushleft}
+[d$\pi$(Qj ), d$\pi$(Pj )] = $-$d$\pi$(T ) = $-$i$\lambda$IH .
+\end{flushleft}
+
+
+\begin{flushleft}
+By modifying Theorem 1.28 in the case of a multiple of the identity (the detatils are
+\end{flushleft}
+
+
+\begin{flushleft}
+left as an exercise) we see that the operators d$\pi$(Qj ) and d$\pi$(Pj ) cannot be both
+\end{flushleft}
+
+
+\begin{flushleft}
+bounded and, in particular, the representation space H cannot be ﬁnite dimensional.
+\end{flushleft}
+
+
+\begin{flushleft}
+In conclusion, every unitary and irreducible representation of Hd which is not trivial
+\end{flushleft}
+
+
+\begin{flushleft}
+on the center is necessarily inﬁnite dimensional.
+\end{flushleft}
+
+
+\begin{flushleft}
+The next step consists in looking for the unitary and irreducible representations of
+\end{flushleft}
+
+
+\begin{flushleft}
+Hd that are not trivial on the center. The most natural way to go about it is to
+\end{flushleft}
+
+
+\begin{flushleft}
+compare the commutation Heisenberg relations with (1.24). We shall start from a very
+\end{flushleft}
+
+
+\begin{flushleft}
+natural representation of the Lie algebra hd and then use some heuristics, together
+\end{flushleft}
+
+
+\begin{flushleft}
+with Stone's Theorem, in order to get the corresponding representation of the group.
+\end{flushleft}
+
+
+\begin{flushleft}
+To this end, we introduce a useful Lie subalgebra of the Lie algebra of all diﬀerential
+\end{flushleft}
+
+
+\begin{flushleft}
+operators with polynomial coeﬃcients on Rd .
+\end{flushleft}
+
+
+\begin{flushleft}
+Let PD(Rd ) denote the vector space of all diﬀerential operators with polynomial
+\end{flushleft}
+
+
+\begin{flushleft}
+coeﬃcients on Rd . Under composition, it is an associative algebra generated by the 2d
+\end{flushleft}
+
+
+\begin{flushleft}
+elements
+\end{flushleft}
+
+
+$\partial$
+
+
+\begin{flushleft}
+Dj = $-$
+\end{flushleft}
+
+
+\begin{flushleft}
+, Mj = (2$\pi$i)xj , j = 1, . . . , d.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\partial$xj
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Heisenberg group
+\end{flushleft}
+
+
+
+
+
+25
+
+
+
+
+
+\begin{flushleft}
+As any other associative algebra, PD(Rd ) becomes a Lie algebra if we deﬁne the bracket
+\end{flushleft}
+
+
+\begin{flushleft}
+as the commutator, that is [A, B] = A ◦ B $-$ B ◦ A. The generators Dj and Mj ,
+\end{flushleft}
+
+
+\begin{flushleft}
+together with the operator {``}2$\pi$i--times the identity, give rise to a ﬁnite dimensional
+\end{flushleft}
+
+
+\begin{flushleft}
+Lie subalgebra of PD(Rd ) which is isomorphic to hd . Indeed, the correspondence
+\end{flushleft}
+
+
+\begin{flushleft}
+Dj $\rightarrow$ Qj , Mj $\rightarrow$ Pj and (2$\pi$i)I $\rightarrow$ T establishes the isomorphism. This isomorphism
+\end{flushleft}
+
+
+\begin{flushleft}
+is actually a faithful (i.e. injective) representation of the Heisenberg algebra and should
+\end{flushleft}
+
+
+\begin{flushleft}
+be thought of as the diﬀerential of the representation we are looking for. In order to
+\end{flushleft}
+
+
+\begin{flushleft}
+ﬁnd the representation space, it will then be enough to ﬁnd a Hilbert space of functions
+\end{flushleft}
+
+
+\begin{flushleft}
+on Rd on which the operators we are dealing with are skew-adjoint. Finally, we shall
+\end{flushleft}
+
+
+\begin{flushleft}
+exponentiate the representation of hd .
+\end{flushleft}
+
+
+\begin{flushleft}
+Let H = L2 (Rd ) and D = S(Rd ), the Schwartz space of rapidly decreasing functions.
+\end{flushleft}
+
+
+\begin{flushleft}
+Both the derivations Dj and the multiplications Mj are densely deﬁned on H since
+\end{flushleft}
+
+
+\begin{flushleft}
+D is a natural common domain for them, which is dense in H. The operators are
+\end{flushleft}
+
+
+\begin{flushleft}
+formally skew-adjoint because for every ϕ, $\psi$ $\in$ S(Rd ) we have
+\end{flushleft}
+
+
+\begin{flushleft}
+Mj ϕ, $\psi$ = $-$ ϕ, Mj $\psi$ ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Dj ϕ, $\psi$ = $-$ ϕ, Dj $\psi$ ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+where we are using L2 inner products and, in the second, integration by parts.
+\end{flushleft}
+
+
+\begin{flushleft}
+Observe that in order to deﬁne representations on the Heisenberg group it is not
+\end{flushleft}
+
+
+\begin{flushleft}
+necessary to specify the skew-adjoint extensions of Mj and of Dj . It will be suﬃcient
+\end{flushleft}
+
+
+\begin{flushleft}
+to exhibit one-parameter groups of unitary operators on L2 (Rd ) whose inﬁnitesimal
+\end{flushleft}
+
+
+\begin{flushleft}
+generators extend our operators, for Stone's Theorem guarantees that these groups are
+\end{flushleft}
+
+
+\begin{flushleft}
+the appropriate ones. Consider then the following formal computation:
+\end{flushleft}
+
+
+$\infty$
+
+
+
+
+
+\begin{flushleft}
+exp(tDj )f (x) =
+\end{flushleft}
+
+
+\begin{flushleft}
+n=0
+\end{flushleft}
+
+
+$\infty$
+
+
+
+
+
+=
+
+
+\begin{flushleft}
+n=0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(tDj )n
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x)
+\end{flushleft}
+
+
+\begin{flushleft}
+n!
+\end{flushleft}
+
+
+\begin{flushleft}
+($-$t)n $\partial$ n f
+\end{flushleft}
+
+
+\begin{flushleft}
+(x)
+\end{flushleft}
+
+
+\begin{flushleft}
+n! $\partial$xn
+\end{flushleft}
+
+
+\begin{flushleft}
+j
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= f (x $-$ tej ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Similarly,
+\end{flushleft}
+
+
+\begin{flushleft}
+exp(tMj )f (x) = e2$\pi$ixj f (x).
+\end{flushleft}
+
+
+\begin{flushleft}
+It is also quite clear that the operators
+\end{flushleft}
+
+
+\begin{flushleft}
+(j)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Ut f (x) = f (x $-$ tej ),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(j)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Vt f (x) = e2$\pi$itxj f (x)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+give rise to one-parameter groups of unitary operators on L2 (Rd ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise 6) Prove that the Schwartz space S(Rd ) is contained in the domain of the
+\end{flushleft}
+
+
+\begin{flushleft}
+(j)
+\end{flushleft}
+
+
+\begin{flushleft}
+(j)
+\end{flushleft}
+
+
+\begin{flushleft}
+inﬁnitesimal generators of \{Ut \} and \{Vt \}.
+\end{flushleft}
+
+
+\begin{flushleft}
+From the previous computations, it is natural to set:
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(q, 0, 0)f (x) = f (x $-$ q)
+\end{flushleft}
+
+
+(2.40)
+
+
+
+
+
+\begin{flushleft}
+$\pi$(0, p, 0)f (x) = e2$\pi$ip·x f (x)
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(0, 0, t)f (x) = e2$\pi$it f (x).
+\end{flushleft}
+
+
+
+
+
+\newpage
+26
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Finally, since for every (q, p, t) $\in$ Hd we have
+\end{flushleft}
+
+
+1
+
+
+\begin{flushleft}
+(q, p, t) = (0, 0, t $-$ q · p)(0, p, 0)(q, 0, 0),
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+by composing the various (2.40) we obtain
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(q, p, t)f (x) = e2$\pi$it e$-$$\pi$iq·p e2$\pi$ip·x f (x $-$ q).
+\end{flushleft}
+
+
+
+
+
+(2.41)
+
+
+
+
+
+\begin{flushleft}
+It is now elementary to check that (2.41) deﬁnes a representation of Hd , called the
+\end{flushleft}
+
+
+\begin{flushleft}
+Schr¨dinger representation. While it is clear that the thus deﬁned operators are unitary
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+because they are compositions of unitary operators, irreducibility requires some extra
+\end{flushleft}
+
+
+\begin{flushleft}
+work. We shal use the Fourier transform F , deﬁnita on L1 (Rd ) $\cap$ L2 (Rd ) by
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x)e$-$2$\pi$ix·$\xi$ dx.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Ff ($\xi$) =
+\end{flushleft}
+
+
+
+
+
+(2.42)
+
+
+
+
+
+\begin{flushleft}
+Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Theorem 2.3. Formula (2.41) deﬁnes a unitary irreducible representation of Hd on
+\end{flushleft}
+
+
+\begin{flushleft}
+L2 (Rd ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Proof. In order to show that $\pi$ is continuous in the strong operator topology it is
+\end{flushleft}
+
+
+\begin{flushleft}
+enough to prove that if (q, p, t) $\rightarrow$ (0, 0, 0), then $\pi$(q, p, t)f $\rightarrow$ f in L2 (Rd ) for every
+\end{flushleft}
+
+
+\begin{flushleft}
+f $\in$ L2 (Rd ). Now,
+\end{flushleft}
+
+
+\begin{flushleft}
+|$\pi$(q, p, t)f (x) $-$ f (x)|2 dx
+\end{flushleft}
+
+
+
+
+
+1/2
+
+
+
+
+
+\begin{flushleft}
+|e2$\pi$it$-$$\pi$iq·p+2$\pi$ip·x f (x $-$ q) $-$ f (x)|2 dx
+\end{flushleft}
+
+
+
+
+
+=
+
+
+
+
+
+\begin{flushleft}
+Rd
+\end{flushleft}
+
+
+
+
+
+1
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|e2$\pi$it$-$$\pi$iq·p+2$\pi$ip·x $-$ 1|2 |f (x)|2 dx
+\end{flushleft}
+
+
+
+
+
+$\leq$
+
+
+
+
+
+1
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|f (x $-$ q) $-$ f (x)|2 dx
+\end{flushleft}
+
+
+
+
+
++
+
+
+
+
+
+1
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+and both summands tend to zero as (q, p, t) $\rightarrow$ (0, 0, 0).
+\end{flushleft}
+
+
+\begin{flushleft}
+Let's show irreducibility. Take a closed subspace V $\subseteq$ L2 (Rd ) and suppose that it is
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$ --invariant. If f $\in$ V , then the translate $\tau$q f = $\pi$(q, 0, 0)f in also in V . If P is the
+\end{flushleft}
+
+
+\begin{flushleft}
+orthogonal projection onto V , then P commutes with translations. Hence there exists
+\end{flushleft}
+
+
+\begin{flushleft}
+a multiplier m $\in$ L$\infty$ (Rd ) such that
+\end{flushleft}
+
+
+(2.43)
+
+
+
+
+
+\begin{flushleft}
+F(P f )($\xi$) = m($\xi$)Ff ($\xi$).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Since P 2 = P , then also m2 = m. Upon considering $\pi$(0, p, 0), one sees that P
+\end{flushleft}
+
+
+\begin{flushleft}
+commutes also with multiplication by any of the characters ep (x) = e2$\pi$ip·x . Therefore,
+\end{flushleft}
+
+
+\begin{flushleft}
+from (2.43) we infer
+\end{flushleft}
+
+
+\begin{flushleft}
+F[P (ep f )]($\xi$) = m($\xi$)F[ep f ]($\xi$) = m($\xi$)Ff ($\xi$ $-$ p),
+\end{flushleft}
+
+
+\begin{flushleft}
+F[ep P f ]($\xi$) = F[P f ]($\xi$ $-$ p) = m($\xi$ $-$ p)Ff ($\xi$ $-$ p),
+\end{flushleft}
+
+
+\begin{flushleft}
+which yield
+\end{flushleft}
+
+
+\begin{flushleft}
+m($\xi$) = m($\xi$ $-$ p),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+for every p $\in$ Rd .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Hence m is constant and since m2 = m it must be either m = 0, that is V = \{0\}, or
+\end{flushleft}
+
+
+\begin{flushleft}
+else m = 1, that is V = L2 (Rd ).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Heisenberg group
+\end{flushleft}
+
+
+
+
+
+27
+
+
+
+
+
+\begin{flushleft}
+By means of formulae (2.41), we have build a unitary and irreducible representation
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$ of Hd for which $\pi$(0, 0, t) = e2$\pi$it IH , that is, recalling (2.36) and (2.37), the representation corresponding to the case $\lambda$ = 2$\pi$ . It is now easy to deﬁne a representation
+\end{flushleft}
+
+
+\begin{flushleft}
+corresponding to the real number $\lambda$ = 2$\pi$h, with h $\in$ R \ensuremath{\backslash} \{0\}. It is enough to put
+\end{flushleft}
+
+
+(2.44)
+
+
+
+
+
+\begin{flushleft}
+$\pi$h (q, p, t)f (x) = $\pi$(hq, p, ht)f (x) = e2$\pi$iht e$-$$\pi$iq·hp e2$\pi$ip·x f (x $-$ hq).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The non zero real number h that labels the Schr¨dinger representation $\pi$h is known
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+as Planck's constant. For comments concerning the physical meaning of h see [F2].
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise 7) Check that $\pi$h is a unitary and irreducible representation of Hd for every
+\end{flushleft}
+
+
+\begin{flushleft}
+h = 0, and that if h = h , then the corresponding representations are inequivalent.
+\end{flushleft}
+
+
+\begin{flushleft}
+The following celebrated theorem by Stone and von Neumann is of fundamental
+\end{flushleft}
+
+
+\begin{flushleft}
+importance in harmonic analysis: it states that the representations that we have built
+\end{flushleft}
+
+
+\begin{flushleft}
+so far exhaust, up to equivalence, the class of unitary and irreducible representation of
+\end{flushleft}
+
+
+\begin{flushleft}
+Hd . For a proof, see, for example, [F2].
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 2.4. (Stone--von Neumann) Every unitary and irreducible representation of Hd is unitarily equivalent to either one of the one--dimensional representations
+\end{flushleft}
+
+
+\begin{flushleft}
+(2.38), or to a Schr¨dinger representation $\pi$h deﬁned in (2.44).
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+It is worth observing that the determination of the Planck's constant is very simple:
+\end{flushleft}
+
+
+\begin{flushleft}
+just compute the representation on the central elements (0, 0, t): by (2.44) this must
+\end{flushleft}
+
+
+\begin{flushleft}
+be just e2$\pi$ht I .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+2.3. Time-frequency analysis. In this section we indicate the basic role that the
+\end{flushleft}
+
+
+\begin{flushleft}
+representation theory of the Heisenberg group plays in time-frequency analysis, in
+\end{flushleft}
+
+
+\begin{flushleft}
+particular in the deﬁnition and study of the so-called short-time Fourier transform
+\end{flushleft}
+
+
+\begin{flushleft}
+(often abbreviated in STFT). The basic reference on this topic is the book [Gro] by
+\end{flushleft}
+
+
+\begin{flushleft}
+K. Gr¨chenig.
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+The most basic operations in time-frequency analysis are the shifts in time and in
+\end{flushleft}
+
+
+\begin{flushleft}
+frequency. For x, $\omega$ $\in$ Rd and f $\in$ L2 (Rd ), we deﬁne the time shift by
+\end{flushleft}
+
+
+\begin{flushleft}
+Tx f (t) = f (t $-$ x),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x, t $\in$ Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+and the frequency shift by
+\end{flushleft}
+
+
+\begin{flushleft}
+M$\omega$ f ($\xi$) = e2$\pi$i$\omega$·$\xi$ f ($\xi$),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\xi$, $\omega$ $\in$ Rd .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It should be quite clear that there is no need to assume f $\in$ L2 (Rd ) in order for formulae
+\end{flushleft}
+
+
+\begin{flushleft}
+(2.3) and (2.3) to make sense, but this is just to ﬁx some function space to work with.
+\end{flushleft}
+
+
+\begin{flushleft}
+It is a matter of simple computation to establish a diﬀerent, but very closely related,
+\end{flushleft}
+
+
+\begin{flushleft}
+version of the canonical commutaion relations, namely
+\end{flushleft}
+
+
+(2.45)
+
+
+
+
+
+\begin{flushleft}
+Tx M$\omega$ = e$-$2$\pi$ix·$\omega$ M$\omega$ Tx .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It follows in particular that Tx and M$\omega$ commute if and only if x · $\omega$ $\in$ Z. Furthermore,
+\end{flushleft}
+
+
+ˆ
+
+
+\begin{flushleft}
+writing f for the Fourier transform Ff deﬁned as in (2.42), using the well-known
+\end{flushleft}
+
+
+\begin{flushleft}
+properties of Ff we have the formulae
+\end{flushleft}
+
+
+ˆ
+
+
+ˆ
+
+
+(2.46)
+
+
+\begin{flushleft}
+(Tx f )ˆ= M$-$x f ,
+\end{flushleft}
+
+
+\begin{flushleft}
+(M$\omega$ f )ˆ= T$\omega$ f .
+\end{flushleft}
+
+
+
+
+
+\newpage
+28
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+From these it follows what is to be regarded as the most important formula in timefrequency analysis, namely
+\end{flushleft}
+
+
+ˆ
+
+
+ˆ
+
+
+(2.47)
+
+
+\begin{flushleft}
+(Tx M$\omega$ f )ˆ= M$-$x T$\omega$ f = e$-$2$\pi$ix·$\omega$ T$\omega$ M$-$x f ,
+\end{flushleft}
+
+
+\begin{flushleft}
+whose proof is is left as an exercise.
+\end{flushleft}
+
+
+\begin{flushleft}
+The short-time Fourier transform is a mathematical device that is meant to capture
+\end{flushleft}
+
+
+\begin{flushleft}
+the local contributions to the Fourier transform of a given function: one restricts the
+\end{flushleft}
+
+
+\begin{flushleft}
+function to a small intervall by a cut-oﬀ function (preferably some smooth window)
+\end{flushleft}
+
+
+\begin{flushleft}
+and then takes the Fourier transform; by sliding the interval, one sees what are the
+\end{flushleft}
+
+
+\begin{flushleft}
+various contributions from diﬀerent regions of the time domain. Formally, we have:
+\end{flushleft}
+
+
+\begin{flushleft}
+Deﬁnition 2.5. Let $\eta$ = 0 be a ﬁxed window, that is, a function deﬁned on Rd . The
+\end{flushleft}
+
+
+\begin{flushleft}
+short-time Fourier transform of the function f : Rd $\rightarrow$ C with respect to $\eta$ is deﬁned
+\end{flushleft}
+
+
+\begin{flushleft}
+by
+\end{flushleft}
+
+
+(2.48)
+
+
+
+
+
+\begin{flushleft}
+f (y)$\eta$(y $-$ x)e$-$i$\xi$·y dy,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+V$\eta$ f (x, $\xi$) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x, $\xi$ $\in$ Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Rd
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+whenever the integral makes sense.
+\end{flushleft}
+
+
+\begin{flushleft}
+A most fundamental observation is that the STFT is a function on the so-called
+\end{flushleft}
+
+
+\begin{flushleft}
+phase-space, namely the 2d-space R2d in which times and frequencies simultaneously
+\end{flushleft}
+
+
+\begin{flushleft}
+lie. In other words, in is a function of time and frequency. The time variable labels
+\end{flushleft}
+
+
+\begin{flushleft}
+the {``}center'' of the window and the frequency labels the point at which the Fourier
+\end{flushleft}
+
+
+\begin{flushleft}
+transform is evaluated.
+\end{flushleft}
+
+
+\begin{flushleft}
+At this stage we do not insist much on the precise domains for $\eta$ or for f . The most
+\end{flushleft}
+
+
+\begin{flushleft}
+basic properties of the STFT are given in the result that follows. The proof is easy.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 2.6. If f, $\eta$ $\in$ L2 (Rd ), then V$\eta$ f is uniformly continuous in R2d and
+\end{flushleft}
+
+
+(2.49)
+
+
+(2.50)
+
+
+
+
+
+\begin{flushleft}
+V$\eta$ f (x, $\xi$) = F(f · Tx $\eta$)($\xi$)
+\end{flushleft}
+
+
+
+
+
+(2.51)
+
+
+
+
+
+\begin{flushleft}
+= f, M$\xi$ Tx $\eta$
+\end{flushleft}
+
+
+ˆ
+
+
+\begin{flushleft}
+= f , T$\xi$ M$-$x $\eta$
+\end{flushleft}
+
+
+ˆ
+
+
+
+
+
+(2.52)
+
+
+
+
+
+ˆ
+
+
+\begin{flushleft}
+= e$-$2$\pi$ix$\xi$ V$\eta$ f ($\xi$, $-$x).
+\end{flushleft}
+
+
+ˆ
+
+
+
+
+
+\begin{flushleft}
+Some comments. Formula (2.49) says what the STFT really is, the Fourier transform of a localized version of f . Formulae (2.50) and (2.51) indicate that it looks
+\end{flushleft}
+
+
+\begin{flushleft}
+formally like the coeﬃcient of some representation. Formula (2.52) exhibits a most
+\end{flushleft}
+
+
+\begin{flushleft}
+intriguing symmetry in time and frequency, together with a ninety-degree rotation
+\end{flushleft}
+
+
+\begin{flushleft}
+(x, $\xi$) $\rightarrow$ ($\xi$, $-$x) in phase-space.
+\end{flushleft}
+
+
+\begin{flushleft}
+Before we pass to discuss the very intimate relation between the Heisenberg group
+\end{flushleft}
+
+
+\begin{flushleft}
+and its representations and the STFT, we point out in the next three results the strong
+\end{flushleft}
+
+
+\begin{flushleft}
+features of the STFT.
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 2.7 (Orthogonality relations for the STFT). Let f1 , f2 , $\eta$1 , $\eta$2 $\in$ L2 (Rd ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Then V$\eta$j fj $\in$ L2 (R2d ) for j = 1, 2 and
+\end{flushleft}
+
+
+(2.53)
+
+
+
+
+
+\begin{flushleft}
+V$\eta$1 f1 , V$\eta$2 f2 = f1 , f2 $\eta$1 , $\eta$2 .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Heisenberg group
+\end{flushleft}
+
+
+
+
+
+29
+
+
+
+
+
+\begin{flushleft}
+It must be observed that the ﬁrst inner product in (2.53) is in L2 (R2d ) (phase space)
+\end{flushleft}
+
+
+\begin{flushleft}
+whereas the ones appearing in the right-hand side are both in L2 (Rd ), in the time
+\end{flushleft}
+
+
+\begin{flushleft}
+domain or in the frequency domain, as one prefers, because of Parseval's equality.
+\end{flushleft}
+
+
+\begin{flushleft}
+Corollary 2.8. If f, $\eta$ $\in$ L2 (Rd ), then
+\end{flushleft}
+
+
+\begin{flushleft}
+V$\eta$ f
+\end{flushleft}
+
+
+\begin{flushleft}
+In particular, if $\eta$
+\end{flushleft}
+
+
+(2.54)
+
+
+
+
+
+2
+
+
+
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+= f
+\end{flushleft}
+
+
+
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+$\eta$ 2.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= 1, then
+\end{flushleft}
+
+
+\begin{flushleft}
+V$\eta$ f
+\end{flushleft}
+
+
+
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+= f
+\end{flushleft}
+
+
+
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+for all f $\in$ L2 (Rd )
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+and in this case the STFT is an isometry of L2 (Rd ) in L2 (Rd ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Theorem 2.9 (Inversion of the STFT). Let $\eta$, $\gamma$ $\in$ L2 (Rd ) be such that $\eta$, $\gamma$ = 0.
+\end{flushleft}
+
+
+\begin{flushleft}
+Then, for every f $\in$ L2 (Rd )
+\end{flushleft}
+
+
+1
+
+
+(2.55)
+
+
+\begin{flushleft}
+f=
+\end{flushleft}
+
+
+\begin{flushleft}
+V$\eta$ f (x, $\xi$)M$\xi$ Tx $\gamma$ dxd$\xi$.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\gamma$, $\eta$
+\end{flushleft}
+
+
+\begin{flushleft}
+We are now in a position to show the relation between the STFT and the Schr¨dinger
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+representation of Hd . This is very simple. First of all,we show that
+\end{flushleft}
+
+
+(2.56)
+
+
+
+
+
+\begin{flushleft}
+$\pi$(q, p, t) = e2$\pi$it e$\pi$iq·p Tq Mp .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Indeed, for any f $\in$ L2 (Rd ) we have, by (2.45) and (2.41)
+\end{flushleft}
+
+
+\begin{flushleft}
+e2$\pi$it e$\pi$iq·p Tq Mp f (y) = e2$\pi$it e$\pi$iq·p e$-$2$\pi$iq·p Mp Tq f (y)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e2$\pi$it e$-$$\pi$iq·p e2$\pi$ip·y Tq f (y)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e2$\pi$it e$-$$\pi$iq·p e2$\pi$ip·y f (y $-$ q)
+\end{flushleft}
+
+
+\begin{flushleft}
+= $\pi$(q, p, t)f (y).
+\end{flushleft}
+
+
+\begin{flushleft}
+Secondly, for ﬁxed $\eta$, f $\in$ L2 (Rd ), the coeﬃcient f, $\pi$(q, p, t)$\eta$ of the Schr¨dinger
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+representation satisﬁes, according to (2.56)
+\end{flushleft}
+
+
+\begin{flushleft}
+f, $\pi$(q, p, t)$\eta$ = e$-$2$\pi$it e$-$$\pi$iq·p f, Tq Mp $\eta$ = e$-$2$\pi$it e$-$$\pi$iq·p V$\eta$ f (q, p),
+\end{flushleft}
+
+
+\begin{flushleft}
+Therefore the STFT is nothing else but a multiple (with a complex number of modulus
+\end{flushleft}
+
+
+\begin{flushleft}
+one) of the coeﬃcient of the Schr¨dinger representation.
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+
+
+
+\newpage
+30
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+3. The metaplectc representation
+\end{flushleft}
+
+
+\begin{flushleft}
+The meteplectic representation is a double-valued unitary representation of the symplectic group Sp(d, R) on L2 (Rd ), or, more technically speaking, a unitary representation of the double cover of Sp(d, R), otherwise known as the metaplectic group Mp(d).
+\end{flushleft}
+
+
+\begin{flushleft}
+It has many other names in the literature, such as the oscillator representation, or the
+\end{flushleft}
+
+
+\begin{flushleft}
+Segal-Shale-Weil representation, and it appears pervasively in mathematics. We point
+\end{flushleft}
+
+
+\begin{flushleft}
+out right from the start that it is not irreducible: both the spaces L2 (Rd ) and L2 (Rd )
+\end{flushleft}
+
+
+\begin{flushleft}
+e
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+of even and odd functions, respectively, are closed and invariant, and on each of them
+\end{flushleft}
+
+
+\begin{flushleft}
+the metaplectic representation is irreducible. In very practical terms, the metaplectic
+\end{flushleft}
+
+
+\begin{flushleft}
+representation assigns to each symplectic matrix a unitary operator on L2 (Rd ), which
+\end{flushleft}
+
+
+\begin{flushleft}
+is well-deﬁned only up to a sign. This ambiguity, though mathematically important
+\end{flushleft}
+
+
+\begin{flushleft}
+and not removable, plays a very mild role, if none at all, in many of the applications
+\end{flushleft}
+
+
+\begin{flushleft}
+that many people are concerned with in Applied Harmonic Analysis. In particular,
+\end{flushleft}
+
+
+\begin{flushleft}
+this ambiguity is irrelevant in the context of the so-called reproducing formulae.
+\end{flushleft}
+
+
+\begin{flushleft}
+As hinted in the previous paragraph, the very deﬁnition of the metaplectic representation is troublesome, and there are diﬀerent ways of going about it. For a thorough
+\end{flushleft}
+
+
+\begin{flushleft}
+presentation of this topic, the reader is referred either to [F2] or [LV]. Here we content ourselves with a discussion of the main features rather than delving into the full
+\end{flushleft}
+
+
+\begin{flushleft}
+machinery of proofs.
+\end{flushleft}
+
+
+\begin{flushleft}
+We start by summarizing the main properties of the symplectic group and of its Lie
+\end{flushleft}
+
+
+\begin{flushleft}
+algebra. A direct and easy proof of most of the statements may be found in [F2]. The
+\end{flushleft}
+
+
+\begin{flushleft}
+most advanced ones, such as for example the Iwasawa decomposition, can be found for
+\end{flushleft}
+
+
+\begin{flushleft}
+example in [K1].
+\end{flushleft}
+
+
+\begin{flushleft}
+3.1. The symplectic group. The symplectic group is the group of invertible 2d × 2d
+\end{flushleft}
+
+
+\begin{flushleft}
+matrices preserving the standard symplectic form $\omega$ : R2d × R2d $\rightarrow$ R deﬁned by
+\end{flushleft}
+
+
+\begin{flushleft}
+$\omega$(x, y) = txJy,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+J=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+0 Id
+\end{flushleft}
+
+
+.
+
+
+\begin{flushleft}
+$-$Id 0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Thus, a matrix g $\in$ GL(2d, R) is symplectic if and only if $\omega$(gx, gy) = $\omega$(x, y) for every
+\end{flushleft}
+
+
+\begin{flushleft}
+x, y $\in$ R2d , so that the group of all of them is therefore
+\end{flushleft}
+
+
+\begin{flushleft}
+Sp(d, R) = g $\in$ GL(d, R) : tgJg = J
+\end{flushleft}
+
+
+\begin{flushleft}
+and its Lie algebra is
+\end{flushleft}
+
+
+\begin{flushleft}
+sp(d, R) = X $\in$ gl(d, R) : tXJ + XJ = 0 .
+\end{flushleft}
+
+
+\begin{flushleft}
+The symplectic group has many interesting subgroups. Among many others,
+\end{flushleft}
+
+
+\begin{flushleft}
+M=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+0
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t $-$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+: det h = $\pm$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\lambda$I
+\end{flushleft}
+
+
+0
+
+
+\begin{flushleft}
+:$\lambda$$>$0
+\end{flushleft}
+
+
+\begin{flushleft}
+0 $\lambda$$-$1 I
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+N=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+I 0
+\end{flushleft}
+
+
+\begin{flushleft}
+: $\sigma$ $\in$ Sym(d, R) ,
+\end{flushleft}
+
+
+\begin{flushleft}
+$\sigma$ I
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+The symplectic group
+\end{flushleft}
+
+
+
+
+
+31
+
+
+
+
+
+\begin{flushleft}
+where evidently Sym(d, R) stands for the vector space of all symmetric d × d real
+\end{flushleft}
+
+
+\begin{flushleft}
+matrices. Observe that
+\end{flushleft}
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+MA =
+\end{flushleft}
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t $-$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+: det h = 0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+where M A stands for the set of products of the form ma with m $\in$ M and a $\in$ A.
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence M A GL(d, R). In particular, we can embed the special linear group SL(d, R)
+\end{flushleft}
+
+
+\begin{flushleft}
+and the special orthogonal group SO(d) in Sp(d, R) in a canonical fahion, namely
+\end{flushleft}
+
+
+\begin{flushleft}
+SL(d, R) $\rightarrow$
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+t $-$1
+\end{flushleft}
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+: h $\in$ SL(d, R)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+SO(d) $\rightarrow$
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+t $-$1
+\end{flushleft}
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+: h $\in$ SO(d)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\subset$ M $\subset$ Sp(d, R)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\subset$ M $\subset$ Sp(d, R).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Exercise 1. Show that an invertible matrix g satisﬁes $\omega$(gx, gy) = $\omega$(x, y) for every
+\end{flushleft}
+
+
+\begin{flushleft}
+x, y $\in$ R2d if and only if tgJg = J
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise 2. Show that M , A and N are indeed subgroups of Sp(d, R). Show that
+\end{flushleft}
+
+
+\begin{flushleft}
+M A is a group and that it normalizes N , that is, that xnx$-$1 $\in$ N whenever x $\in$ M A
+\end{flushleft}
+
+
+\begin{flushleft}
+and n $\in$ N . Show also that
+\end{flushleft}
+
+
+\begin{flushleft}
+N = tn : n $\in$ N
+\end{flushleft}
+
+
+\begin{flushleft}
+is a subgroup of Sp(d, R).
+\end{flushleft}
+
+
+\begin{flushleft}
+As any other semisimple5 group, the symplectic group admits a polar decomposition
+\end{flushleft}
+
+
+\begin{flushleft}
+as stated in the following proposition.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 3.1. (Polar decomposition) Any invertible matrix g can be written
+\end{flushleft}
+
+
+\begin{flushleft}
+uniquely as g = up, where u is orthogonal and p is positive deﬁnite. If g $\in$ Sp(d, R),
+\end{flushleft}
+
+
+\begin{flushleft}
+then both u and p are in Sp(d, R). Furthermore, p $\in$ Sp(d, R) is positive deﬁnite if
+\end{flushleft}
+
+
+\begin{flushleft}
+and only if p = exp S with S $\in$ sp(d, R) $\cap$ Sym(2d, R).
+\end{flushleft}
+
+
+\begin{flushleft}
+The following fact is very important.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 3.2. K = Sp(d, R) $\cap$ O(2d) is a maximal compact subgroup of Sp(d, R)
+\end{flushleft}
+
+
+\begin{flushleft}
+and it is isomorphic to the unitary group U (d) under the natural map induced on linear
+\end{flushleft}
+
+
+\begin{flushleft}
+maps by the identiﬁcation (x, y) $\rightarrow$ x + iy of R2d with Cd .
+\end{flushleft}
+
+
+\begin{flushleft}
+A direct consequence of the previous two propositions is the following statement
+\end{flushleft}
+
+
+\begin{flushleft}
+about the main topological features of the symplectic group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 3.3. The symplectic group is connected but not simply connected; its
+\end{flushleft}
+
+
+\begin{flushleft}
+fundamental group is Z.
+\end{flushleft}
+
+
+\begin{flushleft}
+Again, the theorem that follows is a particular instance of a much more general
+\end{flushleft}
+
+
+\begin{flushleft}
+theorem, valid for all semisimple (in fact reductive) groups.
+\end{flushleft}
+
+
+\begin{flushleft}
+5The
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+symplectic group belongs to the very important class of semisimple Lie groups. Here we are
+\end{flushleft}
+
+
+\begin{flushleft}
+not interested in this particular aspect and shall not introduce this notion. The reader is referred to
+\end{flushleft}
+
+
+\begin{flushleft}
+[K1] and [K2] for a detailed discussion of semisimple Lie groups an their representations.
+\end{flushleft}
+
+
+
+
+
+\newpage
+32
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Theorem 3.4. (Iwasawa decomposition) The following factorizations hold true:
+\end{flushleft}
+
+
+(3.57)
+
+
+
+
+
+\begin{flushleft}
+Sp(d, R) = KAN = KN A = AN K = N AK.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+This means that any g $\in$ Sp(d, R) may be written uniquely as g = kan with k $\in$ K ,
+\end{flushleft}
+
+
+\begin{flushleft}
+a $\in$ A and n $\in$ N . Similarly for the other products, with possibly diﬀerent factors.
+\end{flushleft}
+
+
+\begin{flushleft}
+A little attention must be paid to the last sentence. In short, we may write a group
+\end{flushleft}
+
+
+\begin{flushleft}
+element g either as g = kan or as g = $\alpha$$\nu$$\kappa$, with a, $\alpha$ $\in$, n, $\nu$ $\in$ N and k, $\kappa$ $\in$ K . In
+\end{flushleft}
+
+
+\begin{flushleft}
+general, though, a = $\alpha$ and similarly for the other factors. But if we write g = k a n
+\end{flushleft}
+
+
+\begin{flushleft}
+(same order) then necessarily k = k , a = a and n = n .
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise 3. Show that the product N A is in fact a group itself, whereas neither of
+\end{flushleft}
+
+
+\begin{flushleft}
+the products KA or KN is a group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Proposition 3.5. The symplectic group is generated by N $\cup$ M A $\cup$ \{J\} and also by
+\end{flushleft}
+
+
+\begin{flushleft}
+N $\cup$ M A $\cup$ \{J\}.
+\end{flushleft}
+
+
+\begin{flushleft}
+The meaning of the above statements is that any element in Sp(d, R) can be written
+\end{flushleft}
+
+
+\begin{flushleft}
+as a ﬁnite product of elements all taken from N $\cup$ M A $\cup$ \{J\}, or all taken from
+\end{flushleft}
+
+
+\begin{flushleft}
+N $\cup$ M A $\cup$ \{J\}. This fact is of practical relevance, as we shall see, when dealing with
+\end{flushleft}
+
+
+\begin{flushleft}
+the metaplectic representation.
+\end{flushleft}
+
+
+\begin{flushleft}
+We conclude this section with two simple observation concerning the Lie algebra
+\end{flushleft}
+
+
+\begin{flushleft}
+sp(d, R). First, if we write X $\in$ sp(d, R) in block form, namely
+\end{flushleft}
+
+
+\begin{flushleft}
+X=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A B
+\end{flushleft}
+
+
+,
+
+
+\begin{flushleft}
+C D
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+then it is easy the conditions implied by tXJ + JX = 0, for
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+0=
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A
+\end{flushleft}
+
+
+\begin{flushleft}
+B
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+\begin{flushleft}
+D
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+0 I
+\end{flushleft}
+
+
+\begin{flushleft}
+0 I
+\end{flushleft}
+
+
++
+
+
+\begin{flushleft}
+$-$I 0
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$I 0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A B
+\end{flushleft}
+
+
+\begin{flushleft}
+C $-$ tC
+\end{flushleft}
+
+
+=
+
+
+\begin{flushleft}
+C D
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$ tD $-$ A
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A+D
+\end{flushleft}
+
+
+\begin{flushleft}
+B$-$B
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+yields immediately that B and C are symmetric and D = $-$ tA. Hence
+\end{flushleft}
+
+
+\begin{flushleft}
+X=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A B
+\end{flushleft}
+
+
+,
+
+
+\begin{flushleft}
+C $-$ tA
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+B, C $\in$ Sym(d, R).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Conversely, it is immediate to see that any such matrix is in sp(d, R), so that we
+\end{flushleft}
+
+
+\begin{flushleft}
+actually obtain
+\end{flushleft}
+
+
+(3.58)
+
+
+
+
+
+\begin{flushleft}
+sp(d, R) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A B
+\end{flushleft}
+
+
+\begin{flushleft}
+: A $\in$ Md (R), B, C $\in$ Sym(d, R) .
+\end{flushleft}
+
+
+\begin{flushleft}
+C $-$ tA
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+From the above description, it follows immediately that X $\in$ sp(d, R) if and only if
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+\begin{flushleft}
+X $\in$ sp(d, R). In particular, we obtain that both JX and XJ are symmetric. Indeed,
+\end{flushleft}
+
+
+\begin{flushleft}
+t
+\end{flushleft}
+
+
+\begin{flushleft}
+(JX) = tX tJ = $-$ tXJ = JX by tXJ + JX = 0. Similarly, one uses tX $\in$ sp(d, R) to
+\end{flushleft}
+
+
+\begin{flushleft}
+show that XJ is symmetric.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+The symplectic group
+\end{flushleft}
+
+
+
+
+
+33
+
+
+
+
+
+\begin{flushleft}
+3.2. Construction of the metaplectic representation. We now proceed to deﬁne
+\end{flushleft}
+
+
+\begin{flushleft}
+the metaplectic representation abstractly. Later we indicate how one can go about
+\end{flushleft}
+
+
+\begin{flushleft}
+clearing out all the unsettled points.
+\end{flushleft}
+
+
+\begin{flushleft}
+Recall that the group T of automorphisms of the Heisenberg group that leave the
+\end{flushleft}
+
+
+\begin{flushleft}
+center poinwise ﬁxed is generated by the inner automorphisms and by the symplectic
+\end{flushleft}
+
+
+\begin{flushleft}
+maps. More precisely, the maps ih with h $\in$ Hd and Tg with g $\in$ Sp(d, R) given by
+\end{flushleft}
+
+
+\begin{flushleft}
+i(x,y,z) (q, p, t) = (x, y, z)$-$1 (q, p, t)(x, y, z) = (q, p, t + ap $-$ bq)
+\end{flushleft}
+
+
+\begin{flushleft}
+Tg (q, p, t) = (g(q, p), t),
+\end{flushleft}
+
+
+\begin{flushleft}
+where g(q, p) simply means the eﬀect of the linear map g on the vector (q, p) $\in$ R2d .
+\end{flushleft}
+
+
+\begin{flushleft}
+If T $\in$ T , we can precompose the Schr¨dinger representation $\pi$ with T to obtain a
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+new representation $\pi$ ◦ T of H on L (R ). Indeed, if h, k $\in$ Hd , then
+\end{flushleft}
+
+
+\begin{flushleft}
+($\pi$ ◦ T )(hk) = $\pi$(T (hk)) = $\pi$(T (h)T (K)) = $\pi$(T (h))$\pi$(T (k)) = ($\pi$ ◦ T )(h)($\pi$ ◦ T )(k)
+\end{flushleft}
+
+
+\begin{flushleft}
+shows that it is indeed a representation and furthermore (2.41) shows that
+\end{flushleft}
+
+
+\begin{flushleft}
+($\pi$ ◦ T )(0, 0, t) = $\pi$(T (0, 0, t)) = $\pi$(0, 0, t) = e2$\pi$it I.
+\end{flushleft}
+
+
+\begin{flushleft}
+By the Stone-von Neumann theorem, $\pi$ and $\pi$ ◦ T must be equivalent. Hence there
+\end{flushleft}
+
+
+\begin{flushleft}
+must be a unitary operator $\mu$(T ) on L2 (Rd ) that intertwines the two representations:
+\end{flushleft}
+
+
+(3.59)
+
+
+
+
+
+\begin{flushleft}
+$\pi$ ◦ T (h) = $\mu$(T )$\pi$(h)$\mu$(T )$-$1 ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+h $\in$ Hd .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Moreover, by Schur's Lemma, namely item ii) of Lemma 1.25, $\mu$(T ) is determined
+\end{flushleft}
+
+
+\begin{flushleft}
+up to a phase factor because the space I($\pi$, $\pi$ ◦ T ) of all intertwining operators is
+\end{flushleft}
+
+
+\begin{flushleft}
+one dimensional and contains a unitary operator, hence all its multiples by complex
+\end{flushleft}
+
+
+\begin{flushleft}
+numbers of modulus one. Now, if we write (3.59) for the product T S we ﬁnd that
+\end{flushleft}
+
+
+\begin{flushleft}
+$\mu$(T )$\mu$(S) does the job, so there exists cT,S $\in$ S 1 such that
+\end{flushleft}
+
+
+\begin{flushleft}
+$\mu$(T S) = cT,S $\mu$(T )$\mu$(S).
+\end{flushleft}
+
+
+\begin{flushleft}
+This means that $\mu$ deﬁnes a projective representation of T , that is, a homomorphis
+\end{flushleft}
+
+
+\begin{flushleft}
+into the quotient of the group of unitary operators modulo its center \{cI : c $\in$ S 1 \}.
+\end{flushleft}
+
+
+\begin{flushleft}
+Now, if T = ih , with h $\in$ Hd , then since
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(hgh$-$1 ) = $\pi$(h)$\pi$(g)$\pi$(h)$-$1 ,
+\end{flushleft}
+
+
+\begin{flushleft}
+we can certainly take $\mu$(ih ) = $\pi$(h). Thus we may restrict ourselves to the subgroup
+\end{flushleft}
+
+
+\begin{flushleft}
+of T consisting of the automorphisms Tg with g $\in$ Sp(d, R), a group manifestly
+\end{flushleft}
+
+
+\begin{flushleft}
+isomorphic to Sp(d, R) itself. We shall write for simplicity $\mu$(g) instead of $\mu$(Tg ).
+\end{flushleft}
+
+
+\begin{flushleft}
+From the above discussion it follows that the unitary operator $\mu$(g) is determined up
+\end{flushleft}
+
+
+\begin{flushleft}
+to a phase factor by the relation
+\end{flushleft}
+
+
+(3.60)
+
+
+
+
+
+\begin{flushleft}
+$\pi$(g(q, p), 0) = $\mu$(g)$\pi$(q, p, 0)$\mu$(g)$-$1 .
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It may be shown (see below for further comments) that the phase factors can be chosen
+\end{flushleft}
+
+
+\begin{flushleft}
+in one and only one way up to a sign, so that $\mu$ becomes a double-valued unitary
+\end{flushleft}
+
+
+\begin{flushleft}
+representation of Sp(d, R). In other words, it holds
+\end{flushleft}
+
+
+\begin{flushleft}
+$\mu$(gh) = $\pm$$\mu$(g)$\mu$(h),
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g, h $\in$ Sp(d, R).
+\end{flushleft}
+
+
+
+
+
+\newpage
+34
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+With this choice, $\mu$ is called the metaplectic representation.
+\end{flushleft}
+
+
+\begin{flushleft}
+We should either think of $\mu$ as a genuine unitary representatin of the double cover
+\end{flushleft}
+
+
+\begin{flushleft}
+Mp(d) of Sp(d, R) or as a homomorphism of Sp(d, R) into the quotient of the group of
+\end{flushleft}
+
+
+\begin{flushleft}
+unitary operators modulo its center \{$\pm$I\}.Given a single g $\in$ Sp(d, R), we may think
+\end{flushleft}
+
+
+\begin{flushleft}
+of $\mu$(g) as a pir of unitary operators that diﬀer from each other by $-$1. In explicit
+\end{flushleft}
+
+
+\begin{flushleft}
+formulas, this amniguity usually appears as the possible choice of sign of a square root.
+\end{flushleft}
+
+
+\begin{flushleft}
+Next we compute $\mu$(g) for certain particular types of g , up to phase factors.
+\end{flushleft}
+
+
+\begin{flushleft}
+(i) Take g $\in$ M A, that is g =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+0
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+with h $\in$ GL(d, R). Then
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t $-$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\pi$(g(q, p), 0)f (x) = $\pi$(hq, th$-$1 p, 0)f (x)
+\end{flushleft}
+
+
+\begin{flushleft}
+t $-$1 p)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$-$$\pi$i(hq)·( h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+2$\pi$ip·h$-$1 x
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p e
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t $-$1 p)·x
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+e2$\pi$i( h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f (x $-$ hq)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(f ◦ h)(h$-$1 x $-$ q)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The unitary operator on L2 (Rd ) given by U f (x) = | det h|$-$1/2 f (h$-$1 x) satisﬁes
+\end{flushleft}
+
+
+\begin{flushleft}
+U $\pi$(q, p, 0)U $-$1 f (x) = | det h|$-$1/2 ($\pi$(q, p, 0)U $-$1 f )(h$-$1 x)
+\end{flushleft}
+
+
+\begin{flushleft}
+= | det h|$-$1/2 ($\pi$(q, p, 0)| det h|1/2 f ◦ h)(h$-$1 x)
+\end{flushleft}
+
+
+\begin{flushleft}
+= $\pi$(q, p, 0)(f ◦ h)(h$-$1 x)
+\end{flushleft}
+
+
+\begin{flushleft}
+$-$1 x
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p e2$\pi$ip·h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(f ◦ h)(h$-$1 x $-$ q)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Hence U satisﬁes (3.60), so it must coincide with $\mu$(g) up to a phase factor.
+\end{flushleft}
+
+
+\begin{flushleft}
+I 0
+\end{flushleft}
+
+
+\begin{flushleft}
+(ii) Take now g $\in$ N , that is, g =
+\end{flushleft}
+
+
+\begin{flushleft}
+with $\sigma$ $\in$ Sym(d, R). Then
+\end{flushleft}
+
+
+\begin{flushleft}
+$\sigma$ I
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(g(q, p), 0)f (x) = $\pi$(q, $\sigma$q + p, 0)f (x)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p e2$\pi$i($\sigma$q+p)·x f (x $-$ q)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p e2$\pi$ip·x e$-$$\pi$iq·$\sigma$q e2$\pi$iq·$\sigma$x f (x $-$ q)
+\end{flushleft}
+
+
+\begin{flushleft}
+The unitary operator on L2 (Rd ) given by V f (x) = e$\pi$ix·$\sigma$x f (x) satisﬁes
+\end{flushleft}
+
+
+\begin{flushleft}
+V $\pi$(q, p, 0)V $-$1 f (x) = e$\pi$ix·$\sigma$x $\pi$(q, p, 0)V $-$1 f (x)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e$\pi$ix·$\sigma$x e$-$$\pi$iq·p e2$\pi$ip·x (V $-$1 f )(x $-$ q)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e$\pi$ix·$\sigma$x e$-$$\pi$iq·p e2$\pi$ip·x e$-$$\pi$i(x$-$q)·$\sigma$(x$-$q) f (x $-$ q)
+\end{flushleft}
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p e2$\pi$ip·x e$-$$\pi$iq·$\sigma$q e2$\pi$iq·$\sigma$x f (x $-$ q).
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence V satisﬁes (3.60), so it must coincide with $\mu$(g) up to a phase factor.
+\end{flushleft}
+
+
+\begin{flushleft}
+(iii) Finally, take g = J . Then
+\end{flushleft}
+
+
+\begin{flushleft}
+$\pi$(J(q, p), 0)f ($\xi$) = $\pi$(p, $-$q, 0)f ($\xi$) = e$\pi$iq·p e$-$2$\pi$iq·$\xi$ f ($\xi$ $-$ p)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+The symplectic group
+\end{flushleft}
+
+
+
+
+
+35
+
+
+
+
+
+\begin{flushleft}
+Denote the Fourier transform on L2 (Rd ) by F . For f $\in$ L2 (Rd ) we have
+\end{flushleft}
+
+
+\begin{flushleft}
+F$\pi$(q, p, 0)F $-$1 f ($\xi$) =
+\end{flushleft}
+
+
+=
+
+
+
+
+
+\begin{flushleft}
+e$-$2$\pi$i$\xi$·x $\pi$(q, p, 0)(F $-$1 f )(x) dx
+\end{flushleft}
+
+
+\begin{flushleft}
+e$-$2$\pi$i$\xi$·x e$-$$\pi$iq·p e2$\pi$ip·x (F $-$1 f )(x $-$ q) dx
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+e2$\pi$i(p$-$$\xi$)·x (F $-$1 f )(x $-$ q) dx
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+e2$\pi$i(p$-$$\xi$)·(q+y) (F $-$1 f )(y) dy
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$-$$\pi$iq·p e2$\pi$i(p$-$$\xi$)·q
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+e2$\pi$i(p$-$$\xi$)·y (F $-$1 f )(y) dy
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+= e$\pi$iq·p e$-$2$\pi$i$\xi$·q f ($\xi$ $-$ p).
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence F satisﬁes (3.60), so it must coincide with $\mu$(g) up to a phase factor.
+\end{flushleft}
+
+
+\begin{flushleft}
+Up to phase factors, we have identiﬁed $\mu$(g) on a generating set of elements (thanks
+\end{flushleft}
+
+
+\begin{flushleft}
+to Proposition 3.5), so in principle we know $\mu$ up to phase factors. Anticipating what
+\end{flushleft}
+
+
+\begin{flushleft}
+can be made rigorous, we actually have
+\end{flushleft}
+
+
+(3.61)
+
+
+(3.62)
+
+
+(3.63)
+
+
+
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+0
+
+
+
+
+
+\begin{flushleft}
+$\mu$
+\end{flushleft}
+
+
+\begin{flushleft}
+$\mu$
+\end{flushleft}
+
+
+
+
+
+0
+
+
+\begin{flushleft}
+h
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+t $-$1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+I 0
+\end{flushleft}
+
+
+\begin{flushleft}
+$\sigma$ I
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f (x) = (det h)$-$1/2 f (h$-$1 x)
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x) = $\pm$e$\pi$ix·$\sigma$x f (x)
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\mu$ (J) f (x) = id/2 Ff (x).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+It must be pointed out that in formulae (3.61) and (3.63) the sign of the square root
+\end{flushleft}
+
+
+\begin{flushleft}
+accounts exactly for the ambiguity in sign.
+\end{flushleft}
+
+
+\begin{flushleft}
+3.3. An outline of the full construction. The question remains: how to deﬁne $\mu$
+\end{flushleft}
+
+
+\begin{flushleft}
+in full detail? Our next target is to outline how to do this. The several nontrivial
+\end{flushleft}
+
+
+\begin{flushleft}
+technicalities will not be unravelled completely. The construction can be summarized
+\end{flushleft}
+
+
+\begin{flushleft}
+in the following three basic steps, for each of which we will then give some further
+\end{flushleft}
+
+
+\begin{flushleft}
+information.
+\end{flushleft}
+
+
+\begin{flushleft}
+(i) Deﬁne ﬁrst the inﬁnitesimal representation d$\mu$ of the Lie algebra sp(d, R) by
+\end{flushleft}
+
+
+\begin{flushleft}
+densely deﬁned unbounded and essentially skew-adjoint operators on L2 (Rd ).
+\end{flushleft}
+
+
+\begin{flushleft}
+This step is obtained by means of the so calle Weyl calculus, realizing ﬁrst
+\end{flushleft}
+
+
+\begin{flushleft}
+sp(d, R) as a Lie algebra of polynomials.
+\end{flushleft}
+
+
+\begin{flushleft}
+(ii) {``}Integrate'' the representation to a representation of the universal cover of
+\end{flushleft}
+
+
+\begin{flushleft}
+Sp(d, R). This step uses the notion of analytic vector for a representation.
+\end{flushleft}
+
+
+\begin{flushleft}
+(iii) Show that the represntation actually factors to a representation of the double
+\end{flushleft}
+
+
+\begin{flushleft}
+cover of Sp(d, R).
+\end{flushleft}
+
+
+
+
+
+\newpage
+36
+
+
+
+
+
+\begin{flushleft}
+The use of representations
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+4. Restriction to triangular subgroups
+\end{flushleft}
+
+
+\begin{flushleft}
+Bibliografy
+\end{flushleft}
+
+
+\begin{flushleft}
+[F1]
+\end{flushleft}
+
+
+\begin{flushleft}
+[F2]
+\end{flushleft}
+
+
+\begin{flushleft}
+[Gro]
+\end{flushleft}
+
+
+\begin{flushleft}
+[K1]
+\end{flushleft}
+
+
+\begin{flushleft}
+[K2]
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+G. B. Folland, A Course in Abstract Harmonic Analysis, CRC Press, Boca Raton, 1995.
+\end{flushleft}
+
+
+\begin{flushleft}
+G. B. Folland, Harmonic Analysis in Phase Space, Princeton University Press, Princeton, 1989.
+\end{flushleft}
+
+
+\begin{flushleft}
+K. Gr¨chenig, Foundations of Time-Frequency Analysis. Birkh¨user, Boston, 2001.
+\end{flushleft}
+
+
+\begin{flushleft}
+o
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+A.W. Knapp, Lie Groups Beyond an Introduction, Birkh¨user, Boston, 1996.
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+A.W. Knapp, Representation Theory of Semisimple Lie Groups: An Overview Based on Examples, Princeton University Press, Princeton, 1988.
+\end{flushleft}
+
+
+\begin{flushleft}
+[LV] G. Lion and M. Vergne, The Weil representation, Maslov index and theta series, Birk¨user,
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+Boston, 1980.
+\end{flushleft}
+
+
+\begin{flushleft}
+[R] W. Rudin, Functional Analysis, second edition, McGraw Hill, New York,1991.
+\end{flushleft}
+
+
+\begin{flushleft}
+[V] V.S. Varadarajan, Lie Groups, Lie Algebras and Their Representations, second edition,
+\end{flushleft}
+
+
+\begin{flushleft}
+Springer-Verlag, New York, 1984.
+\end{flushleft}
+
+
+\begin{flushleft}
+[W] F. Warner, Foundations of Diﬀerentiable Manifolds and Lie Groups, second edition, SpringerVerlag, New York, 1983.
+\end{flushleft}
+
+
+`
+
+
+\begin{flushleft}
+Filippo De Mari, Universita di Genova
+\end{flushleft}
+
+
+\begin{flushleft}
+E-mail address: demari@dima.unige.it
+\end{flushleft}
+
+
+
+
+
+\newpage
+
+
+
+\end{document}

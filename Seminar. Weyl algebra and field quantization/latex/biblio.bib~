@@ -1,0 +1,32 @@
+% This file was created with JabRef 2.7b.
+% Encoding: UTF-8
+
+@ARTICLE{Binz:2004ns,
+  author = {Binz, E. Honegger, R. and Rieckers, A.},
+  title = {Field-theoretic Weyl quantization as a strict and continuous deformation
+	quantization},
+  journal = {Annales Henri Poincare},
+  year = {2004},
+  volume = {5},
+  pages = {327-346},
+  doi = {10.1007/s00023-004-0171-y},
+  slaccitation = {%%CITATION = AHPJF,5,327;%%}
+}
+
+@BOOK{moretti2012spectral,
+  title = {Spectral Theory and Quantum Mechanics with an introduction to the
+	Algebraic Formulation},
+  publisher = {Springer-Verlag},
+  year = {2012},
+  author = {Moretti, Valter},
+  url = {http://www.springer.com/mathematics/applications/book/978-88-470-2834-0}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+

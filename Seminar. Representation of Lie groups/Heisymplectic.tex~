@@ -1,0 +1,1913 @@
+%%%%%%% VERSIONE DEL 26 Maggio 98 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,twoside,leqno,psamsfonts]{amsart}
+\usepackage{amssymb}
+%\documentstyle[12pt,twoside, titlepage]{article}%{report}%{book} %
+\topmargin=-1cm
+\textwidth=15.5cm
+\textheight=22cm
+\hoffset=-1.7cm
+\mathsurround 1pt
+%\makeindex
+%%%%%%%%%%%%%%%%%%%  END PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%  NUMBERS AND VARIOUS COMMON LETTERS %%%%%%%%%%%%
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+\def\X{{\mathbb X}}
+\def\T{{\mathbb T}}
+\def\K{{\mathbb K}}
+\def\H{{\mathbb H}}
+\def\Rtwo{{\mathbb R}^2}
+\def\Rn{{\mathbb R}^d}
+\def\RPone{{\mathbb {RP}}^1}
+\def\RPtwo{{\mathbb {RP}}^2}
+\def\Rnn{{\mathbb R}^{2d}}
+\def\C{{\mathbb C}}
+\def\Cn{{\mathbb C}^d}
+\def\H{{\mathbb H}}
+\def\e{\epsilon}
+\def\RR{{\mathcal R}}
+\def\F{{\mathcal F}}
+\def\P{{\mathcal P}}
+\def\Pone{\P_1}
+\def\Ptwo{\P_2}
+%%%%%%%%%%%%%%%%%% HILBERT SPACE AND OPERATORS %%%%%%%%%%%%%
+\def\cH{{\mathcal H}}
+\def\cD{{\mathcal D}}
+\def\cB{{\mathcal B}}
+\def\cU{{\mathcal U}}
+\def\cA{{\mathcal A}}
+\def\cG{{\mathcal G}}
+\def\cR{{\mathcal R}}
+\def\cT{{\mathcal T}}
+\def\cX{{\mathcal X}}
+\def\cL{{\mathcal L}}
+\def\cI{{\mathcal I}}
+\def\cP{{\mathcal P}}
+\def\cS{{\mathcal S}}
+\def\cF{{\mathcal F}}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% LIE ALGEBRA SYMBOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\gg{{\mathfrak g}}
+\def\gn{\mathfrak n}
+\def\gs{{\mathfrak s}}
+\def\gt{{\mathfrak t}}
+\def\gb{\mathfrak b}
+\def\gp{{\mathfrak p}}
+\def\gq{{\mathfrak q}}
+\def\gk{{\mathfrak k}}
+\def\ga{{\mathfrak a}}
+\def\gm{{\mathfrak m}}
+\def\gh{{\mathfrak h}}
+\def\gz{{\mathfrak z}}
+
+\def\gX{{\mathfrak X}}
+
+%%%%%%%%%%%%%%%%%% CLASSICAL LIE ALGEBRAS %%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\glg{{\mathfrak {gl}}(\gg)}
+\def\genln{{\mathfrak {gl}}}
+
+\def\glnr{{\mathfrak {gl}}(d,\R)}
+\def\glnc{{\mathfrak {gl}}(d,\C)}
+\def\glnnr{{\mathfrak {gl}}(2d,\R)}
+\def\sltwor{{\mathfrak {sl}}(2,\R)}
+\def\slthreer{{\mathfrak {sl}}(3,\R)}
+\def\slnr{{\mathfrak {sl}}(d,\R)}
+\def\slnc{{\mathfrak {sl}}(d,\C)}
+\def\un{{\mathfrak u}(d)}
+\def\utwon{{\mathfrak u}(2d)}
+\def\sun{{\mathfrak {su}}(d)}
+\def\sutwon{{\mathfrak {su}}(2d)}
+\def\spn{{\mathfrak {sp}}(d)}
+\def\spnr{{\mathfrak {sp}}(d,\R)}
+\def\spnc{{\mathfrak {sp}}(d,\C)}
+\def\sonc{{\mathfrak {so}}(d,\C)}
+\def\sonr{{\mathfrak {so}}(d,\R)}
+\def\sotwor{{\mathfrak {so}}(2,\R)}
+\def\sopq{{\mathfrak {so}}(p,q)}
+\def\supq{{\mathfrak {su}}(p,q)}
+\def\hsn{{\mathfrak h}^d}
+\def\hsone{{\mathfrak h}^1}
+\def\gen{\hsn\ltimes \spnr}
+\def\gone{\gh_1\ltimes\sltwor}
+\def\Symnr{{\rm Sym}(d,\R)}
+
+
+%%%%%%%%%%%%%%%%%% CLASSICAL LIE GROUPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Glnr{GL(d,\R)}
+\def\Gltwor{GL(2,\R)}
+\def\Glnc{GL(d,\C)}
+\def\Glnnr{GL(2d,\R)}
+\def\Sltwor{SL(2,\R)}
+\def\slthreer{SL(3,\R)}
+\def\Slnr{SL(d,\R)}
+\def\Slnc{SL(d,\C)}
+\def\Un{U(d)}
+\def\Utwon{U(2d)}
+\def\Uun{SU(d)}
+\def\Sutwon{SU(2d)}
+\def\Spn{Sp(d)}
+\def\Spnr{Sp(d,\R)}
+\def\Spnc{Sp(d,\C)}
+\def\Sonc{SO(d,\C)}
+\def\Sonr{SO(d,\R)}
+\def\Sotwor{SO(d,\R)}
+\def\Sopq{SO(p,q)}
+\def\Supq{SU(p,q)}
+\def\Hsn{{\mathbb H}^d}
+\def\Hsone{{\mathbb H}^1}
+\def\Gn{\Hsn\ltimes \Spnr}
+
+\def\Slptwor{SL^{(p)}(2,\R)}
+\def\Slttwor{SL^{(2)}(2,\R)}
+\def\Gone{{\mathbb H}_1\ltimes\Sltwor}
+\def\Gtwo{{\mathbb H}_1\ltimes\Slttwor}
+\def\Gp{{\mathbb H}_1\ltimes\Slptwor}
+%%%%%%%%%%%%%%%%%% OPERATORS AND SYMBOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ker{\mathop{\rm ker}}
+
+\def\End{\mathop{\rm End}}
+\def\Aut{\mathop{\rm Aut}}
+\def\Int{\mathop{\rm Int}}
+
+
+\def\Ad{\mathop{\rm Ad}}
+\def\ad{\mathop{\rm ad}}
+\def\tr{\mathop{\rm tr}}
+\def\id{\mathop{\rm id}}
+\def\diag{\mathop{\rm diag}}
+\def\sp{\mathop{\rm sp}}
+\def\Arg{\mathop{\rm Arg}}
+\def\Aut{\mathop{\rm Aut}}
+\def\im{\mathop{\rm im}}
+\def\dom{\mathop{\rm dom}}
+\def\dimen{\mathop{\rm dim}}
+
+\def\sg{\mathop{\rm sign}}
+\def\eps{\varepsilon}
+\def\la{\lambda}
+\def\La{\Lambda}
+\def\w{\wedge}
+
+\def\t{\!\;^t\!}   % transpose %
+
+%%%%%%%%%%%%%%%%%% SYNTAX FOR FORMULAE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\raz#1#2{{\langle#1,#2\rangle}}
+%\def\raz#1#2{\frac{#1}{#2}}
+%\def\frac#1#2{{#1\over#2}}
+\def\sfrac#1#2{{\scriptstyle{\frac{#1}{#2}}}}
+\def\se{\subseq}
+\def\seg#1#2{\overline{{#1}{#2}}}
+
+\def\squareforqed{\hbox{\rlap{$\sqcap$}$\sqcup$}}
+
+\def\qed{\ifmmode\squareforqed\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil\squareforqed
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi}
+
+\def\QED{\qed}
+\def\pf{{\bf Proof.}\ }
+%\def\defi{{\bf Definition.}\ }
+\def\dimo{{\bf Proof.}\ }
+\def\pmn{\par\medskip}
+
+
+%%%%%%%%%%%%%%%%%%% STRUCTURE MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% numera  teoremi, lemma, corollari separatamente dalle formule
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%\newtheorem{theorem}{Theorem}[section]%[chapter]%
+%\newtheorem{cor}[theorem]{Corollary}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{prop}[theorem]{Proposition}
+%\newtheorem{defn}[theorem]{Definition}
+%\newtheorem{assioma}{Assioma}
+%\newtheorem{ex}[theorem]{Example}
+
+
+%\newtheorem{definition}{Definition}%[section]
+%\newenvironment{defn}{\begin{definition}\rm}%
+%{\end{definition}}
+%%%%%%%%%%%%%%%%%%% ITALIAN VERSION %%%%%%%%%%%%%%%%%%%%
+% numera  teoremi, lemma, corollari separatamente dalle formule
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\newtheorem{theorem}{Theorem}[section]%[chapter]%
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{assioma}{Axiom}
+\newtheorem{defn}[theorem]{Definition}
+
+%\newtheorem{definition}{Definizione}%[section]
+%\newenvironment{defn}{\begin{definition}\rm}{\end{definition}}
+
+%\renewcommand{\chaptername}{Capitolo}
+%\renewcommand{\indexname}{Indice dei nomi}
+\renewcommand{\refname}{Bibliografy}
+%\renewcommand{\appendixname}{Appendice}
+\renewcommand{\contentsname}{Table of Contents}
+%\renewcommand{\bibname}{Bibliografia}
+\def\dim{{\bf Proof.}\ }
+
+
+%%%%%%%%%%%%%%%%%%% END STRUCTURE MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%% TOP MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{The use of representations \\in Applied Harmonic Analysis}
+\author{Notes by Filippo De Mari}
+\address{Filippo De Mari\\ Universit\`a di Genova}
+\email{demari@dima.unige.it}
+\date{}
+%\thanks{We would like to thank Simona Aicardi for useful observations and careful
+%proofreading.}
+%\begin{abstract} We classify all subgroups of the semidirect product $\Gone$
+%up to inner conjugation. As a corollary, we obtain an analogous classification for
+%subgroups of $\R^2\ltimes\Sltwor$, the group of automorphisms of the Heisenberg
+%group $\Hsone$.
+%\end{abstract}
+\maketitle
+%%%%%%%%%%%%%%%% END TOP MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%% PAGE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{myheadings}
+\markboth{The use of representaions}{F.De Mari}
+\tableofcontents
+\phantom{}
+%\vfill\eject
+%%%%%%%%%%%%%%%%%%% END PAGE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% ACTUAL DOCUMENT BEGINS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Representations of Lie groups.}
+\pagestyle{myheadings}
+\markboth{The use of representations}{Representations of Lie groups}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Representation theory of groups is a vast subject. Many of the  aspects of this theory that are  of interest in Harmonic Analysis, and, in particular, of that body of ideas and techniques that might be collectively referred to as Applied Harmonic Analysis, can be studied within the class of  locally compact and second countable topological groups, a family whose nickname in the group-theory jargon  is ``lcsc''. To be honest, though, most interesting examples belong to the smaller and nicer class of Lie groups, for which not only much more is known, but that  also have the additional feature of possessing a geometric nature that allows, for instance, to speak about dimension. 
+For this reason we work mostly with this family, even  though we shall by no means use the full force of the representation thereof. On the reader's side, we shall take for granted basic knowledge of differential geometry.
+\subsection{Locally compact groups} We start with some fundamental definitions and results. For a detailed account on these matters the reader may consult \cite{Fol1}.
+\begin{defn} A topological group is a group $G$ endowed with  a topology relative to which the group operations
+\[
+(g,h)\mapsto gh,
+\qquad
+g\mapsto g^{-1}
+\]
+are continuous as maps $G\times G\to G$ and $G\to G$, respectively. $G$ is locally compact if every point has a compact neighborhood. We shall also assume our groups to be Hausdorff.
+\label{LCG}\end{defn}
+\begin{defn} A Borel measure $\mu$ on the topological space $X$ is called a Radon measure if:
+\begin{itemize}
+\item[(i)] it is finite on compact sets;
+\item[(ii)] it is outer regular on the Borel sets: for every Borel set $E$
+\[
+\mu(E)=\inf\{\mu(U):U\supset E,\;U\text{ open }\}
+\]
+\item[(iii)] it is inner regular on the open sets: for every open set $U$
+\[
+\mu(U)=\sup\{\mu(K):K\subset E,\;K\text{ compact }\}.
+\]
+\end{itemize}
+\label{radon}\end{defn}
+\begin{defn} A left Haar measure on the topological group $G$ is a non zero Radon measure $\mu$ such that $\mu(xE)=\mu(E)$ for every Borel set $E\subset G$ and every $x\in G$. Similarly for right Haar measures.
+\label{haar}\end{defn}
+Of course, the prototype of Haar measure is the Lebesgue measure on the additive group $\R^d$, which is invariant under left (and right) translations.
+\begin{theorem} Every locally compact  group  $G$ has a left Haar measure $\lambda$, which is essentially unique in the sense that if $\mu$ is any other left Haar measure, then there exists a positive constant $C$ such that $\mu=c\lambda$.
+\label{existhaar}\end{theorem}
+If we fix a left Haar measure $\lambda$ on $G$, then for any $x\in G$ the measure $\lambda_x$ defined by
+\[
+\lambda_x(E)=\lambda(Ex)
+\]
+is again a left Haar measure (here $Ex=\{ex:e\in E\}$). Therefore there must exist a positive real number,
+denoted $\Delta(x)$ such that
+\[
+\lambda_x=\Delta(x)\lambda.
+\]
+The function $\Delta:G\to\R_+$ is called the modular function.
+\begin{prop} Let $G$ be a locally compact  group.The modular function $\Delta:G\to\R_+$ is a continuous homomorphism into the multiplicative group $\R_+$. Furthermore, for every $f\in L^1(G,\lambda)$ we have
+\[
+\int_Gf(xy)\,dx=\Delta(y)^{-1} \int_Gf(x)\,dx.
+\]
+\label{modular}\end{prop}
+In the Section~\ref{haarlie} below we give some examples in the context of Lie groups. A group for which every left Haar measure is also a right Haar measure, hence for which the modular function is identically equal to one, is called {\it unimodular}. Large classes of groups are unimodular, such as the abelian, compact, nilpotent, semisimple and reductive groups. Nevetherless, in Applied Harmonic Analysis non-unimodular groups play a prominent role, such as the affine group ``$ax+b$'' that we shall define in the next section.
+ 
+ 
+ \subsection{Lie groups and Lie algebras}
+In this section we recall, without proofs, some basic facts about Lie groups and Lie algebras.
+For a concise and effective exposition, see   \cite{war}. Classical references with a wider scope are
+ \cite{Kn1} and \cite{Var}.
+\begin{defn} A Lie group $G$ is a $C^\infty$  (smooth or differentiable) manifold endowed with a  group structure such that the group operations $(g,h)\mapsto gh$ and
+$g\mapsto g^{-1}$ are smooth, that is, $C^\infty$.
+\end{defn}
+{\bf Examples.} {\bf 1.} Clearly, $\R^d$ is an additive, abelian Lie group. Similarly $\C^d$, identified with $\R^{2d}$ as manifolds. 
+\pmn{\bf 2.} The sphere $S^1=\{e^{i\theta}:\theta\in[0,2\pi)\}$ is an abelian compact Lie group. A famous theorem states that the only other spheres that are Lie groups are $S^3$ and $S^7$.
+\pmn{\bf 3.} The multiplicative group $\Glnr$ of invertible  matrices is a Lie group.
+Indeed, it is an open submanifold of $\R^{d^2}$ with the global coordinates $x_{ij}$ that assign to a matrix its  ${ij}$--th entry. If  $y,z\in\Glnr$, then  $x_{ij}(yz)$ and
+$x_{ij}(y^{-1})$ are rational functions of $\{x_{ij}(y),x_{ij}(z)\}$ and of  $\{x_{ij}(y)\}$, respectively, with non vanishing denominator. Hence they are smooth functions. 
+
+As we shall mention briefly, all closed subgroups of $\Glnr$ are nice Lie groups. Most notably, from our point of view, the symplectic group $\Spnr$ to be defined below.
+\pmn{\bf 4.} The affine group ``$ax+b$''. There are several possible versions of this group. Let 
+$G=\R_+\times\R$ as a manifold. One can visualize it as the right half plane. The multiplication is obtained by thinking of the pair $(a,b)$, with $a>0$ and $b\in\R$, as identifying the affine transformation of the real line given by $x\mapsto ax+b$, whence the name. The composition of maps 
+\[
+x\mapsto ax+b\mapsto a'(ax+b)+b'=[a'a]x+[a'b+bÕ]
+\]
+yields the product rule
+\[
+(a',b')(a,b)=(a'a,a'b+bÕ).
+\]
+Evidently, both functions $a'a$ and $a'b+bÕ$ are smooth in the global coordinates on $G$, which is then a Lie group. Evidently, $G$ is connected. When speaking of the ``$ax+b$'' group we refer to this group.
+
+A non-connected version arises by taking $a\in\R$ instead of $a>0$. Yet another slightly different construction comes from thinking of the pair $(a,b)$ as identifying the affine transformation $x\mapsto a(x+b)$. This point of view yields both a connected and a non-connected Lie group.
+\pmn{\bf 4.} The Heisenberg group $\Hsn$. We refer to the next section for the explicit definition. 
+
+
+\begin{defn} A Lie algebra $\gg$ over the field\footnote{Here mostly $\K=\R$ but one may also think of the case $\K=\C$.}
+ $\K$ is a $\K$-vector space endowed with a bilinear operation $[\cdot,\cdot]:\gg\times\gg\rightarrow\gg$, 
+called bracket, such that 
+\begin{itemize}
+\item[i)] $[X,Y]=-[Y,X]$ for every $X,Y\in\gg$,
+\item[ii)] $[X,[Y,Z]]=[[X,Y],Z]+[Y,[X,Z]]$ for every $X,Y,Z\in\gg$.
+\end{itemize}
+\end{defn}
+\pmn
+Item ii), oterwise known as the Jacobi identity, should be thought of as an analogous version of the derivative of the product. Indeed, if  for any $X\in\gg$ we put
+\begin{equation}\ad X:\gg\rightarrow\gg,\qquad \ad X(Y)=[X,Y]\label{ad}\end{equation}
+the Jacobi identity may be formulated:
+\[
+\ad X ([Y,Z])=[\ad X(Y),Z]+[Y,\ad X(Z)].
+\]
+If  $V$  is a $\K$-vector space, the set  $\End (V)$ of all linear maps of $V$ into itself is
+a Lie algebra under the commutator
+$[\phi,\psi]=\phi\psi-\psi\phi$ as bracket. With this structure understood, it is denoted by
+$\genln (V)$.
+\pmn 
+Let $G$ be a Lie group, and let $\gX(G)$  denote the  $C^\infty(G)$-module of the  
+smooth vector fileds on $G$. Denote by  $l_g:G\rightarrow G$ the left translation by  $g\in G$,
+that is $l_g(h)=gh$. A vector field $X\in\gX(G)$ is called left invariant on $G$ if for every 
+ $g,h\in G$ it holds
+\[
+(l_g)_{*h}X_h=X_{gh},
+\]
+where $(l_g)_{*h}:T_h(G)\rightarrow T_h(G)$ denotes the differential of $l_g$ at $h$
+and $T_h(G)$ is the tangent space to $G$ at $h$. The set of all left invariant vector fields
+on  $G$ will be  denoted $\cL (G)$.
+\begin{prop} Let  $G$ be a Lie group and denote by $\cL (G)$ the set of left invariant vector fields on $G$. Then:
+\begin{itemize}
+\item[i)] $\cL (G)$ is an $\R$-vector space and the map $\alpha:\cL
+(G)\rightarrow T_e(G)$ defined by $\alpha (X)=X_e$is a vector space isomorphism between $\cL (G)$ and the tangent space to $G$ at the identity $e\in G$. Consequently,  $\dimen \cL (G)=\dimen T_e(G)=\dimen G$.
+\item[ii)] The commutator $[X,Y]=X\circ Y-Y\circ X$ of two left invariant vector fields is again a left invariant vector field. With this  bracket, $\cL (G)$ becomes a  Lie algebra,  which will be called the Lie algebra of $G$.
+\end{itemize}
+\end{prop}
+\pmn
+\subsubsection{Homomorphisms}
+Take now two Lie groups,   $G$ ed $H$. A map $\varphi:G\rightarrow H$ is a Lie group
+homomorphism  if it is a group homomorphism (hence if $\varphi(xy)=\varphi(x)\varphi(y)$ for every $x,y\in G$ and if $\varphi(e)=e$, the identities of $G$ and $H$, respectively) and if it is a $C^\infty$ map of smooth manifolds.
+We say that  $\varphi$ is a Lie group isomorphism  if it is a diffeomorphism.  An isomorphism of $G$ onto itself is called an automorphism. Observe that the set of  automorphisms of a finite dimensional  $\R$--vector space  $V$ has a natural structure of Lie group, because if a basis is selected, then the group of all linear invertible maps  may be identified with the Lie group of invertible matrices. This group is denoted by $\Aut (V)$. As we shall see in Section~\ref{unirreps}, a homomorphism $\pi:G\rightarrow\Aut (V)$ is  a finite dimensional {\it
+representation}  of $G$.
+\pmn
+If  $\gg$ and  $\gh$ sare both real Lie algebras, a linear map  $\psi:\gg\rightarrow\gh$  for which
+$\psi([X,Y])=[\psi(X),\psi(Y)]$ is a Lie algebra homomorphism. 
+Further, if  $\psi$ is a linear isomorphism, then it is called a Lie algebra isomorphism. If $\gh=\genln (W)$ is the Lie algebra of all endomorphisms  of a vector space $W$, a Lie algebra homomorphism
+$\psi:\gg \rightarrow\gh$ is called a  {\it representation} of
+$\gg$ on $W$. This is the case of the homomorphism $X\mapsto\ad X$, which defines the  {\it adjoint representation} of $\gg$, a representation of $\gg$ on itself.
+\pmn
+Let $\varphi:G\rightarrow H$ be a Lie group homomorphism. Its differential 
+$\varphi_{*e}:T_e(G)\rightarrow T_e(H)$ is a linear map. By the natural identifications $T_e(G)\simeq\cL(G)$ and  $T_e(H)\simeq\cL(H)$, $\varphi_{*e}$  induces a linear map
+ $\cL(G)\rightarrow \cL(H)$  denoted $d\varphi$.
+More precisely, if $X\in\cL(G)$, then $d\varphi(X)$ is the unique left invariant vector field on $G$ such that
+\[
+(d\varphi(X))_e=\varphi_{*e}X_e.
+\]
+The following result clarifies matters.
+\begin{prop} Let $\varphi:G\rightarrow H$ be a Lie group homomorphism. Then
+$\varphi_{*g}X_g=(d\varphi (X))_{\varphi(X)}$ for every $X\in\cL(G)$ and $d\varphi$ is
+a Lie algebra homomorphism.
+\end{prop}
+\pmn
+Take again a  Lie group homomorphism $i:G\rightarrow H$ and assume that  $i$ is injective 
+and that also its differential is injective in every point (such a map is called an injective immersion). In this case the pair $(i,H)$ is called a Lie subgroup of  $G$.
+\begin{theorem} Let  $G$ be a Lie group with Lie algebra $\gg$ and take a Lie subalgebra
+$\gh$ of  $\gg$. Then there exists a connected Lie subgroup $(i,H)$ of $ G$, unique up to isomorphisms, such that $di(\cL(H))=\gh$. Therefore there is a bijective correspondence between the
+connected Lie subgroup of a Lie group and the subalgebras of its Lie algebra.
+\end{theorem}
+The theory of covering groups is also very important, and relevant in the present context, but we content ourselves with the observation that every connected Lie group has a simply connected covering that admits the structure of Lie group and for which the covering homomorphism is a Lie group homomorphism. 
+Furthermore,  a Lie group homomorphism
+$\varphi:G\rightarrow H$
+is a covering map if and only if $d\varphi$ is a Lie algebra isomorphism. The following theorem is of central importance in the  theory of Lie groups.
+\begin{theorem} Let $G_1$ and $G_2$ be two  Lie groups with Lie algebras
+ $\gg_1$ and $\gg_2$, respectively, and let $\lambda:\gg_1\rightarrow\gg_2$ be a Lie algebra homomorphism.
+Then there cannot be more than one Lie group homomorphism $\varphi:G_1\to G_2$ such that $d\varphi=\lambda$. If $G_1$ is simply connected, then such a $\varphi$ exists.
+\end{theorem}
+\pmn
+\subsubsection{Exponential mapping}We now review in some detail the definition of the fiundamental map linking the group and its Lie algebra, namely the exponential mapping
+$\exp:\gg\rightarrow G$. Let $\R$ be the additive Lie group of real numbers.
+Its Lie algebra is one-dimensional and is generated by the vector field
+$\frac{d}{dt}$. Take now a Lie group $G$ with Lie algebra $\gg$, and fix
+$X\in\gg$. The map
+\[
+\tau\frac{d}{dt}\mapsto \tau X,\qquad\tau\in\R
+\]
+is a Lie algebra homomorphism. Since $\R$is simply connected,
+there exists a unique homomorphism $\xi_X:\R\rightarrow G$ such that:
+\begin{equation}\begin{cases}
+(\xi_X)_{*\tau}\frac{d}{dt}\Bigr|_{t=\tau}=X_{\xi_X(\tau)}\\
+(\xi_X)_{*0}\frac{d}{dt}\Bigr|_{t=0}=X_{e}
+\end{cases}\label{exp1}
+\end{equation}
+Conversely, if $\eta:\R\rightarrow G$ is a Lie group homomorphism, then
+$X=d\eta(\frac{d}{dt})$ satisfies
+$\eta=\xi_X$. Hence, the correspondence $X\mapsto\xi_X$ establishes a bijection 
+between $\gg$ and the set of homomorphisms from  $\R$ into $G$ with the property that  
+$d\xi_X(\frac{d}{dt})=X$ for every $X\in\gg$.
+\pmn
+Fix now  $\tau\in\R$ and $X\in\gg$. Then, if  $m_\tau$ denotes the multiplication by  $\tau$ in $\R$, the map
+ $\eta(t)=\xi_X(\tau t)=\xi_X\circ m_\tau(t)$ is again a homomorphism
+from $\R$ into $G$ and since
+\[
+\eta_{*0}\frac{d}{dt}\bigr|_{t=0}=(\xi_X)_{*0}\tau\frac{d}{dt}\bigr|_{t=0}=\tau
+X_e,
+\]
+it follows that $\eta=\xi_{\tau X}$, that is
+\begin{equation}\xi_{\tau X}(t)=\xi_X(\tau t),\qquad
+t,\tau\in\R,\;X\in\gg.\label{exp2}\end{equation}
+We define
+\begin{equation}\exp X=\xi_X(1),\qquad X\in\gg.\label{exp3}\end{equation}
+The map $\exp:\gg\rightarrow G$ is called the {\it exponential mapping}. From \eqref{exp2}
+it follows that
+\begin{align*}\xi_X(t)&=\exp (tX),\qquad t\in\R,\;X\in\gg\\
+\exp 0&=e.
+\end{align*}
+It is easy to check that if $X\in\gg$ e $x\in G$ sare fixed, the map
+$t\mapsto x\exp (tX)$ defines the integral curve relative  to $X$ passing through $x$. Hence, for every  $C^\infty$-function $f$ in a neighborhood of $x$ we have
+\begin{equation}X_x(f)=\frac{d}{dt}\bigr|_{t=0}f(x\exp tX)\label{exp4}.\end{equation}
+An immediate consequence of the fact that  $\xi_X$ is a homomorphism are the formulae
+\begin{align}\exp (t+s)X&=\exp tX\exp sX\label{exp5}\\
+\exp (-tX)&=(\exp tX)^{-1}.\label{exp6}
+\end{align}
+The following formulae require some harder work:
+\begin{align}&\exp tX\exp tY=\exp \{t(X+Y)+\sfrac{1}{2}t^2[X,Y]+O(t^3)\}\label{exp7}\\
+&\exp (-tX)exp (-tY)\exp tX\exp tY=\exp\{t^2[X,Y]+O(t^3)\}\label{exp8}\\
+&\exp tX\exp tY\exp (-tX)=\exp \{tY+t^2[X,Y]+O(t^3)\}.\label{exp9}
+\end{align}
+Formula \eqref{exp7} is the well-known di Baker--Campbell--Hausdorff formula. 
+The exponential map is in general neither injective nor surjective, but it is locally very nice:
+\begin{prop} The exponential map is  $C^\infty$ and its differntial at zero
+is the  identity map of $\gg$. Consequently, $\exp$ establishes a diffeomorphism
+of a neighborhood of $0\in\gg$ onto a a neighborhood of $e\in G$.
+\end{prop}
+\pmn
+The following is fundamental.
+\begin{theorem} Let $\varphi:G\rightarrow H$ be a Lie group homomorphism with
+differential $d\varphi:\gg\rightarrow\gh$. Then, for every $X\in\gg$
+\begin{equation}\varphi (\exp X)=\exp(d\varphi X).\label{exp10}\end{equation}
+\end{theorem}
+\pmn
+By means of the previous result it is easy to show the next one, which is of great practical use because it allows to calculate the Lie algebra of a subgroup of  $G$ as a subalgebra of the Lie algebra of $G$.
+\begin{prop} Let $H$ be a Lie subgroup of the Lie group $G$ and let $\gh\subset\gg$ be 
+the corresponding Lie algebras. Fix $X\in\gg$. If $X\in\gh$, then $\exp tX\in H$ for every $t\in\R$. Conversely, if $\exp tX\in H$ for every  $t\in\R$, then $X\in\gh$.
+\end{prop}
+\pmn
+Refining the above result  one obtains the next, which is very useful when dealing with the classical matrix groups and algebras.
+\begin{prop}\label{gralg} Let $A$ be an abstract subgroup of the Lie group $G$ and let
+$\ga$ be a vector subspace of the Lie algebra $\gg$ of $G$. Let $U$be a neighborhood
+of
+$0\in\gg$ diffeomorphic via $\exp$ to the neighborood $V$ of $e\in G$. Suppose that
+\[
+\exp (U\cap\ga)=A\cap V.
+\]
+Then, endowed with the relative topology,  $A$ is a Lie subgroup of $G$ and
+$\ga$ is its Lie algebra.
+\end{prop}
+
+\pmn
+{\bf Examples.} The set  of all $n\times n$ real matrices endowed with the bracket $[A,B]=AB-BA$
+is a Lie algebra, and, as any vector space, a smooth manifold with coordinates given by any choice of a basis.  Denote by $\gg$ the Lie algebra of $\Glnr$ and let  $\alpha:\glnr_e\rightarrow\glnr$
+the canonical identification of the tangent space at the identity
+$e\in\glnr$ with $\glnr$. Thus, if  $v\in\glnr_e$
+\[
+\alpha(v)_{ij}=v(x_{ij}).
+\]
+Since $\Glnr_e=\glnr_e$, there is a natural map:
+\[
+\beta:\gg\rightarrow\glnr,\qquad\beta(X)=\alpha(X_e).
+\]
+It is easy to see (exercise) that   $\beta$ is a Lie algebra isomorphism.
+The ordinary matrix exponentiation
+\[
+A\mapsto e^A
+\]
+satisfies all the properties of the exponential mapping and it thus coincides with it,
+from $\glnr$ into $\Glnr$.
+We recall also that
+\[
+\det e^A=e^{\tr A}.
+\]
+\pmn
+Take now a neighborhood  $U$ of  $0\in\glnc$ diffeomorphic under $\exp$ to the neighborhood   $V$ of
+$I\in\Glnc$. We now prove that the Lie algebra of $\Spnr$ is $\spnr$, where
+\[
+\Spnr=\bigl\{g\in\Glnr\,:\,\t gJg=J\bigr\}
+\]
+\[
+\spnr=\bigl\{X\in\glnr\,:\,\t XJ+XJ=0\bigr\},\]
+and where $J$ is the canonical skew-symmetric matrix
+\[
+J=\bmatrix 0&I_d\\-I_d&0\endbmatrix,
+\]
+that defines the standard symplectic form (see Section~\ref{SYMP} for more details).
+If $X\in U\cap\spnr$, the relation $\t XJ=-JX$ implies
+\[
+\t(e^X)J(e^X)=e^{\t X}Je^X=J(Je^{\t X}J^{-1})e^X=Je^{-J\t XJ}e^X=Je^{-X}e^X=J.
+\]
+Elementary manipulations  show that if $Y=e^X\in V\cap\Spnr$, then  $\t
+XJ+JX=0$. Applying nw Proposition~\ref{gralg} one may conclude  (exercise: fill in the details).
+\pmn
+We conclude this section with two important results.
+\pmn
+\begin{theorem}{\bf (Cartan)} Let $G$ be a Lie group and let  $A$ be a closed subgroup of 
+$G$. Then $A$ has a unique smooth (in fact analytic) structure that makes it a Lie subgroup of $G$.
+\end{theorem}
+\pmn
+\begin{theorem} Let $G$ be a connected Lie group  with Lie algebra $\gg$ and
+let $\varphi:G\rightarrow H$ be a Lie group homomorphism of $G$ into the Lie group $H$, whose Lie
+algebra is $\gh$. Then:
+\begin{itemize}
+\item[i)] $\ker (\varphi)$ is a closed Lie subgroup of $G$ with Lie algebra $\ker (d\varphi)$;
+\item[ii)] $\varphi (G)$ is a Lie subgroup of $H$ with Lie algebra $d\varphi
+(\gg)\in\gh$.
+\end{itemize}
+\end{theorem}
+
+
+\subsubsection{Adjoint representations} The most important finite dimensional representation of a Lie group $G$  is certainly the adjoint representation, which acts on its Lie algebra $\\gg$.
+Passiamo infine a descrivere la pi\`u importante rappresentazione (finito
+dimensionale) di un gruppo di Lie, cio\`e quella naturale sulla sua algebra di Lie.
+Given any real Lie algebra $\gg$, we shall denote by
+$\glg$ the Lie algebra of all endomorphisms of $\gg$  with the commutator as bracket and by 
+$GL(\gg)$ the group of all non singular endomorphisms of $\gg$ as a vector space.
+Hence $\glg$ is the Lie algebra of $GL(\gg)$. The map
+$X\mapsto \ad X$ is a Lie algebra homomorphism whose image is a Lie subalgebra of $\glg$ 
+denoted $\ad \gg$. Let
+$\Int (\gg)$ be the connected Lie subgroup of  $GL(\gg)$ whose Lie algebra is $\ad
+\gg$. The group $\Int (\gg)$ is called the  {\it adjoint group} of $\gg$.
+Schematically:
+\begin{eqnarray*} \glg &\longleftrightarrow&GL(\gg) \\
+ \cup& & \cup\\
+\ad \gg &\longleftrightarrow&\Int (\gg)
+\end{eqnarray*}
+where the arrows stand for the correspondence group-algebra.
+Next, let $\Aut (\gg)$ be the Lie subgroup of  $GL(\gg)$ consisting of all the automorphisms of $\gg$ (the invertible homomorphisms of $\gg$ onto itself) and let
+$\partial \gg$ its Lie algebra. Sappiamo che $\partial \gg$ \`e formata da
+tutti gli endomorfismi $D\in\glg$ tali che $\exp tD\in\Aut (\gg)$ per ogni
+$t\in\R$. Dalla relazione
+$\exp (tD) [X,Y]=[\exp (tD)X,\exp (tD)Y]$ segue, calcolando la derivata per $t=0$
+$$D[X,Y]=[DX,Y]+[X,DY].$$
+Un tale operatore si chiama una derivazione di $\gg$. Viceversa, se $D$ \`e una
+derivazione, allora per induzione
+$$D^k[X,Y]=\sum_{i+j=k}\frac{k!}{i!j!}[D^iX,D^jY],$$
+cosicch\'e $\exp (tD)[X,Y]=[\exp (tD)X,\exp (tD)Y]$. Ne segue che $\partial \gg$ \`e
+formata da tutte le derivazioni di $\gg$. Infine, siccome $\ad X$ \`e una
+derivazione di $\gg$ per ogni $X\in\gg$, possiamo raffinare il diagramma precedente:
+\begin{eqnarray*} \glg &\longleftrightarrow&GL (\gg) \\
+\cup& & \cup\\
+\partial \gg&\longleftrightarrow&\Aut (\gg)\\
+\cup& & \cup\\
+\ad \gg &\longleftrightarrow&\Int (\gg)
+\end{eqnarray*}
+\begin{prop} $\Int (\gg)$ \`e un sottogruppo normale di
+ $\Aut (\gg)$ e $\ad\gg$ \`e un ideale in $\partial \gg$.
+\end{prop}
+\pmn
+Sia $G$ un gruppo di Lie e sia $g\in G$. Denotiamo con
+$i_g$ la coniugazione interna di $G$ definita da $x\mapsto gxg^{-1}$ e poniamo:
+$$\Ad g:=di_g:\gg\rightarrow\gg.$$
+Siccome $i_g$ \`e un isomorfismo di $G$, $\Ad g\in\Aut(\gg)$.
+La mappa
+$$\Ad:G\rightarrow \Aut(\gg),\quad g\mapsto\Ad g$$
+\`e un omomorfismo di gruppi che sia chiama la {\it rappresentazione aggiunta} di
+$G$. Sui gruppi classici di matrici risulta $\Ad g (X)=gXg^{-1}$.
+Si osservi che a causa delle propriet\`a di $\exp$, si ha: 
+$$\exp (\Ad g (X))=\exp (di_g (X))=i_g(\exp X)=g(\exp X) g^{-1}.$$
+\begin{theorem} $\Ad$ \`e una mappa $C^\infty$ ed inoltre
+$d\Ad =\ad$. In particolare, per ogni $X\in \gg$: $\Ad (\exp X)=e^{\ad X}.$
+\end{theorem}
+\pmn
+\begin{cor} La rappresentazione aggiunta di $G$ \`e un omomorfismo surgettivo e
+liscio ($C^\infty$) di $G$ su $\Int (\gg)$ con nucleo il centro $Z_G$ di $G$. In
+particolare
+$$G/Z_G\simeq\Int (\gg).$$
+\end{cor}
+\pmn
+E' chiaro dal risultato precedente che il centro di un gruppo di Lie connesso \`e un
+sottogruppo di Lie chiuso, e che si ha il seguente fondamentale diagramma
+\begin{eqnarray*}\gg&\stackrel{\ad}{\longrightarrow}&\ad\gg\\
+^{\exp}\Big\downarrow& &\Big\downarrow\ ^{\exp}\\
+G&\stackrel{\Ad}{\longrightarrow}&\Int(\gg)
+\end{eqnarray*}
+\pmn
+Ne segue che l'algebra di Lie del centro  $Z_G$ \`e il centro
+$${\gz}_{\gg}=\bigl\{X\in\gg\,:\,[X,Y]=0 \text{ per ogni } Y\in\gg\bigr\}$$ 
+di $\gg$. Quindi, un gruppo di Lie \`e abeliano se e solo se la sua
+algebra di Lie \`e abeliana.
+
+
+\subsubsection{Haar measure on Lie groups and integration}\label{haarlie} Some comments on integration and modular functions on Lie groups are in order.
+First of all, left Haar measures are very easy to construct. One takes any positive definite inner product on the tangent space at the identity $T_eG$ and carries it around with the differential of left translations, thereby obtainining a Riemannian structure.  The corresponding volume form is a Haar measure. Furthermore, in every local coordinate system, it is given by a $C^\infty$ density times the Lebesgue measure. The following proposition is quite handy.
+\begin{prop} If $G$ is a Lie group whose underlying manifold is an open set in $\R^d$ and if the left translations are given by affine maps, that is
+\[
+xy=A(x)y+b(x),
+\]
+where $A(x)$ is a linear transformation and $b(x)\in\R^d$, then $|\det A(x)|^{-1}\,dx$
+is a Haar measure on $G$.
+\label{affines}\end{prop}
+
+For example, in the group ``$ax+b$'' the left translations are
+\[
+l_{(a,b)}(\alpha,\beta)=\begin{bmatrix}a&0\\0&a\end{bmatrix}
+\begin{bmatrix}\alpha\\\beta\end{bmatrix}+\begin{bmatrix}0\\b\end{bmatrix},
+\]
+so that by Proposition~\ref{affines} we have
+\[
+|\det A(a,b)|^{-1}\,da\,db=\frac{da}{a^2}db.
+\]
+As for the modular function, in any Lie group we have
+\[
+\Delta(g)=|\det \Ad(g)|^{-1}.
+\]
+It is possible to realize the ``$ax+b$'' group as a matrix group. The reader may check that t
+
+The correspondence
+\begin{equation}
+(a,b)\leftrightarrow\begin{bmatrix} a&b\\0&1\end{bmatrix} 
+\end{equation}
+establishes an isomorphism of $(ax+b)$ with a closed Lie subgroup of $GL(2,\mathbb{R})$, whose Lie algebra can be seen as the matrices
+\begin{equation}
+\begin{bmatrix} A&B\\0&0\end{bmatrix}. 
+\end{equation}
+The adjoint representation takes the form
+\begin{equation}
+\begin{bmatrix} a&b\\0&1\end{bmatrix}\begin{bmatrix} A&B\\0&0\end{bmatrix}
+\begin{bmatrix} a^{-1}&-ba^{-1}\\0&1\end{bmatrix}
+=\begin{bmatrix} A&-bA+aB\\0&0\end{bmatrix} 
+\end{equation}
+and it is thus the linear map
+\begin{equation}
+\begin{bmatrix} A\\B\end{bmatrix}\mapsto
+\begin{bmatrix} 1&0\\-b&a\end{bmatrix}\begin{bmatrix} A\\B\end{bmatrix}. 
+\end{equation}
+It follows that
+\begin{equation}
+\Delta(a,b)=|\det\begin{bmatrix} 1&0\\-b&a\end{bmatrix}|^{-1}=a^{-1}. 
+\end{equation}
+
+
+
+
+
+\vskip1truecm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Representation theory}\label{unirreps}
+Let  $\cH_1$ and  $\cH_2$ be two Hilbert spaces and suppose that  $T:\cH_1\rightarrow\cH_2$ is  linear and
+bounded, that is $T\in\cB(\cH_1,\cH_2)$.  Recall that  $T$ is an  {\it isometry}
+if $\|Tu\|=\|u\|$ for every  $u\in\cH_1$. Since $\|Tu\|^2=\langle
+Tu,Tu\rangle=\langle T^*Tu,u\rangle$ e $\|u\|^2=\langle u,u\rangle$, the
+polarition identity  implies that $T$ is an isometry if and only if  $T^*T=id_{\cH_1}$.
+Hence, isometries are injective, but they are not necessarily surjective. A bijective isometry is called a  {\it unitary map}. If $T$ is unitary,
+such is also $T^{-1}$ and in this case $TT^*=id_{\cH_2}$. In particular
+if $\cH_1=\cH_2=\cH$, the set
+\[
+\cU(\cH)=\bigl\{T\in\cB(\cH)\,:\,T \text{ is unitary}\bigr\}
+\]
+forms a group.
+\pmn
+Let now $G$ be a Lie\footnote{In all what follows, it would suffice to consider a locally compact Hausdorff topological group.} group.
+\begin{defn} A unitary representation of $G$ on the Hilbert space  $\cH$ is a group homomorphism
+$\pi:G\rightarrow\cU(\cH)$ continuous in the strong operator topology. This means:
+\begin{itemize}
+\item[i)] $\pi(gh)=\pi(g)\pi(h)$ for every  $g,h\in G$;
+\item[ii)] $\pi(g^{-1})=\pi(g)^{-1}=\pi(g)^*$  for every  $g\in G$;
+\item[iii)] $g\mapsto \pi(g)u$  is continuous from $G$ to  $\cH$, for every $u\in\cH$.
+\end{itemize}
+\end{defn}
+\pmn
+Observe that from the equality $\|\pi(g)u-\pi(h)u\|=\|\pi(hg^{-1})u-u\|$ it follows that it is enough
+to check iii) for $g=e$,  the identity of $G$.
+\pmn
+{\bf Examples. 1.} Let $G=\R$ be  additive group and $\cH=\C$. For every  $s\in\R$ we define the function 
+$\chi_s(t)=e^{its}$ and we identify the complex number  $e^{its}$ with the multiplication operator on $\C$ defined by $z\mapsto ze^{its}$. Clearly,
+$\chi_s:\R\rightarrow\cU(\C)$ is a unitary representation, because 
+\begin{align*}
+&\chi_s(x+y)=\chi_s(x)\chi_s(y)\\
+&\chi_s(-x)=\chi_s(x)^{-1}=\overline{\chi_s(-x)}&     \\
+&t\mapsto  e^{its}z\text{ is continuous for every }z\in\C.
+\end{align*}
+{\bf 2.} Let $G$ be any locally compact group and choose $\cH=L^2(G)$. Define
+\begin{equation}L:G\rightarrow\cU(\cH),\quad g\mapsto L_x,\quad
+L_xf(y)=f(x^{-1}y).\label{rightreg}\end{equation}
+It is easy to check that this is a unitary representation, the so-called  {\it left regular} representation.
+\pmn
+{\bf 3.} Let $G$ be the ``$ax+b$'' group and $\cH=L^2(\R)$. Define
+\begin{equation}
+\pi(a,b)f(x)=\frac{1}{\sqrt a}f\left(\frac{x-b}{a}\right),
+\label{wavrep}
+\end{equation}
+the so-called {\it wavelet} representation. Notice that it is just the composition of the two very important and basic unitary maps
+\begin{align}
+T_bf(x)&=f(x-b)\hskip1truecm\text{(translation operator)}\label{TO}     \\
+D_af(x)&=\frac{1}{\sqrt a}f\left(\frac{x}{a}\right) \hskip1truecm\text{(dilation operator)}\label{DI}    
+\end{align}
+for indeed
+\[
+T_bD_af(x)=T_b(D_af)(x)=D_af(x-b)=\frac{1}{\sqrt a}f\left(\frac{x-b}{a}\right).
+\]
+Observe that
+\[
+T_bT_{b'}=T_{b+b'},
+\qquad D_aD_{a'}=D_{aa'}.
+\]
+It is important to observe that $T_bD_a\not=D_aT_b$. More precisely,
+\[
+D_aT_bf(x)=\frac{1}{\sqrt a}(T_bf)\left(\frac{x}{a}\right)
+=\frac{1}{\sqrt a}f\left(\frac{x}{a}-b\right)
+=\frac{1}{\sqrt a}f\left(\frac{x-ab}{a}\right)=T_{ab}D_af(x).
+\]
+In other words
+\[
+D_aT_b=T_{ab}D_a.
+\]
+It follows that
+\[
+(T_\beta D_\alpha)(T_bD_a)=T_\beta(D_\alpha T_b)D_a
+=T_\beta(T_{\alpha b}D_a)D_a
+=(T_\beta T_{\alpha b})(D_aD_a)
+=T_{\beta+\alpha b}D_{\alpha a}.
+\]
+so that $\pi$ is a homomorphism:
+\[
+\pi(\alpha,\beta)\pi(a,b)=\pi(\alpha a,\beta+\alpha b)=\pi((\alpha,\beta)(a,b)).
+\]
+Finally, it is instructive to check the strong continuity, which is left as an exercise.
+\pmn
+\begin{defn} Sia $M\subset\cH$ un sottospazio chiuso dello spazio di Hilbert $\cH$.
+Diremo che $M$ \`e un sottospazio invariante per la rappresentazione unitaria
+$\pi:G\rightarrow\cU(\cH)$ se $\pi(g)M\subset M$ per ogni $g\in G$. Diremo che $\pi$
+\`e irriducibile se $\cH$ non contiene sottospazi invarianti propri non banali,
+cio\`e diversi da $\{0\}$.
+\end{defn}
+\pmn
+{\bf Esercizio.} Provare che se $M$ \`e un sottospazio invariante per $\pi$ tale \`e
+anche $M^\perp$ e che $\pi=\pi_M\oplus\pi_{M^\perp}$, dove $\pi_M$ \`e la
+restrizione di $\pi$ ad $M$ e similmente per $M^\perp$.
+\pmn
+\begin{defn} Siano $\pi_i:G\rightarrow\cU(\cH_i)$, $i=1,2$ due rappresentazioni
+unitarie di $G$. Esse sono dette equivalenti se esiste un operatore unitario
+$U:\cH_1\rightarrow\cH_2$ tale che
+\begin{equation}\pi_2(g)\circ U=U\circ\pi_1(g),\qquad \text{ per ogni }g\in
+G\label{intertw}\end{equation}
+In questo caso $U$ si chiama un operatore di intrallacciamento tra $\pi_1$
+e $\pi_2$. L'insieme di tutti gli operatori di intrallacciamento tra $\pi_1$
+e $\pi_2$ si denoter\`a $\cI(\pi_1,\pi_2)$, Se $\pi_1=\pi_2=\pi$, scriveremo
+$\cI(\pi,\pi)=\cI(\pi)$,
+\end{defn}
+
+\pmn
+{\bf Esercizi. 1)} Sia  $L$ la rappresentazione di $\R$ su $L^2(\R)$
+definita mediante $L_xf(y)=f(y-x)$. Esibire un operatore unitario su $L^2(\R)$
+che intrallaccia $R$ ed $L$.
+\pmn
+{\bf 2)} Sia $M\subset\cH$ chiuso, $P$ la proiezione orogonale su $M$. Provare che
+$M$ \`e $\pi$--invariante se e solo se $P\in\cI(\pi)$.
+\pmn
+Il prossimo risultato \`e di cruciale importanza in teoria delle rappresentazioni.
+Per una dimostrazione si veda, ad esempio \cite{Fol2}.
+\begin{lemma}{\bf (di Schur.)}\label{schurlemma} i) Una rappresentazione unitaria di $G$ \`e
+irriducibile se e solo se $\cI(\pi)$ contiene solo multipli scalari
+dell'identit\`a.
+\pmn
+ii) Siano $\pi_1$ e $\pi_2$ due rappresentazioni irriducibili e unitarie di $G$.
+Se esse sono equivalenti $\cI(\pi_1,\pi_2)$ ha dimensione uno, altrimenti
+$\cI(\pi_1,\pi_2)=\{0\}$.
+\end{lemma}
+\pmn
+\begin{defn} Sia $\pi$ una rappresentazione unitaria di $G$ su $\cH$ e siano
+$\xi,\eta\in\cH$. La funzione sul gruppo $g\mapsto\langle\pi(g)\xi,\eta\rangle\in\C$
+ si chiama il coefficiente di $\pi$ relativo a $(\xi,\eta)$. Se $\xi=\eta$, esso si
+dice un coefficiente diagonale. Si osservi che i coefficienti sono funzioni continue
+e che $|\langle\pi(g)\xi,\eta\rangle|\leq\|\xi\|\|\eta\|$.
+\end{defn}
+\pmn
+{\bf Esercizio.} Provare che se $\pi_1$ e $\pi_2$ sono equivalenti, esse hanno gli
+stessi coefficienti. Viceversa, siano $\pi_1$ e $\pi_2$ irriducibili e si supponga
+che esse abbiano gli stessi coefficienti diagonali non--nulli. Si provi che allora
+$\pi_1$ e $\pi_2$ sono equivalenti.
+
+\noindent [{\bf Traccia:} si considerino $\xi_1$ e $\xi_2$
+tali che $\langle\pi_1(g)\xi_1,\xi_1\rangle=\langle\pi_2(g)\xi_2,\xi_2\rangle\not=0$
+per ogni $g\in G$ e si definisca $U$ sugli elementi del tipo
+$\xi=\sum_{j=1}^k\alpha_j\pi_1(x_j)\xi_1$ mediante la formula
+$U\xi=\sum_{j=1}^k\alpha_j\pi_2(x_j)\xi_2$.]
+\pmn
+
+
+\vskip1truecm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unbounded operators. Stone's Theorem and  $C^\infty$-vectors}
+\pmn
+In questo paragrafo $\cH$ sar\`a uno spazio di Hilbert fissato. Diremo che
+$T$
+\`e un {\it operatore} su $\cH$ se $T$ \`e una mappa lineare definita su un
+dominio $\cD (T)\subset\cH$ con immagine $\cR(T)\subset\cH$. Non si assume
+dunque che $T$ sia limitato o continuo. Naturalmente, se $T$ \`e continuo allora
+esso ha una estensione continua sulla chiusura di  $\cD(T)$ e quindi su
+$\cH$; in altre parole, in questo caso $T$ \`e la restrizione a
+$\cD(T)$ di un qualche $\widetilde T\in\cB(\cH)$. Il grafico di $T$ in
+$\cH\times\cH$ verr\`a denotato $\cG(T)$. Si osservi che  $S$ \`e una
+estensione di $T$ se e solo se $\cG (T)\subset \cG (S)$, cosicch\`e, in questo
+caso, scriveremo $T\subset S$. Un operatore si dir\`a {\it chiuso} se tale \`e il
+suo grafico. Il teorema del grafico chiuso dice semplicemente che 
+$T\in\cB(\cH)$ se e solo se $\cD (T)=\cH$ e $T$ \`e un operatore chiuso.
+\pmn
+Vogliamo ora definire l'aggiunto hilbertiano di $T$, che denoteremo $T^*$. Il suo
+dominio $\cD(T^*)$ sar\`a costituito da tutti i vettori $y\in\cH$ per i quali il
+funzionale lineare
+\begin{equation}x\mapsto\langle Tx,y\rangle\label{adj1}\end{equation}
+\`e continuo su $\cD(T)$. Se quindi $y\in\cD(T^*)$, il teorema di Hahn--Banach ci
+consente di estendere il funzionale \ref{adj1} ad un funzionale lineare continuo su
+tutto $\cH$ e quindi esiste un elemento, denotato $T^*y$ per il quale
+risulta
+\begin{equation}\langle Tx,y\rangle=\langle x,T^*y\rangle,\qquad
+x\in\cD(T).\label{adj2}\end{equation}
+E' evidente che $T^*y$ \`e individuato univocamente da \ref{adj2} se e solo se
+$\cD(T)$ \`e denso in $\cH$. Definiremo quindi $T^*$ solo per gli operatori $T$
+densamente definiti in $\cH$.
+\pmn
+{\bf Esercizi.}
+
+\smallskip
+\noindent
+{\bf 1.} Provare che se $T$ \`e un operatore densamente definito,
+allora
+$T^*$ \`e un operatore su $\cH$. Provare inoltre che se $T\in\cB(\cH)$, allora la
+definizione di $T^*$ coincide con la definizione usuale e che, in particolare,
+$\cD(T^*)=\cH$ e $T^*\in\cB(\cH)$.
+\pmn
+{\bf 2.} Siano $R$, $S$ e $T$ operatori su $\cH$. Provare le seguenti relazioni.
+\begin{itemize}
+\smallskip
+\item[] $\cD(S+T)=\cD(S)\cap\cD(T)$;
+\item[] $\cD(ST)=\bigl\{x\in\cD(T)\,:\,Tx\in\cD(S)\bigr\}$;
+\item[] $(R+S)+T=R+(S+T)$;
+\item[] $(RS)T=R(ST)$;
+\item[] $(R+S)T=RT+ST$;
+\item[] $TR+TS\subset T(R+S)$.
+\end{itemize}
+\pmn
+{\bf 3.} Siano $S$, $T$ e $ST$ operatori densamente definiti su $\cH$. Provare che
+allora $T^*S^*\subset (ST)^*$. Se inoltre $S\in\cB(\cH)$, allora $T^*S^*=(ST)^*$.
+\pmn
+\begin{defn} Un operatore su $\cH$ si dice simmetrico se
+\begin{equation}\langle Tx,y\rangle=\langle x,Ty\rangle\label{sym1}\end{equation}
+per ogni $x\in\cD(T)$ ed $y\in\cD(T)$. Gli operatori simmetrici densamente definiti
+sono quindi quelli per cui
+\begin{equation}T\subset T^*\label{sym2}\end{equation}
+Se $T=T^*$, allora $T$ si dice autoaggiunto (selfadjoint). Si dice che $T$ \`e
+anti--autoaggiunto (skewadjoint) se $iT$ \`e autoaggiunto.
+\end{defn}
+\pmn
+Si osservi che un operatore limitato \`e simmetrico se e solo se \`e autoaggiunto.
+In generale questo non \`e vero. Si osservi inoltre che se $\cD(T)$ \`e denso e
+$\langle Tx,y\rangle=\langle x,Sy\rangle$ per ogni $x\in\cD(T)$ ed ogni $y\in\cD(S)$
+allora $S\subset T^*$.
+\pmn
+{\bf Esempio.} Sia $\cH=L^2([0,1])$ con la misura di Lebesgue, e siano
+\begin{itemize}
+\smallskip
+\item[] $\cD(T_1)=\bigl\{f\in A.C.[0,1]\,:\,f'\in L^2\bigr\}$;
+\item[] $\cD(T_2)=\cD(T_1)\cap \bigl\{f\,:\,f(0)=f(1)\bigr\}$;
+\item[] $\cD(T_3)=\cD(T_1)\cap \bigl\{f\,:\,f(0)=f(1)=0\bigr\}$;
+\end{itemize}
+siano poi 
+$$T_kf=if',\qquad f\in\cD(T_k),\;k=1,2,3.$$
+Proveremo ora che
+$$T_1^*=T_3,\quad T_2^*=T_2, \quad T_3^*=T_1.$$
+Siccome evidentemente $T_3\subset T_2\subset T_1$, ne risulta che $T_2$ \`e una
+estensione autoaggiunta dell'operatore $T_3$ che \`e simmetrico (ma non
+autoaggiunto) e che l'estensione $T_1$ di $T_2$ non \`e simmetrica.
+\pmn
+Innanzitutto \`e necessario provare che i tre domini in questione sono densi
+in $L^2$, il che \`e lasciato per esercizio. Notiamo poi che se
+$f\in\cD(T_k)$ e
+$g\in\cD(T_m)$ con
+$m+k=4$ (cio\`e
+$(k,m)\in\{(1,3), (2,2),(3,1)\}$), Allora $f(1)\bar g(1)=f(0)\bar g(0)$, cosicch\'e
+$$\langle T_kf,g\rangle=\int_0^1(if')\bar g=\int_0^1f\overline{(ig')}=\langle
+f,T_mg\rangle.$$
+Ne segue che $T_m\subset T_k^*$, ovvero
+$$T_1\subset T^*_3,\quad T_2\subset T_2^*, \quad T_3\subset T_1^*.$$
+Sia ora $g\in\cD(T_k^*)$ e sia $\phi=T_k^*g$. Poniamo $\Phi(x)=\int_0^x\phi$.
+Allora, per $f\in \cD(T_k)$ si ha:
+\begin{equation}\int_0^1(if')\bar g=\langle T_kf,g\rangle=\langle
+f,\phi\rangle=f(1)\overline{\Phi(1)}-\int_0^1f'\bar\Phi.\label{ex1}\end{equation}
+Ora, se $k=1,2$, il corrispondente dominio contiene le $f$ costanti; siccome \ref{ex1}
+deve valere anche per le costanti non nulle, ne risulta $\Phi(1)=0$. Se invece $k=3$
+allora $f(1)=0$. Quindi in ogni caso
+\begin{equation}ig-\Phi\in\cR (T_k)^\perp.\label{ex2}\end{equation}
+Sia ora $k=1$. Siccome $\cR (T_k)=L^2$, $ig=\Phi$ cosicch\'e
+$g(0)=-i\Phi(0)=0=-i\Phi(1)=g(1)$ e $g\in\cD(T_3)$. Perci\`o $T_1^*\subset T_3$. Se
+invece $k=2,3$ allora $\cR(T_k)$ \`e costituito dalle $u\in L^2$ tali che $\int_0^1
+u=0$ e possiamo scrivere
+\begin{equation}\cR (T_2)=\cR (T_3)=Y^\perp,\label{ex3}\end{equation}
+dove $Y$ \`e il sottospazio uno--dimensionale di $L^2$ delle costanti. Ma allora
+\ref{ex2} implica che $ig-\Phi$ \`e costante, il che \`e equivalente ad affermare
+che $g$ \`e assolutamente continua ed ha derivata in $L^2$. In altre parole
+$g\in\cD(T_1)$. Perci\`o $T_3^*\subset T_1$. Infine, se $k=2$ allora $\Phi(1)=0$ e
+$g(0)=g(1)$, cio\`e $g\in\cD(T_2)$ e $T_2^*\subset T_2$. Questo conclude la
+dimostrazione delle affermazioni fatte.
+\pmn
+Sulla scorta dell'esempio precedente, possiamo descrivere un altro fenomeno che
+rivedremo sul gruppo di Heisenberg. Se infatti $\cH$ \`e ancora $L^2[0,1]$ come
+sopra, $Tf=f'$ su $\cD(T_2)$ e $Mf(t)=tf(t)$, allora \`e immediato verificare che
+$(DM-MD)f=f$, ossia
+\begin{equation}DM-MD=I,\label{heisenberg}\end{equation}
+dove $I$ \`e l'identit\`a sul dominio di $D$. In altre parole, l'operatore
+identit\`a appare come il commutatore di due operatori uno solo dei quali \`e
+limitato. Ci si pu\`o porre la domanda se sia possibile realizzare una analoga
+identit\`a con due operatori limitati, una domanda naturale in meccanica
+quantistica. La risposta \`e negativa non solo nell'algebra di Banach $\cB(\cH)$ ma
+in {\it ogni} algebra di Banach con identit\`a. La dimostrazione particolarmente
+elegante del teorema che segue \`e dovuta a Wielandt.
+\begin{theorem}\label{wielandt} Sia $A$ un'algebra di Banach con identit\`a $e$.
+Se
+$x$,
+$y\in A$ allora
+$$xy-yx\not=e$$
+\end{theorem}
+\dim Supponiamo che $xy-yx=e$ e facciamo l'ipotesi induttiva
+$$x^ny-yx^n=nx^{n-1},$$
+verificata per $n=1$. Risulta allora
+\begin{eqnarray*}x^{n+1}y-yx^{n+1}&=&x^n(xy-yx)+(x^ny-yx^n)x\\
+&=&x^ne+nx^{n-1}x\\
+&=&(n+1)x^n,\end{eqnarray*}
+cosicch\'e la relazione \`e vera per ogni $n$.
+Ne segue che
+$$n\|x^{n-1}\|=\|x^ny-yx^n\|\leq 2\|x^n\|\|y\|\leq 2\|x^{n-1}\|\|x\|\|y\|,$$
+cio\`e $n\leq 2\|x\|\|y\|$ per ogni $n$. Questo \`e impossibile.
+\qed
+\begin{defn} Un gruppo ad un parametro di operatori su $\cH$ \`e una famiglia
+$\{U_t\,:\,t\in\R\}\subset\cB(\cH)$ che soddisfa
+\begin{itemize}
+\smallskip
+\item[i)] $U_0=I$;
+\item[ii)] $U_{t+s}=U_tU_s$;
+\item[iii)] $
+\lim_{t\to 0}\|U_tx-x\|=0$ per ogni $x\in\cH$
+\end{itemize}
+\end{defn}
+\pmn
+Si osservi che se $\pi$ \`e una rappresentazione su $\cH$ di un gruppo di Lie $G$
+con algebra di Lie $\gg$, allora per ogni fissato $X\in\gg$ la famiglia
+$\{U_t=\pi(\exp tX)\,:\,t\in\R\}$ costituisce un gruppo ad un parametro di operatori
+su $\cH$. Se inoltre $\pi$ \`e unitaria, allora i gruppi ad un parametro sono gruppi
+di operatori unitari. 
+\pmn
+In analogia con il caso $\cH=\C$ in cui ogni funzione continua $f$ che soddisfi
+$f(s+t)=f(s)f(t)$ \`e della forma $f(t)=e^{at}$ con $a=f'(0)$, ad ogni gruppo ad un
+parametro si associa un operatore, in genere {\it illimitato}, come precisato
+dalla definizione che segue.
+\begin{defn} Sia $\{U_t\,:\,t\in\R\}$ un gruppo ad un parametro di operatori su
+$\cH$ e sia $\cD(A)$ il sottospazio di $\cH$ costituito dai vettori $x$ per i quali
+\begin{equation}\lim_{t\to 0}\frac{U_tx-x}{t}=Ax\label{geninf}\end{equation}
+esiste nella topologia della norma in $\cH$. L'operatore $A$ (necessariamente
+lineare) definito su $\cD(A)$ mediante \ref{geninf} si chiama il generatore
+infinitesimale del gruppo.
+\end{defn}
+\pmn
+Diamo adesso l'enunciato del classico teorema di M.H.~Stone. Per la dimostrazione si
+veda, ad esempio \cite{Rud}.
+\begin{theorem}{\bf (di Stone)} Sia $\{U_t\}$ un gruppo ad un parametro di operatori
+unitari su $\cH$. Il generatore infinitesimale $A$ di $\{U_t\}$ \`e densamente
+definito su $\cH$ ed \`e anti--autoaggiunto. Viceversa, se $A$ \`e un operatore densamente
+definito su $\cH$ ed anti--autoaggiunto, allora esiste un unico gruppo ad un
+parametro di operatori unitari su $\cH$ il cui generatore infinitesimale \`e $A$.
+\end{theorem}
+\pmn
+Ritorniamo al caso in cui $\cH$ sia lo spazio della rappresentazione $\pi$ di un
+gruppo di Lie $G$. Mediante \ref{geninf} possiamo definire il differenziale $d\pi$
+su $\gg$. In altre parole
+\begin{equation}d\pi(X)x=\lim_{t\to 0}\frac{\pi(\exp
+tX)x-x}{t}\label{dpi}\end{equation}
+che alle volte riscriveremo
+\begin{equation}d\pi(X)x=\frac{d}{dt}\Bigr|_{t=0}\pi(\exp
+tX)x.\label{dpi2}\end{equation}
+Il nostro prossimo obiettivo consiste nel provare che $d\pi$ definisce una
+rappresentazione di $\gg$, ossia nel provare che i vari operatori $d\pi(X)$ possono
+essere composti e soddisfano $d\pi([X,Y])=d\pi(X)\circ d\pi(Y)-d\pi(Y)\circ
+d\pi(X)$. Si tratta in altre parole di studiare i vari domini $\cD(d\pi(X))$.
+\pmn
+Ricordiamo che una funzione $f$ definita su un sottonisieme aperto $\Omega\in\Rn$ a
+valori in uno spazio vettoriale topologico $V$ (di dimensione arbitraria) si dice
+{\it differenziabile} in $x_0\in\Omega$ se esiste una mappa lineare --
+necessariamente unica -- $df_{x_0}:\Rn\rightarrow V$ tale che
+$$\lim_{x\to x_0}\frac{f(x)-f(x_0)-df_{x_0}(x-x_0)}{\|x-x_0\|}=0,$$
+dove $\|\cdot\|$ \`e una norma qualunque in $\Rn$. La mappa $df_{x_0}$ si chiama il
+{\it differenziale} di $f$ in $x_0$.
+\pmn
+Se $f$ \`e differenziabile in ogni punto di
+$\Omega$, allora $x\mapsto df_x$ \`e una mappa da $\Omega$ a valori in
+$\End(\Rn,V)$, che \`e uno spazio vettoriale topologico in modo canonico. Diremo
+allora che $f$ \`e di classe $C^1$ se $x\mapsto df_x$ \`e continua, di classe $C^2$
+se $x\mapsto df_x$ \`e di classe $C^1$, e cos\'\i\ via. Diremo infine che $f$ \`e
+di classe $C^\infty$ se \`e di classe $C^k$ per ogni $k$.
+\pmn
+Come nel caso di funzioni a valori in uno spazio finito--dimensionale, si pu\`o
+provare che
+\begin{itemize}
+\item[i)] $f$ \`e di classe $C^k$ se e solo se tutte le sue derivate parziali fino
+all'ordine $k$ esistono e sono continue;
+\item[ii)] la regola di derivazione di funzioni composte vale per una composizione
+del tipo $f\circ h$ dove \`e una mappa differenziabile definita su un sottoinsieme
+aperto di uno spazio euclideo a valori in $\Omega$.
+\end{itemize}
+La nozione di mappa
+$C^\infty$ \`e dunque locale in natura e si applica al caso di mappe da un gruppo
+di Lie $G$ a valori in uno spazio di Hilbert $\cH$.
+Enunciamo in particolare un risultato che costituisce l'analogo della
+formula \ref{exp4} per funzioni su un gruppo di Lie a valori in uno spazio di
+Hilbert. 
+\begin{prop}\label{leftinv} Sia $G$ un gruppo di Lie con algebra di Lie $\gg$ e sia
+$X\in\gg$. Se
+$F:G\rightarrow \cH$ \`e una mappa $C^\infty$ a valori in uno spazio di Hilbert,
+allora la mappa
+\begin{equation}g\mapsto X_gF=\lim_{t\to 0}\frac{F(g\exp
+tX)-F(g)}{t}\label{leftinvV}\end{equation}
+\`e anch'essa di classe $C^\infty$.
+\end{prop}
+\dim
+La composta $(g,t)\mapsto(g,\exp tX)\mapsto g\exp tX\mapsto F(g\exp tX)$ \`e di
+classe $C^\infty$. Quindi, in virt\`u della i) vista sopra, la sua
+derivata parziale rispetto a $t$ in zero \`e di classe $C^\infty$ rispetto a $g$.
+\qed
+\pmn
+Introduciamo finalmente lo spazio naturale su cui sono definiti gli operatori che
+provengono dal differenziale di una rappresentazione di un gruppo di Lie.
+\begin{defn} Sia $\pi:G\rightarrow\cB(\cH)$ una rappresentazione del gruppo di Lie
+$G$. Un elemento $\xi\in\cH$ si chiama vettore $C^\infty$ se $g\mapsto\pi(g)\xi$ \`e
+di classe $C^\infty$ su $G$. Lo spazio dei vettori $C^\infty$ verr\`a denotato con
+$C^\infty(\pi)$.
+\end{defn}
+\begin{theorem} Sia $\pi:G\rightarrow\cB(\cH)$ una rappresentazione del gruppo di Lie
+$G$. Per ogni $X\in\gg$, $d\pi(X)$ manda $C^\infty(\pi)$ in se' e
+\begin{equation}d\pi([X,Y])\xi=\Bigl(d\pi(X)\circ d\pi(Y)-d\pi(Y)\circ
+d\pi(X)\Bigr)\xi,
+\quad \xi\in C^\infty(\pi).\label{hom}\end{equation}
+\end{theorem}
+
+\pmn
+Lasciamo come esercizio la non difficile dimostrazione della seguente proposizione:
+\begin{prop} Sia $\pi$ una rappresentazione unitaria del gruppo di Lie $G$ sullo
+spazio di Hilbert $\cH$, e sia $\gg$ l'algebra di Lie di $G$. Allora:
+\begin{itemize}
+\item[i)] per ogni $X\in\gg$, $d\pi (X)$ \`e anti--autoaggiunto su
+$C^\infty(\pi)$;
+\item[ii)] per ogni $g\in G$, $\pi(g)$ manda $C^\infty(\pi)$ in se';
+\item[iii)] per ogni $g\in G$ ed ogni $X\in\gg$ si ha
+$\pi(g)d\pi(X)\pi(g)^{-1}=d\pi(\Ad g X)$.
+\end{itemize}
+\end{prop}
+\pmn
+Concludiamo questo capitolo con un risultato che implica che gli
+operatori $d\pi (X)$ sono densamente definiti su $\cH$. Alla luce del Teorema di
+Stone, questo fatto \`e di notevole importanza. Per la dimostrazione si veda ad
+esempio
+\cite{Kn2}
+\begin{theorem} Sia $\pi$ una rappresentazione unitaria del gruppo di Lie $G$ sullo
+spazio di Hilbert $\cH$. Lo spazio $C^\infty(\pi)$ \`e denso in $\cH$.
+\end{theorem}
+\vfill
+\eject
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Heisenberg group and its representations}
+\pagestyle{myheadings}
+\markboth{The use of representations}{Heisenberg group}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pmn
+\subsection{The group and its Lie algebra}
+We shall denote by $\Hsn$ the  Heisenberg group, namely the smooth differentiable manifold $\Rn\times\Rn\times\R$ endowed with the product
+\begin{equation}((q,p,t)(q',p',t')=(q+q',p+p',t+t'-\sfrac{1}{2}(\t qp-\t
+pq)).\label{hsn1}\end{equation}
+Let $\omega:\Rnn\times\Rnn\rightarrow\R$ be the standard symplectic form
+\begin{equation}\omega(x,x')=\t xJx,\qquad J=\bmatrix 0&I_d\\-I_d&0\endbmatrix.
+\label{hsn2}\end{equation}
+Upon writing $x=x_{(q,p)}=\,^t[q,p]\in\Rnn$, we may formulate
+\eqref{hsn1} in terms of the symplectic form, namely:
+\begin{equation}((x,t)(x',t')=(x+x',t+t'-\frac{1}{2}\omega(x,x')).\label{hsn3}
+\end{equation}
+It is clear from \eqref{hsn1} and \eqref{hsn3} that the product in  $\Hsn$ is given by functions that are $C^\infty$ in the global  $\R^{2d+1}$ coordinates $(q,p,t)$. Furthermore, one checks at once that
+$$
+(x,t)^{-1}=(-x,-t),
+$$
+another $C^{\infty}$ formula. Hence  $\Hsn$  is a  Lie group. 
+\pmn
+{\bf Exercises. 1)} Prove that the center of $\Hsn$ is $Z=\{(0,t)\,:\, t\in\R\}$.
+\pmn
+{\bf 2)} Write explicitely the inner conjugation $i_g(h)=ghg^{-1}$.
+\pmn
+{\bf 3)} Prove that $L_1=\{(q,0,t)\,:\,q\in\Rn,t\in\R\}$ and
+$L_2=\{(0,p,t)\,:\,p\in\Rn,t\in\R\}$ are two Lie subgroups of $\Hsn$ which are mutually isomorphic
+but not conjugate.
+\bigskip
+\pmn
+We next want to identify the Lie algebra $\hsn$ of $\Hsn$ in terms of left invariant vector fields.
+To this end, fix $(q,p,t)\in\Hsn$ and $f\in C^\infty(\Hsn)$ and consider the smooth curve $q_j(s)=(se_j,0,0)$, with
+$s\in(-\eps,\eps)$, where $e_j$ denotes the  $j$--th unit coordinate vector in $\Rn$.
+Then
+\begin{align*}\frac{d}{ds}\Bigl|_{s=0}f((q,p,t)(se_j,0,0)
+&=\frac{d}{ds}\Bigl|_{s=0}f(q+se_j,p,t+\frac{1}{2}sp_j)\\
+&=\frac{\partial f}{\partial q_j}(q,p,t)+\frac{1}{2}p_j\frac{\partial f}{\partial t}(q,p,t).
+\end{align*}
+An analogous calculation with the  curves $p_j(s)=(0,se_j,0)$ and $t(s)=(0,0,s)$ shows that 
+a basis for $\hsn$ is given by the vector fields $\{Q_1,\dots,Q_d,P_1,\dots,P_d,T\}$, where
+\begin{align*}
+Q_j&=\frac{\partial}{\partial q_j}+\frac12 p_j\frac{\partial}{\partial t},
+\qquad j=1,\dots,d\\
+P_j&=\frac{\partial}{\partial p_j}-\frac12 q_j\frac{\partial}{\partial t},
+\qquad j=1,\dots,d\\
+T&=\frac{\partial}{\partial t}.
+\end{align*}
+A straightforward computation shows that
+\[
+[Q_j,P_k]=-\delta_{jk}T,\qquad j,k=1,\dots,d
+\]
+\[
+[Q_j,T]=[P_j,T]=0,\qquad j=1,\dots,d
+\]
+the celebrated  Heisenberg commutation relations. Therefore, identifying
+$\R^{2d+1}$ with  $\hsn$ via the map
+$(x_1,\dots,x_d,y_1,\dots,y_d,z)\mapsto\sum_{j=1}^d(x_jQ_j+y_jP_j)+zT$, we 
+obtain the following Lie algebra structure on $\R^{2d+1}$:
+\begin{equation}[(X,z),(X',z')]=(0,-\omega(X,X')).\label{brahsn}\end{equation}
+From this commutator rule, one sees immediately that  $[A,[B,C]]=0$ for every choice 
+of $A$, $B$ and $C$ in $\hsn$. Similarly, any higher order bracket vanishes. This fact can be expressed technically by saying that  $\hsn$ is a   {\it two-step nilpotent Lie algebra}. The Baker--Campbell--Hausdorff formula becomes
+$A,B\in\hsn$
+\[
+\exp A\exp B=\exp(A+B+\frac{1}{2}[A,B])
+\]
+and since for $A=(X,z)$ and $B=(X',z')$ it holds
+\[
+A+B+\frac{1}{2}[A,B]=(X+X',z+z'-\frac{1}{2}\omega(X,X')),
+\]
+which coincides with the product \eqref{hsn3}, we infer that
+\begin{equation}\exp(X,z)=(X,z)\qquad\text{for every }(X,z)\in\R^{2d+1}.\label{exphsn}\end{equation}
+This simply says that  the exponential mapping is nothing else but the identity map of $\R^{2d+1}$, when we identify the latter with  $\hsn$ on the one hand and with $\Hsn$ on the other hand.
+\pmn
+{\bf Exercise 4)} Prove that the adjoint action of $\Hsn$ on $\hsn$ is given by
+\begin{equation}\Ad(y,s)(X,t)=(X,t-\omega(y,X)).\label{Adhsn}\end{equation}
+\pmn
+\pmn
+{\bf A different presentation.} Given $(q,p,t)\in\R^{2d+1}$, write
+\[
+m(q,p,t)=\bmatrix 0&p_1&p_2&\dots&p_d&t\\
+&0& & & &q_1\\
+& &  &\ddots & &\vdots\\
+& & & & &q_d\\
+& & & & &0\endbmatrix.
+\] 
+Observe that
+\begin{itemize}
+\item[i)] $m(q,p,t)m(q',p',t')=m(0,0,\t pq')$;
+\item[ii)] $[m(q,p,t),m(q',p',t')]=m(0,0,-\omega(x_{(q,p)},x_{(q',p')}))$.
+\end{itemize}
+\pmn
+From i) it follows that $m(q,p,t)^2=m(0,0,\t pq)$ and $m(q,p,t)^3=0$, so that, in
+particular
+\[
+e^{m(q,p,t)}=\bmatrix 1&p_1&p_2&\dots&p_n&t+\sfrac{1}{2}(\t pq)\\
+&1& & & &q_1\\
+& &  &\ddots & &\vdots\\
+& & & & &q_n\\
+& & & & &1\endbmatrix.
+\] 
+Thus, if we set
+\[
+M(q,p,t)=I_n+m(q,p,t),
+\]
+then
+\[
+e^{m(q,p,t)}=M(q,p,t+\frac{1}{2}(\t pq)).
+\]
+It is also easy to see that 
+\[
+\exp\bigl(m(q,p,t)\exp m(qÕ,pÕ,tÕ)\bigr)
+=\exp m(q+q',p+p',t+t'-\frac{1}{2}\omega(x_{(q,p)},x_{(q',p')})).
+\]
+Therefore, the map
+\[
+\Phi:\R^{2d+1}\rightarrow GL(d+2,\R),\quad(q,p,t)\mapsto M(q,p,t+\frac{1}{2}(\t pq))
+\] 
+defines an isomorphism of $\Hsn$ onto the closed subgroup of  $GL(d+2,\R)$,
+denoted $\widetilde\Hsn$, and consisting of the matrices
+\[
+e^{m(q,p,t)}=\bmatrix 1&a_1&a_2&\dots&a_d&c\\
+&1& & & &b_1\\
+& &  &\ddots & &\vdots\\
+& & & & &b_d\\
+& & & & &1\endbmatrix.
+\] 
+Notice also that, by means of ii),
+\[
+\widetilde\hsn=\{m(q,p,t)\,:\,(q,p,t)\in\R^{2n+1}\}\subset\genln(n+2,\R)
+\]
+is a Lie algebra isomorphic to  $\hsn$.  One has to be careful because
+in this setting the exponential mapping is no longer the identity map of matrices, rather the usual
+matrix exponential.
+
+The picture discussed so far can be summarized in the following diagram:
+\begin{eqnarray*}\hsn\simeq\R^{2d+1}&\stackrel{m(\cdot)}{\longrightarrow}
+&\widetilde\hsn\subset\genln(d+2,\R)\\
+^{\exp(\cdot)=id(\cdot)}\Big\downarrow&
+&\Big\downarrow\,^{\exp(\cdot)=e^{(\cdot)}}\\
+\Hsn\simeq\R^{2d+1}&\stackrel{\Phi}{\longrightarrow}&\widetilde\Hsn\subset
+GL(d+2,\R)\end{eqnarray*}
+\pmn
+{\bf Automorphisms.} Given a Lie group $G$ with Lie algebra $\gg$ it is often interesting (and many times difficult) to understand their {\it automorphism groups}. An automorphism of the Lie group $G$ is an invertible group homomorphism. Unravelling this definition, this means a bijective smooth map $\varphi:G\to G$  preserving products, namely satisfying $\varphi(xy)=\varphi(x)\varphi(y)$ and $\varphi(e)=e$. The collection of all such maps is, in turn,  a group under composition, denoted $\Aut(G)$. Under favorable 
+circumstances\footnote{As it was shown by Hochschild in 1951, it is enough that the group of components of $G$ is finitely generated.}, and surely this is the case for $\Hsn$, the group $\Aut(G)$ has itself a natural structure of Lie group, though we shall not insist on this. Notice that since we have identified $\Hsn$ with $\R^{2d+1}$, we are in fact looking at maps $\varphi:\R^{2d+1}\to\R^{2d+1}$.
+
+Similarly, one may consider the automorphisms of $\gg$, namely the bijective linear maps $\Phi:\gg\to\gg$
+satisfying $\Phi([X,Y])=[\Phi(X),\Phi(Y)]$. Again, under composition they form a group, denoted by $\Aut(\gg)$. Since its elements  are linear maps, $\Aut(\gg)$ is in fact a (closed) subgroup of $\Glnr$ in a natural fashion, where $d$ is the dimension of $\gg$. Hence $\Aut(\gg)$ can be given the structure of a Lie group without  problems. Also, the differential $d\varphi$ of any $\varphi\in\Aut(G)$ is easily seen to belong to  $\Aut(\gg)$. This accounts for an immersion of $\Aut(G)$ into $\Aut(\gg)$ whenever $G$ is connected.
+When looking at the Heisenberg group, things are even nicer, this, and the following results show exactly how. The proofs and arguments below are from \cite{Fol2}.
+
+
+\begin{prop}\label{autolin} $\Aut (\Hsn)=\Aut (\hsn)$.
+\end{prop}
+\dim Under our identifications, the group and  algebra operations are related by:
+\[
+X\cdot Y=X+Y+\frac{1}{2}[X,Y].
+\]
+Take now $\alpha\in\Aut (\hsn)$. Then
+$$\alpha(X+Y+\frac{1}{2}[X,Y])=\alpha(X)+\alpha(Y)+\frac{1}{2}[\alpha(X),
+\alpha(Y)]=\alpha(X)\cdot\alpha(Y)$$
+shows that $\alpha\in\Aut (\Hsn)$. Conversely, let  $\alpha\in\Aut
+(\Hsn)$ and take $X,Y\in\hsn$ such that $[X,Y]=0$. Then
+\begin{align*}\alpha(X+Y)
+&=\alpha(X\cdot Y)\\
+&=\alpha(X)\cdot\alpha(Y)\\
+&=\alpha(X)+\alpha(Y)+\frac{1}{2}[\alpha(X), \alpha(Y)]\\
+&=\alpha(Y\cdot X)\\
+&=\alpha(X)+\alpha(Y)+\frac{1}{2}[\alpha(Y), \alpha(X)],
+\end{align*}
+so that necessarily $[\alpha(Y), \alpha(X)]=0$ and therefore $\alpha(X+Y)=\alpha(X)+\alpha(Y)$. In particular, 
+$\alpha$ is additive on one-dimensional subspaces and is continuous; hence it commutes with 
+scalar multiplication\footnote{Show this!}. Therefore, if $X,Y\in\R^{2n+1}$ and $s\in\R$
+\begin{align*}s\alpha(X+Y+\frac{s}{2}[X,Y])
+&=\alpha(sX+sY+\frac{s^2}{2}[X,Y])\\
+&=\alpha (sX\cdot sY)\\
+&=\bigl(s\alpha(X)\bigr)\bigl(s\alpha(Y)\bigr)\\
+&=s\alpha(X)+s\alpha(Y)+\frac{1}{2}s^2[\alpha(X),\alpha(Y)]
+\end{align*}
+If we divide by $s$ and let $s\to 0$, we get
+that $\alpha$ is additive on the whole of  $\R^{2d+1}$, namely that it is linear.
+The last equality with  $s=1$ yields
+$\alpha([X,Y])=[\alpha(X),\alpha(Y)]$, that is $\alpha\in\Aut (\hsn)$, as desired.
+\qed
+\pmn
+It is actually possible to give an explicit description of the automorphisms of $\Hsn$. It is immediate to see that 
+each of the following families of maps are automorphisms:
+\pmn
+{\bf (i) Symplectic maps:} For any $X\in\Spnr$, $(\bmatrix
+q\\p\endbmatrix,t)\mapsto(X\bmatrix q\\p\endbmatrix,t)$.
+\pmn
+{\bf (ii) Inner automorphisms.} 
+\pmn
+{\bf (iii)  Homogeneous dilations:} For any $r\in\R_+$, $\delta_r(x,t)=(rx,r^2t)$. Observe that
+for any $r,s>0$ it holds $\delta_r\delta_s=\delta_{rs}$.
+\pmn
+{\bf (iv) Inversion:} $(q,p,y)\mapsto (p,q,-t)$.
+\bigskip
+\pmn
+We shall momentarily denote by $G_j$ the  automorphism group  generated by the 
+trasformations  of type  $j$, with $j\in\{(i),(ii),(iii),(iv)\}$.
+\begin{theorem} Every automorphism of  $\Hsn$ can  be written uniquely  as 
+ $\alpha_1\alpha_2\alpha_3\alpha_4$, with $\alpha_j\in G_j$.
+\end{theorem}
+\dim
+If $\alpha\in\Aut(\Hsn)$, then $\alpha$ preserves the center.
+Since   $\alpha$ is linear by Proposition~\ref{autolin},
+it must be
+\[
+\alpha(q,p,t)=(T(q,p),st+\,\t aq+\,\t bp)
+\]
+with $T\in\Glnr$, $a,b\in\Rn$, $s\in\R\setminus\{0\}$. Composing $\alpha$ with the inversion
+if necessary, we may assume $s>0$ and composing then with the 
+dilation $\delta_{s^{1/2}}$,  we may  assume $s=1$. Finally, composing with
+a suitable inner  automorphism, we infer that  $\alpha$ is of the type
+$\alpha(q,p,t)=(T(q,p),t)$ with $T\in\Glnr$. In order that this map is an
+automorsphism, it is necessary (and sufficient) that $T\in\Spnr$.
+\qed
+\pmn
+It is very important to observe that the only  automorphisms that leave the center fixed
+are precisely those of the kind $(i)$ e $(ii)$. We shall denote by $\cT$ the group generated by them.
+\pmn
+{\bf Exercise 5)} Define the semidirect product $\Rnn\ltimes\Spnr$
+as the set $\Rnn\times\Spnr$  endowed with the product
+$$(x,A)(x',A')=(x+Ax',AA').$$
+Show that the map $(x,A)\mapsto\Psi_{(x,A)}$, where
+\[
+\Psi_{(x,A)}(y,t)=i_{(x,0)}(Ay,t),\qquad(x,0),(y,t)\in\Hsn
+\]
+defines an isomorphism of  $\Rnn\ltimes\Spnr$ with $\cT$. Define further the semidirect product
+ $\Hsn\ltimes\Spnr$ via the formula
+\[
+((x,t);A)((xÕ,tÕ);AÕ)=((x,t)(Ax',t');AAÕ).
+\]
+Calculate its center  $Z$ and prove that $\Hsn\ltimes\Spnr/Z$ is isomorphic to
+$\Rnn\ltimes\Spnr$.
+\vskip1truecm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Schr\" odinger representation}
+
+\pmn
+Let $\pi$ be a  unitary  and irreducible representation of  $\Hsn$ on the
+Hilbert space $\cH$. Then all the operators  $\pi (0,0,t)$
+are in $\cI (\pi)$ because the center of $\Hsn$ consists
+of the elements of the form $(0,0,t)$. But then Schur's  Lemma
+implies that there exists a complex number of modulus one, denoted $\chi(t)$, such that
+\begin{equation}\pi(0,0,t)=\chi (t)I_\cH.\label{picenter1}\end{equation}
+Hence $t\mapsto\chi(t)$ is a continuous function from $\R$ into $\T$ that satisfies the equality 
+$\chi(s+t)=\chi(s)\chi(t)$. Therefore there exists a unique $\lambda\in\R$ such that
+\begin{equation}\chi(t)=e^{i\lambda t}.\label{picenter2}\end{equation}
+Now, if $\lambda=0$, then $\pi(0,0,t)=I_\cH$, so that $Z\subset\ker\pi$ and the 
+representaion $\pi$ projects onto a representation $\tilde\pi$ on the
+quotient $\Hsn/Z\simeq\Rnn$. The representation $\tilde\pi$ is still unitary and irreducible. 
+But $\Rnn$ is abelian and hence all the operators
+$\tilde\pi(x,y)$, with $(x,y)\in\Rnn$ commute with each other and therefore belong to
+$\cI(\pi)$. But then they are multiples of the identity on $\cH$ and every one-dimensional subspace of  $\cH$  is a proper $\tilde\pi$--invariant subspace. Since  $\tilde\pi$ is irreducible, necessarily $\dimen\cH=1$, namely $\cH=\C$. Therefore, there exists a unique vector
+$(\xi,\eta)\in\Rnn$ such that
+\begin{equation}\tilde\pi(x,y)=e^{i(\xi\cdot
+x+\eta\cdot y)}I_\C.\label{picenter3}\end{equation}
+Consider first the case $\lambda\not=0$. From \eqref{picenter1} e \eqref{picenter2},
+taking the differential, it follows 
+\begin{equation}d\pi(T)=i\lambda I_\cH.\label{picenter4}\end{equation}
+In particular  $d\pi(T)$ is a bounded operator.  But we also know that
+for every  $j=1,\dots,d$ it holds $[Q_j,P_j]=-T$, so that it must be
+$$[d\pi (Q_j),d\pi(P_j)]=-d\pi(T)=-i\lambda I_\cH.$$
+By modifying Theorem~\ref{wielandt} in the case of a multiple of the identity (the detatils are left as an exercise) we see that the operators
+$d\pi(Q_j)$ and $d\pi(P_j)$ cannot be both bounded and, in particular, the representation space $\cH$ cannot be
+finite dimensional. In conclusion,  every unitary and irreducible representation of $\Hsn$ 
+which is not trivial on the center is necessarily infinite dimensional.
+\pmn
+The next step   consists in looking for the unitary and irreducible representations
+of $\Hsn$ that are not trivial on the center. The most natural way to go about it is to compare
+the commutation Heisenberg relations with \eqref{heisenberg}.  We shall start from a very
+natural representation of the Lie algebra $\hsn$ and then use some heuristics, together with 
+Stone's Theorem, in order to get the corresponding representation of the group. To this end, 
+we introduce a useful Lie subalgebra of the Lie algebra of all differential operators with polynomial
+coefficients on $\Rn$.
+\pmn
+Let $\cP\cD(\Rn)$ denote the vector space of all differential operators with polynomial
+coefficients on $\Rn$. Under composition, it is an associative algebra generated by the 
+$2d$ elements
+\[
+D_j=-\frac{\partial}{\partial x_j}, \quad M_j=(2\pi i)x_j,\quad j=1,\dots, d.
+\]
+As any other associative algebra,  $\cP\cD(\Rn)$ becomes a Lie algebra if we
+define the bracket as the commutator, that is $[A,B]=A\circ B-B\circ A$.
+The generators  $D_j$ and $M_j$, together with the operator 
+ ``$2\pi i$--times the identityÕÕ, give rise to a finite dimensional Lie subalgebra 
+of $\cP\cD(\Rn)$ which is isomorphic to  $\hsn$. Indeed, 
+the correspondence $D_j\mapsto Q_j$, $M_j\mapsto P_j$ and
+$(2\pi i)I\mapsto T$ establishes the isomorphism. 
+This isomorphism is actually a  faithful (i.e. injective) representation
+of the Heisenberg algebra and should be thought of as the differential
+of the representation we are looking for. In order to find the representation space,
+ it will then be enough to find a Hilbert space of functions on $\Rn$ on which the 
+ operators we are dealing with are skew-adjoint. Finally, we  shall exponentiate
+ the representation of $\hsn$.
+\pmn
+Let $\cH=L^2(\Rn)$ and $\cD=\cS(\Rn)$, the Schwartz space of rapidly 
+decreasing functions. Both the derivations  $D_j$ and the multiplications $M_j$ 
+are densely defined on $\cH$ since $\cD$ is a natural common domain for them,
+which is dense in $\cH$. The operators are formally skew-adjoint because for every
+$\varphi,\psi\in\cS(\Rn)$ we have
+\[
+\langle M_j\varphi,\psi\rangle=-\langle \varphi,M_j\psi\rangle,\quad
+\langle D_j\varphi,\psi\rangle=-\langle \varphi,D_j\psi\rangle,
+\]
+where we are using $L^2$ inner products and, in the second, integration by parts.
+\pmn
+Observe that in order to define representations on the Heisenberg group it is
+not necessary to specify the skew-adjoint extensions of $M_j$ and of $D_j$.
+It will be sufficient to exhibit one-parameter groups of unitary operators on 
+$L^2(\Rn)$ whose infinitesimal generators extend our operators, for Stone's Theorem
+guarantees that these groups are the appropriate ones.
+Consider then the following formal computation:
+\begin{align*}
+\exp (tD_j)f(x)&=\sum_{n=0}^\infty \frac{(tD_j)^n}{n!}f(x)\\
+&=\sum_{n=0}^\infty \frac{(-t)^n}{n!}\frac{\partial^n f}{\partial x_j^n}(x)\\
+&=f(x-te_j).
+\end{align*}
+Similarly, 
+\[
+\exp (tM_j)f(x)=e^{2\pi ix_j}f(x).
+\]
+It is also quite clear that the operators
+\[
+U_t^{(j)}f(x)=f(x-te_j),\quad V_t^{(j)}f(x)=e^{2\pi itx_j}f(x)
+\]
+give rise to one-parameter groups of unitary operators on $L^2(\Rn)$.
+\pmn
+{\bf Exercise 6)} Prove that the Schwartz space $\cS(\Rn)$  is contained in the domain
+of the infinitesimal generators of $\{U_t^{(j)}\}$ and $\{V_t^{(j)}\}$.
+\pmn
+From the previous computations, it is natural to set:
+\begin{align}
+\pi(q,0,0)f(x)&=f(x-q)\nonumber\\
+\pi(0,p,0)f(x)&=e^{2\pi i p\cdot x}f(x)\label{pi1}\\
+\pi(0,0,t)f(x)&=e^{2\pi i t}f(x).\nonumber
+\end{align}
+Finally, since for every $(q,p,t)\in\Hsn$ we have
+\[
+(q,p,t)=(0,0,t-\frac{1}{2}q\cdot p)(0,p,0)(q,0,0),
+\]
+by composing the various \eqref{pi1} we obtain
+\begin{equation}\pi(q,p,t)f(x)=e^{2\pi i t}e^{-\pi i q\cdot p}e^{2\pi i p\cdot
+x}f(x-q).\label{pi2}\end{equation}
+It is now elementary to check that   \eqref{pi2} defines a representation of
+$\Hsn$, called the {\it Schr\"odinger representation}. While it is clear that the thus defined operators are unitary
+because they are compositions of unitary operators, irreducibility requires
+some extra work. We shal use the  Fourier transform $\cF$,
+definita on $L^1(\Rn)\cap L^2(\Rn)$ by
+\begin{equation}\cF f(\xi)=\int_{\Rn}f(x)e^{-2\pi i x\cdot
+\xi}\;dx.\label{Fourier}\end{equation}
+\begin{theorem} Formula \eqref{pi2} defines a unitary irreducible representation
+of $\Hsn$ on $L^2(\Rn)$.
+\end{theorem}
+\dim In order to show that  $\pi$ is continuous in the strong operator topology it is enough
+to prove that if  $(q,p,t)\to(0,0,0)$, then
+$\pi (q,p,t)f\to f$ in $L^2(\Rn)$ for every $f\in L^2(\Rn)$. Now,
+\begin{align*}
+\bigl(\int_{\Rn}|\pi(q,p,t)f(x)-f(x)|^2\;dx\bigr)^{1/2}&=
+\bigl(\int_{\Rn}|e^{2\pi it-\pi i q\cdot p+2\pi i p\cdot x}f(x-q)-f(x)|^2\;dx\bigr)
+^{\frac{1}{2}}\\
+&\leq\bigl(\int_{\Rn}|e^{2\pi it-\pi i q\cdot p+2\pi i p\cdot
+x}-1|^2|f(x)|^2\;dx\bigr)^{\frac{1}{2}}\\
+&\hskip0.4truecm+\bigl(\int_{\Rn}|f(x-q)-f(x)|^2\;dx\bigr)^{\frac{1}{2}}
+\end{align*}
+and both summands tend to zero as $(q,p,t)\rightarrow (0,0,0)$.
+\pmn
+Let's show irreducibility. Take a closed subspace $V\subseteq L^2(\Rn)$ and suppose that it is  $\pi$--invariant. If $f\in V$, then the translate
+$\tau_qf=\pi(q,0,0)f$ in also in $V$. If $P$ is the orthogonal projection onto $V$, then
+$P$ commutes with  translations. Hence there exists a multiplier
+ $m\in L^\infty(\Rn)$ such that
+\begin{equation}\cF (Pf)(\xi)=m(\xi)\cF f(\xi).\label{Fm}\end{equation}
+Since $P^2=P$, then also $m^2=m$. Upon considering  $\pi(0,p,0)$, one sees that
+ $P$ commutes also with  multiplication by any of the characters $e_p(x)=e^{2\pi
+ip\cdot x}$. Therefore,  from \eqref{Fm} we infer
+\begin{align*}
+\cF [P(e_pf)](\xi)&=m(\xi)\cF [e_pf](\xi)=m(\xi)\cF
+f(\xi-p),\\
+\cF [e_pPf](\xi)&=\cF[Pf](\xi-p)=m(\xi-p)\cF f(\xi-p),
+\end{align*}
+which yield
+\[
+m(\xi)=m(\xi-p),\qquad\text{for every  }p\in\Rn.
+\]
+Hence $m$ is constant and since $m^2=m$ it must be either $m=0$, that is $V=\{0\}$, or else
+$m=1$, that is $V=L^2(\Rn)$.
+\qed
+\pmn
+By means of  formulae \eqref{pi2}, we have build a unitary and irreducible representation  $\pi$ of
+ $\Hsn$  for which $\pi (0,0,t)=e^{2\pi it}I_{\cH}$, that is, recalling  \eqref{picenter1} and  \eqref{picenter2},
+the representation corresponding to the case  $\lambda=2\pi$. It is now easy to define a representation corresponding to the real number $\lambda=2\pi h$, with
+$h\in\R\setminus\{0\}$. It is enough to put
+\begin{equation}
+\pi_h(q,p,t)f(x)=\pi(hq,p,ht)f(x)=e^{2\pi i ht}e^{-\pi i q\cdot
+hp}e^{2\pi i p\cdot x}f(x-hq).\label{pih}
+\end{equation}
+The non zero real number $h$ that labels the
+Schr\"odinger representation $\pi_h$ is known as {\it Planck's constant}. For comments concerning the physical meaning of $h$ see \cite{Fol2}.
+\pmn
+{\bf Exercise 7)} Check that  $\pi_h$ 
+is a unitary and irreducible representation of $\Hsn$ for every $h\not=0$, and that if $h\not=h'$,  then the corresponding representations are inequivalent.
+\pmn
+The  following celebrated theorem by Stone and von Neumann
+is of fundamental importance in harmonic analysis: it states that the representations that we have built so far exhaust, up to equivalence, the class of unitary and irreducible representation of $\Hsn$. For a proof, see, for example,  \cite{Fol2}.
+\begin{theorem}{\bf (Stone--von Neumann)} Every unitary and irreducible representation of $\Hsn$ is unitarily equivalent to either one of the one--dimensional representations \eqref{picenter3}, or to a  Schr\"odinger
+representation $\pi_h$ defined  in \eqref{pih}.\end{theorem}
+
+It is worth observing that the determination of the Planck's constant is very simple: just compute the representation on the central elements $(0,0,t)$: by \eqref{pih} this must be just $e^{2\pi ht}I$.
+\vskip1truecm
+\subsection{Time-frequency analysis} In this section we indicate the basic role that the representation theory of the Heisenberg group plays in time-frequency analysis, in particular in the definition and study of the so-called short-time Fourier transform (often abbreviated in STFT). The basic reference  on this topic is the book \cite{Charlie} by K.~Gr\"ochenig.
+
+The most basic operations in time-frequency analysis are the shifts in time and in frequency.
+For $x,\omega\in\R^d$ and $f\in L^2(\R^d)$, we define the time shift by
+\begin{equation*}\label{trasla}
+T_xf(t)=f(t-x),\qquad x,t\in\R^d
+\end{equation*}
+and the frequency shift by 
+\begin{equation*}\label{modula}
+M_\omega f(\xi)=e^{2\pi i\omega\cdot\xi}f(\xi),\qquad \xi,\omega\in\R^d.
+\end{equation*}
+It should be quite clear that there is no need to assume  $f\in L^2(\R^d)$ in order for formulae \eqref{trasla} and \eqref{modula} to make sense, but this is just to fix some function space to work with.
+It is a matter of simple computation to establish a different, but very closely related, version of the canonical commutaion relations, namely
+\begin{equation}
+T_xM_\omega=e^{-2\pi ix\cdot\omega}M_\omega T_x.
+\label{CCR}\end{equation}
+It follows in particular that
+$T_x$ and $M_\omega$ commute if and only if $x\cdot\omega\in\Z$. Furthermore, writing $\hat f$ for the Fourier transform $\cF f$ defined as in \eqref{Fourier}, using the well-known properties of $\cF f$ we  have
+the  formulae
+\begin{equation}\label{basicTFop}
+\left(T_xf\right)\hat{}=M_{-x}\hat f,
+\qquad
+\left(M_\omega f\right)\hat{}=T_{\omega}\hat f.
+\end{equation}
+From these it follows what is to be regarded as the most important formula in time-frequency analysis, namely
+\begin{equation}\label{FITFA}
+\left(T_xM_\omega f\right)\hat{}
+=M_{-x}T_\omega\hat f
+=e^{-2\pi ix\cdot\omega}T_\omega M_{-x}\hat f,
+\end{equation}
+whose proof is  is left as an exercise.
+\pmn
+The short-time Fourier transform is a mathematical device that is meant to capture the local contributions to the Fourier transform of a given function: one restricts the function to a small intervall by a cut-off function (preferably some smooth window) and then takes the Fourier transform; by sliding the interval, one sees what are the various contributions from different regions of the time domain. Formally, we have:
+\begin{defn}\label{STFT} Let $\eta\not=0$ be a fixed window, that is, a function defined on $\R^d$. The short-time Fourier transform
+of the function $f:\R^d\to\C$ with respect to $\eta$ is defined by
+\begin{equation}\label{intSTFT}
+V_{\eta}f(x,\xi)=\int_{\R^d}f(y)\overline{\eta(y-x)}e^{-i\xi\cdot y}\,dy,
+\qquad x,\xi\in\R^d\end{equation}
+whenever the integral makes sense.
+\end{defn}
+A most fundamental observation is that the STFT is a function on the so-called {\it phase-space}, namely the 
+$2d$-space $\R^{2d}$ in which times and frequencies simultaneously lie. In other words, in is a function of time {\it and} frequency. The time variable labels the ``center'' of the window and the frequency labels the point at which the Fourier transform is evaluated.
+\pmn
+At this stage we do not insist much on the precise domains for $\eta$ or for $f$. The most basic properties of the STFT are given in the result that follows. The proof is easy.
+\begin{prop}\label{STFTproperties} If $f,\eta\in L^2(\R^d)$, then
+$V_\eta f$ is uniformly continuous in $\R^{2d}$ and
+\begin{align}
+V_\eta f(x,\xi)&=\cF(f\cdot T_x\overline{\eta})(\xi)\label{STFTn0}\\
+&=\langle f,M_\xi T_x\eta\rangle\label{STFTn1}\\
+&=\langle \hat f,T_\xi M_{-x}\hat\eta\rangle\label{STFTn2}\\
+&=e^{-2\pi ix \xi}V_{\hat\eta}\hat f(\xi,-x)\label{STFTn3}.
+\end{align}
+\end{prop}
+Some comments. Formula \eqref{STFTn0} says what the STFT really is, the Fourier transform of a localized version of $f$. Formulae \eqref{STFTn1} and \eqref{STFTn2} indicate that it looks formally like the coefficient of some representation. Formula \eqref{STFTn3} exhibits a most intriguing symmetry in time and frequency, together with a ninety-degree rotation $(x,\xi)\mapsto(\xi,-x)$ in phase-space.
+\pmn
+Before we pass to discuss the very intimate relation between the Heisenberg group and its representations and the STFT, we point out in the next  three results the strong features of the STFT.
+\begin{theorem}[{\bf Orthogonality relations for the  STFT}]\label{OR}  Let
+$f_1,f_2,\eta_1,\eta_2\in L^2(\R^d)$. Then $V_{\eta_j}f_j\in
+L^2(\R^{2d})$ for $j=1,2$ and 
+\begin{equation}
+\langle V_{\eta_1}f_1,V_{\eta_2}f_2\rangle
+=\langle f_1,f_2\rangle\overline{\langle \eta_1,\eta_2\rangle}.
+\label{schurSTFT}
+\end{equation}
+\end{theorem}
+It must be observed that the first inner product in \eqref{schurSTFT} is in $L^2(\R^{2d})$ (phase space) whereas the ones appearing in the right-hand side are both in  $L^2(\R^{d})$, in the time domain or in the frequency domain, as one prefers, because of Parseval's equality.
+\begin{cor} If $f,\eta\in L^2(\R^d)$, then
+$$
+\|V_\eta f\|_2=\|f\|_2\|\eta\|_2.
+$$
+In particular, if $\|\eta\|_2=1$, then
+\begin{equation}
+\|V_\eta f\|_2=\|f\|_2
+\qquad\hbox{for all  }f\in L^2(\R^d)
+\label{isoSTFT}\end{equation}
+and in this case the  STFT is an isometry of $L^2(\R^d)$ in 
+$L^2(\R^d)$.
+\end{cor}
+\begin{theorem}[{\bf Inversion of the  STFT}]\label{ifSTFT} Let
+$\eta,\gamma\in L^2(\R^d)$ be such that
+$\langle \eta,\gamma\rangle\not=0$.
+Then, for every  $f\in L^2(\R^d)$ 
+\begin{equation}
+f=\frac{1}{\langle \gamma,\eta\rangle}
+\iint V_\eta f(x,\xi) M_\xi T_x \gamma\;dxd\xi.
+\label{inversion1}\end{equation}
+\end{theorem}
+\pmn
+We are now in a position to show the relation between the STFT and the Schr\"odinger representation of 
+$\Hsn$. This is very simple. First of all,we show that
+\begin{equation}
+\pi(q,p,t)=e^{2\pi i t}e^{\pi i q\cdot p}\,T_qM_p.
+\label{scroshifts}
+\end{equation}
+Indeed, for any $f\in L^2(\R^d)$ we have, by \eqref{CCR} and \eqref{pi2}
+\begin{align*}
+e^{2\pi i t}e^{\pi i q\cdot p}\,T_qM_pf(y)&=e^{2\pi i t}e^{\pi i q\cdot p}\,e^{-2\pi i  q\cdot p}\,M_pT_qf(y) \\
+&=e^{2\pi i t}e^{-\pi i q\cdot p}\,e^{2\pi i  p\cdot y}\,T_qf(y)\\
+&=e^{2\pi i t}e^{-\pi i q\cdot p}\,e^{2\pi i  p\cdot y}\,f(y-q)\\
+&=\pi(q,p,t)f(y).
+\end{align*}
+Secondly, for fixed $\eta,f\in L^2(\R^d)$,  the coefficient $\langle f,\pi(q,p,t)\eta\rangle$ of the Schr\"odinger representation satisfies, according to \eqref{scroshifts}
+\[
+\langle f,\pi(q,p,t)\eta\rangle= e^{-2\pi i t}e^{-\pi i q\cdot p}\langle f,T_qM_p\eta\rangle 
+=e^{-2\pi i t}e^{-\pi i q\cdot p}V_\eta f(q,p),
+\]
+Therefore the STFT is nothing else but a multiple (with a complex number of modulus one) of the coefficient of the Schr\"odinger representation. 
+\vfill
+\eject
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The metaplectc representation}
+\pagestyle{myheadings}
+\markboth{The use of representations}{The symplectic group}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The meteplectic representation is a double-valued unitary representation of the symplectic group $\Spnr$ on $L^2(\R^d)$, or, more technically speaking, a unitary representation of the double cover of $\Spnr$, otherwise known as the metaplectic group ${\rm Mp}(d)$. It has many other names in the literature, such as the oscillator representation, or the Segal-Shale-Weil representation, and it appears pervasively in mathematics. We point out right from the start that it is {\it not} irreducible: both the spaces $L^2_e(\R^d)$ and $L^2_o(\R^d)$ of even and odd functions, respectively, are closed and invariant, and on each of them the metaplectic representation is irreducible. In very practical terms, the metaplectic representation assigns to each symplectic matrix  a unitary operator on $L^2(\R^d)$, which is well-defined only up to a sign. This ambiguity, though mathematically important and
+not removable, plays a very mild role, if none at all, in many of the applications that many people are concerned
+with in Applied Harmonic Analysis. In particular, this ambiguity is irrelevant in the context of the so-called reproducing formulae.
+\pmn
+As hinted in the previous paragraph, the very definition of the metaplectic representation is troublesome, and there are different ways of going about it. For a thorough presentation of this topic, the reader is referred  either to \cite{Fol2} or \cite{LV}. Here we content ourselves with a discussion of the main features  rather than delving into the full machinery of proofs.
+\pmn
+We start by summarizing the main properties of the symplectic group and of its Lie algebra. A direct and easy proof of most of the statements may be found in \cite{Fol2}. The most advanced ones, such as for example the Iwasawa decomposition, can be found for example in \cite{Kn1}. 
+\subsection{The symplectic group}\label{SYMP} 
+The symplectic group is the group of invertible $2d\times2d$ matrices preserving the standard symplectic form $\omega:\R^{2d}\times\R^{2d}\to\R$ defined by
+\[
+\omega(x,y)=\t xJ y,
+\qquad
+J=\bmatrix 0&I_d\\-I_d&0\endbmatrix.
+\]
+Thus, a  matrix $g\in\Glnnr$ is symplectic if and only if  $\omega(gx,gy)=\omega(x,y)$ for every $x,y\in\R^{2d}$, so that  the group of all of them is therefore
+\[
+\Spnr=\bigl\{g\in\Glnr\,:\,\t gJg=J\bigr\}
+\]
+and its Lie algebra is 
+\[
+\spnr=\bigl\{X\in\glnr\,:\,\t XJ+XJ=0\bigr\}.
+\]
+The symplectic group has many interesting subgroups. Among many others,
+\begin{align*}
+M
+&=\left\{\begin{bmatrix} h&0\\0&\t\,h^{-1}\end{bmatrix}: \det h=\pm1  \right\}\\
+A
+&=\left\{\begin{bmatrix} \lambda I&0\\ 0&\lambda^{-1} I\end{bmatrix}: \lambda>0  \right\}
+\\
+N
+&=\left\{\begin{bmatrix} I&0\\ \sigma&I\end{bmatrix}: \sigma\in\Symnr  \right\},
+\end{align*}
+where evidently $\Symnr$ stands for the vector space of all symmetric $d\times d$ real matrices.
+Observe that
+\[
+MA=\left\{\begin{bmatrix} h&0\\0&\t\,h^{-1}\end{bmatrix}: \det h\neq0  \right\}
+\]
+where $MA$ stands for the set of products of the form $ma$ with $m\in M$ and $a\in A$. Hence
+$MA\simeq\Glnr$. In particular, we can embed the special linear group $\Slnr$   and the special orthogonal group $SO(d)$  in $\Spnr$ in a canonical fahion, namely  
+\begin{align*}
+\Slnr&\hookrightarrow\left\{\begin{bmatrix} h&0\\0&\t\,h^{-1}\end{bmatrix}: h\in\Slnr  \right\}\subset M\subset\Spnr    \\
+SO(d)&\hookrightarrow\left\{\begin{bmatrix} h&0\\0&\t\,h^{-1}\end{bmatrix}: h\in SO(d)  \right\}\subset M\subset\Spnr.
+\end{align*}
+{\bf Exercise 1.} Show that an invertible matrix $g$ satisfies $\omega(gx,gy)=\omega(x,y)$ for every $x,y\in\R^{2d}$ if and only if $\t gJg=J$
+\pmn
+\noindent
+{\bf Exercise 2.} Show that $M$, $A$ and $N$ are indeed subgroups of $\Spnr$. Show that $MA$ is a group and that it normalizes $N$, that is, that $xnx^{-1}\in N$ whenever $x\in MA$ and $n\in N$. Show also that 
+\[
+\overline{N}=\left\{\t n:n\in N\right\}
+\]
+is a subgroup of $\Spnr$.
+
+\pmn
+As any other semisimple\footnote{The symplectic group belongs to the very important class of semisimple Lie groups. Here we are not interested in this particular aspect and shall not introduce this notion. The reader is referred to \cite{Kn1} and \cite{Kn2} for a detailed discussion of semisimple Lie groups an their representations.} group, the symplectic group admits a polar decomposition  as stated in the following proposition. 
+\begin{prop}\label{polar}{\bf(Polar decomposition)} Any invertible matrix $g$ can be written uniquely as $g=up$, where $u$ is orthogonal and $p$ is positive definite. If $g\in\Spnr$, then both $u$ and $p$ are in $\Spnr$.
+Furthermore, $p\in\Spnr$ is positive definite if and only if $p=\exp S$ with $S\in\spnr\cap{\rm Sym}(2d,\R)$.
+\end{prop}
+The following fact is very important. 
+\begin{prop}\label{max} $K=\Spnr\cap O(2d)$ is a maximal compact subgroup of $\Spnr$ and it is isomorphic to the unitary group $U(d)$ under the natural map induced on linear maps by the identification $(x,y)\mapsto x+iy$
+of $\R^{2d}$ with $\C^d$.
+\end{prop}
+A direct consequence of the previous two propositions is the following statement about the main topological features of the symplectic group.
+\begin{prop}\label{connect} The symplectic group is connected but not simply connected; its fundamental group is $\Z$.
+\end{prop}
+Again, the theorem that follows is a particular instance of a much more general theorem, valid for all semisimple (in fact reductive) groups.
+\begin{theorem}\label{iwa}{\bf(Iwasawa decomposition)} The following factorizations hold true:
+\begin{equation}
+\Spnr=KAN=KNA=ANK=NAK.
+\label{iwas}
+\end{equation}
+This means that any $g\in\Spnr$ may be written uniquely as $g=kan$ with $k\in K$, $a\in A$ and $n\in N$. Similarly for the other products, with possibly different factors.
+\end{theorem}
+A little attention must be paid to the last sentence. In short, we may write a group element $g$ either as
+$g=kan$ or as $g=\alpha\nu\kappa$, with $a,\alpha\in $, $n,\nu\in N$ and $k,\kappa \in K$.  In general, though, $a\neq\alpha$ and similarly for the other factors. But if we write $g=k'a'n'$ (same order) then necessarily $k=k'$, $a=a'$ and $n=n'$. 
+\pmn
+\noindent
+{\bf Exercise 3.} Show  that the product $NA$ is in fact a group itself, whereas neither of the products $KA$ or $KN$ is a group.
+\begin{prop}\label{generators} The symplectic group is generated by $N\cup MA\cup\{J\}$ and also by 
+$\overline{N}\cup MA\cup\{J\}$.
+\end{prop}
+The meaning of the above statements is that any element in $\Spnr$ can be written as a {\it finite} product of elements all taken from $N\cup MA\cup\{J\}$, or all taken from $\overline{N}\cup MA\cup\{J\}$. This fact is of practical relevance, as we shall see, when dealing with the metaplectic representation.
+\pmn
+We conclude this section with two simple observation concerning the Lie algebra $\spnr$. First, if we write $X\in \spnr$ in block form, namely
+\[
+X=\begin{bmatrix} A&B\\C&D\end{bmatrix},
+\]
+then it is easy  the conditions implied by $\t XJ+JX=0$, for
+\[
+0=\begin{bmatrix}\t A&\t C\\\t B&\t D\end{bmatrix}\begin{bmatrix} 0&I\\-I&0\end{bmatrix}
++\begin{bmatrix} 0&I\\-I&0\end{bmatrix}\begin{bmatrix} A&B\\C&D\end{bmatrix}
+=\begin{bmatrix}C-\t  C&\t A+D\\-\t D-A&\t B-B\end{bmatrix}
+\]
+yields immediately that $B$ and $C$ are symmetric and $D=-\t A$. Hence
+\[
+X=\begin{bmatrix} A&B\\C&-\t A\end{bmatrix},
+\qquad
+B,C\in\Symnr.
+\]
+Conversely, it is immediate to see that any such matrix is in $\spnr$, so that we actually obtain
+\begin{equation}
+\spnr=\left\{\begin{bmatrix} A&B\\C&-\t A\end{bmatrix}:
+A\in M_d(\R), B,C\in\Symnr\right\}.
+\label{symplalg}
+\end{equation}
+From the above description, it follows immediately that $X\in\spnr$ if and only if $\t X\in\spnr$.
+In particular, we obtain that both $JX$ and $XJ$ are symmetric. Indeed,
+$\t(JX)=\t X\t J=-\t XJ=JX$  by  $\t XJ+JX=0$. Similarly, one uses $\t X\in\spnr$ to show that $XJ$ is symmetric. 
+
+
+\vskip1truecm
+\subsection{Construction of the metaplectic representation} We now proceed to define the metaplectic representation abstractly. Later we indicate how one can go about clearing out all the unsettled points.
+\pmn
+Recall that the group $\cT$ of automorphisms of the Heisenberg group that leave the center  poinwise fixed is generated by the inner automorphisms and by the symplectic maps. More precisely, the maps $i_{h}$ with $h\in\Hsn$ and $T_g$ with $g\in\Spnr$ given by
+\begin{align*}
+i_{(x,y,z)}(q,p,t)&=(x,y,z)^{-1}(q,p,t)(x,y,z)=(q,p,t+ap-bq)  \\
+T_g(q,p,t)&=(g(q,p),t),
+\end{align*}
+where $g(q,p)$ simply means the effect of the linear map $g$ on the vector $(q,p)\in\R^{2d}$.
+\pmn
+If $T\in\cT$, we can precompose the Schr\"odinger representation $\pi$ with $T$  to obtain a new representation $\pi\circ T$ of $\Hsn$ on $L^2(\R^d)$. Indeed, if $h,k\in\Hsn$, then 
+\[
+(\pi\circ T)(hk)=\pi(T(hk))=\pi(T(h)T(K))=\pi(T(h))\pi(T(k))=(\pi\circ T)(h)(\pi\circ T)(k)
+\]
+shows that it is indeed a representation and furthermore \eqref{pi2} shows that
+\[
+(\pi\circ T)(0,0,t)=\pi(T(0,0,t))=\pi(0,0,t)=e^{2\pi i t}I.
+\]
+By the Stone-von Neumann theorem, $\pi$ and $\pi\circ T$ must be equivalent. Hence there must be a unitary operator $\mu(T)$ on $L^2(\R^d)$ that intertwines the two representations:
+\begin{equation}
+\pi\circ T(h)=\mu(T)\pi(h)\mu(T)^{-1},
+\qquad
+h\in\Hsn.
+\label{intert}
+\end{equation}
+Moreover, by Schur's Lemma, namely item ii) of Lemma~\ref{schurlemma}, $\mu(T)$ is determined up to a phase factor because the space $\cI(\pi,\pi\circ T)$ of all intertwining operators is one dimensional and  contains a unitary operator, hence all its multiples by complex numbers of modulus one. Now, if we write \eqref{intert} for the product $TS$ we find that $\mu(T)\mu(S)$ does the job, so there exists $c_{T,S}\in S^1$ such that
+\[
+\mu(TS)=c_{T,S}\mu(T)\mu(S).
+\]
+This means that $\mu$ defines a projective representation of $\cT$, that is, a homomorphis into the quotient of the group of unitary operators modulo its center $\{cI:c\in S^1\}$.
+\pmn
+Now, if $T=i_h$, with $h\in\Hsn$, then since
+\[
+\pi(hgh^{-1})=\pi(h)\pi(g)\pi(h)^{-1},
+\]
+we can certainly take $\mu(i_h)=\pi(h)$. Thus we may restrict ourselves to the subgroup of $\cT$ consisting of the automorphisms $T_g$ with $g\in\Spnr$, a group manifestly isomorphic to $\Spnr$ itself. We shall write for simplicity $\mu(g)$ instead of $\mu(T_g)$. From the above discussion it follows that the unitary operator $\mu(g)$ is determined up to a phase factor by the relation
+\begin{equation}
+\pi(g(q,p),0)=\mu(g)\pi(q,p,0)\mu(g)^{-1}.
+\label{interBIS}
+\end{equation}
+It may be shown (see below for further comments) that the phase factors can be chosen in one and only one way up to a sign, so that $\mu$ becomes a double-valued unitary representation of $\Spnr$. In other words, it holds
+\[
+\mu(gh)=\pm\mu(g)\mu(h),
+\qquad
+g,h\in\Spnr.
+\]
+With this choice, $\mu$ is called the {\it metaplectic representation}.
+\pmn
+We should either think of $\mu$ as a genuine unitary representatin of the double cover ${\rm Mp}(d)$ of $\Spnr$ or as a homomorphism of $\Spnr$ into the quotient of the group of unitary operators modulo its center $\{\pm I\}$.Given a single $g\in\Spnr$, we may think of $\mu(g)$ as a pir of unitary operators that differ from each other by $-1$. In explicit formulas, this amniguity usually appears as the possible choice of sign of a square root.
+\pmn
+Next we compute $\mu(g)$ for certain particular types of $g$, up to phase factors.
+\begin{itemize}
+\item[(i)] Take $g\in MA$, that is $g=\begin{bmatrix} h&0\\0&\t\,h^{-1}\end{bmatrix}$ with $h\in\Glnr$. Then
+\begin{align*}
+\pi(g(q,p),0)f(x)&=\pi(hq,\t h^{-1}p,0)f(x) \\
+&=e^{-\pi i (hq)\cdot(\t h^{-1}p)}e^{2\pi i (\t h^{-1}p)\cdot x}f(x-hq)    \\
+&=e^{-\pi i q\cdot p}e^{2\pi i p\cdot h^{-1}x}(f\circ h)(h^{-1}x-q)    
+\end{align*}
+The unitary operator on $L^2(\R^d)$ given by $Uf(x)=|\det h|^{-1/2}f(h^{-1}x)$ satisfies
+\begin{align*}
+U\pi(q,p,0)U^{-1}f(x)&=|\det h|^{-1/2}(\pi(q,p,0)U^{-1}f)(h^{-1}x)     \\
+&=|\det h|^{-1/2}(\pi(q,p,0)|\det h|^{1/2}f\circ h)(h^{-1}x)  \\
+&=\pi(q,p,0)(f\circ h) (h^{-1}x)   \\
+&=e^{-\pi i q\cdot p}e^{2\pi i p\cdot  h^{-1}x}(f\circ h)(h^{-1}x-q)
+\end{align*}
+Hence $U$ satisfies \eqref{interBIS}, so it must  coincide with $\mu(g)$ up to a phase factor.
+\item[(ii)] Take now $g\in N$, that is, $g= \begin{bmatrix} I&0\\ \sigma&I\end{bmatrix}$ with $\sigma\in\Symnr$.
+Then  
+\begin{align*}
+\pi(g(q,p),0)f(x)&=\pi(q,\sigma q+p,0)f(x) \\
+&=e^{-\pi i q\cdot p}e^{2\pi i (\sigma q+p)\cdot x}f(x-q)\\
+&=e^{-\pi i q\cdot p}e^{2\pi i p\cdot x}e^{-\pi iq\cdot\sigma q}e^{2\pi i q\cdot  \sigma x}f(x-q)
+\end{align*}
+The unitary operator on $L^2(\R^d)$ given by $Vf(x)=e^{\pi i x\cdot\sigma x}f(x)$ satisfies
+\begin{align*}
+V\pi(q,p,0)V^{-1}f(x)&=e^{\pi i x\cdot\sigma x}\left(\pi(q,p,0)V^{-1}f\right)(x)\\
+&=e^{\pi i x\cdot\sigma x}e^{-\pi i q\cdot p}e^{2\pi i p\cdot x}(V^{-1}f)(x-q)\\
+&=e^{\pi i x\cdot\sigma x}e^{-\pi i q\cdot p}e^{2\pi i p\cdot x}e^{-\pi i (x-q)\cdot\sigma(x-q)}f(x-q)\\
+&=e^{-\pi i q\cdot p}e^{2\pi i p\cdot x}e^{-\pi iq\cdot\sigma q}e^{2\pi i q\cdot  \sigma x}f(x-q).
+\end{align*}
+Hence $V$ satisfies \eqref{interBIS}, so it must coincide with $\mu(g)$ up to a phase factor.
+\item[(iii)] Finally, take $g=J$. Then
+\[
+\pi(J(q,p),0)f(\xi)= \pi(p,-q,0)f(\xi)=e^{\pi i q\cdot p}e^{-2\pi iq\cdot\xi}f(\xi-p)
+\]
+Denote the Fourier transform  on $L^2(\R^d)$ by $\cF$. For  $f\in L^2(\R^d)$ we have
+\begin{align*}
+\cF\pi(q,p,0)\cF^{-1}f(\xi)&=\int e^{-2\pi i\xi\cdot x}\pi(q,p,0)(\cF^{-1}f)(x)\,dx\\
+&=\int e^{-2\pi i\xi\cdot x}e^{-\pi i q\cdot p}e^{2\pi ip\cdot x}(\cF^{-1}f)(x-q)\,dx\\
+&=e^{-\pi i q\cdot p}\int e^{2\pi i(p-\xi)\cdot x}(\cF^{-1}f)(x-q)\,dx\\
+&=e^{-\pi i q\cdot p}\int e^{2\pi i(p-\xi)\cdot(q+y)}(\cF^{-1}f)(y)\,dy\\
+&=e^{-\pi i q\cdot p}e^{2\pi i(p-\xi)\cdot q}\int e^{2\pi i(p-\xi)\cdot y}(\cF^{-1}f)(y)\,dy\\
+&=e^{\pi i q\cdot p}e^{-2\pi i\xi\cdot q}f(\xi-p).
+\end{align*}
+\end{itemize}
+Hence $\cF$ satisfies \eqref{interBIS}, so it must  coincide with $\mu(g)$ up to a phase factor.
+\pmn
+Up to phase factors, we have identified $\mu(g)$ on a generating set of elements (thanks to 
+Proposition~\ref{generators}), so in principle we know $\mu$ up to phase factors. Anticipating what can be made rigorous, we actually have
+\begin{align}
+\mu\left(\begin{bmatrix} h&0\\0&\t\,h^{-1}\end{bmatrix}\right)f(x)&=(\det h)^{-1/2}f(h^{-1}x)\label{MRdiag}     \\
+\mu\left(\begin{bmatrix}  I&0\\ \sigma&I\end{bmatrix}\right)f(x)&=\pm e^{\pi i x\cdot\sigma x}f(x)\label{MRlow} \\
+\mu\left(J\right)f(x)&=i^{d/2}\cF f(x).\label{MRJ}
+\end{align}
+It must be pointed out that in formulae \eqref{MRdiag} and \eqref{MRJ} the sign of the square root accounts exactly for the ambiguity in sign.
+\pmn
+\subsection{An outline of the full construction}
+The question remains: how to define $\mu$ in full detail? Our next target is to outline how to do this. The several nontrivial technicalities will not be unravelled completely. The construction can be summarized in the following three basic steps, for each of which we will then give some further information.
+\begin{itemize}
+\item[(i)] Define first the infinitesimal representation $d\mu$ of the Lie algebra $\spnr$ by densely defined unbounded and essentially skew-adjoint operators on $L^2(\R^d)$. This step is obtained by means of the so calle Weyl calculus, realizing first $\spnr$ as a Lie algebra of polynomials.
+\item[(ii)] ``Integrate'' the representation to a representation of the universal cover of $\Spnr$. This  step uses the notion of analytic vector for a representation.
+\item[(iii)] Show that the represntation actually factors to a representation of the double cover of $\Spnr$.
+\end{itemize}
+
+
+\vfill
+\eject
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Restriction to triangular subgroups}
+\pagestyle{myheadings}
+\markboth{The use of representations}{Triangular subgroups}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% ACTUAL DOCUMENT ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{dn2}
+\pagestyle{myheadings}
+\markboth{The use of representations}{Bibliography}
+
+\bibitem[F1]{Fol1} G. B. Folland, {\em A Course in Abstract Harmonic Analysis}, CRC
+Press, Boca Raton, 1995.
+
+\bibitem[F2]{Fol2} G. B. Folland, {\em Harmonic Analysis in Phase Space}, Princeton
+University Press, Princeton,  1989.
+
+\bibitem[Gro]{Charlie} K.~Gr\"ochenig, {\em Foundations of Time-Frequency
+Analysis}. Birkh\"auser, Boston, 2001.
+
+\bibitem[K1]{Kn1} A.W. Knapp, {\em Lie Groups Beyond an Introduction},
+Birkh\" auser, Boston, 1996.
+
+\bibitem[K2]{Kn2} A.W. Knapp, {\em Representation Theory of Semisimple Lie
+Groups: An Overview Based on Examples}, Princeton University Press, Princeton, 1988.
+
+\bibitem[LV]{LV} G.~Lion and M.~Vergne, {\em The Weil representation, Maslov index and theta series}, Birk\"auser, Boston, 1980.
+\bibitem[R]{Rud} W. Rudin, {\em Functional Analysis}, second edition, McGraw Hill,
+New York,1991.
+
+\bibitem[V]{Var} V.S. Varadarajan, {\em Lie Groups, Lie Algebras and Their
+Representations}, second edition, Springer-Verlag, New York, 1984.
+
+\bibitem[W]{war} F. Warner, {\em Foundations of Differentiable Manifolds and
+Lie Groups}, second edition, Springer-Verlag, New York, 1983.
+
+\end{thebibliography}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
